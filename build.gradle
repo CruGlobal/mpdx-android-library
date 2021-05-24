@@ -14,6 +14,10 @@ buildscript {
     }
 }
 
+plugins {
+    id "com.vanniktech.android.junit.jacoco" version "0.16.0"
+}
+
 allprojects {
     repositories {
         google()
@@ -24,4 +28,8 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+task jacocoTestReport {
+    subprojects.each { dependsOn(it.tasks.withType(JacocoReport)) }
 }
