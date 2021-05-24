@@ -15,4 +15,4 @@ TODO: add proper info to README files.
 implementation ''
 ```
 
-[![codecov](https://codecov.io/gh/CruGlobal/mpdx-android-library/branch/master/graph/badge.svg)](https://codecov.io/gh/CruGlobal/mpdx-andriod-library)
+[![codecov](https://codecov.io/gh/CruGlobal/mpdx-android-library/branch/master/graph/badge.svg)](https://codecov.io/gh/CruGlobal/mpdx-android-library)
