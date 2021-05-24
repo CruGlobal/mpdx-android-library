@@ -1,13 +1,16 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = "1.5.0"
+    ext.deps = [
+            kotlin_version  : '1.5.0',
+    ]
+
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.2.1"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${deps.kotlin_version}"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -23,6 +26,51 @@ allprojects {
         google()
         mavenCentral()
         jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+
+subprojects {
+    apply plugin: 'com.android.library'
+    apply plugin: 'kotlin-android'
+    apply plugin: 'kotlin-kapt'
+
+    group 'org.cru.mpdx.android'
+    version '1.0.0-SNAPSHOT'
+
+
+    apply plugin: 'maven-publish'
+    afterEvaluate {
+        publishing {
+            publications {
+                release(MavenPublication) {
+                    from components.release
+
+                    groupId = project.group
+                    artifactId = project.name
+                    version = project.version
+
+                    pom.withXml {
+                        def scm = asNode().appendNode('scm')
+                        scm.appendNode('connection', POM_SCM_CONNECTION)
+                        scm.appendNode('developerConnection', POM_SCM_CONNECTION)
+                    }
+
+                }
+            }
+            repositories {
+                maven {
+                    name "cruGlobalMavenRepository"
+
+                    if (project.version.endsWith('-SNAPSHOT')) {
+                        url "https://cruglobal.jfrog.io/cruglobal/list/maven-cru-android-public-snapshots-local/"
+                    } else {
+                        url "https://cruglobal.jfrog.io/cruglobal/list/maven-cru-android-public-releases-local/"
+                    }
+
+                    credentials(PasswordCredentials)
+                }
+            }
+        }
     }
 }
 
