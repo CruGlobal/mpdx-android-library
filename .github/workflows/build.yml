@@ -1,0 +1,45 @@
+# This workflow will build a Java project with Gradle
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
+
+name: Build MPDX Android Library
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    cancel-previous:
+      name: Cancel Stale In-propress Builds
+      runs-on: ubuntu-latest
+      steps:
+        - name: Cancel Previous Runs
+          uses: stylfle/cancel-workflow-action@0.9.0
+          with:
+            acess_token: ${{github.token}}
+
+    static:
+      name: Static Analysis
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
+        - name: Cache Gradle
+          uses: actions/cache@v2
+          with:
+            path: |
+              ~/.gradle.caches
+              ~/.gradle.wrapper
+            key: ${{ runner.os }}-gradle-${{ github.sha }}
+            restore-keys: |
+              ${{ runner.os }}-gradle-
+        - name: Run Static Analysis
+          run: ./gradlew assemble check --continue --stacktrace --parallel
+        - name: Archive lint results
+          if: always()
+          uses: actions/upload-artifact@v2
+          with:
+            name: lint-results
+            path: "**/build/reports/lint-results.*"
