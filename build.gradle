@@ -29,6 +29,52 @@ allprojects {
     }
 }
 
+subprojects {
+    apply plugin: 'com.android.library'
+    apply plugin: 'kotlin-android'
+    apply plugin: 'kotlin-kapt'
+
+    group 'org.cru.mpdx.android'
+    version '1.0.0-SNAPSHOT'
+
+
+    apply plugin: 'maven-publish'
+    afterEvaluate {
+        publishing {
+            publications {
+                release(MavenPublication) {
+                    from components.release
+
+                    groupId = project.group
+                    artifactId = project.name
+                    version = project.version
+
+                    pom.withXml {
+                        def scm = asNode().appendNode('scm')
+                        scm.appendNode('connection', POM_SCM_CONNECTION)
+                        scm.appendNode('developerConnection', POM_SCM_CONNECTION)
+                    }
+
+                }
+            }
+            repositories {
+                maven {
+                    if (project.version.endsWith('-SNAPSHOT')) {
+                        url "https://cruglobal.jfrog.io/cruglobal/list/maven-cru-android-public-snapshots-local/"
+                    } else {
+                        url "https://cruglobal.jfrog.io/cruglobal/list/maven-cru-android-public-releases-local/"
+                    }
+
+                    credentials {
+                        username cruGlobalMavenRepositoryUsername
+                        password cruGlobalMavenRepositoryPassword
+                    }
+                }
+            }
+        }
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
