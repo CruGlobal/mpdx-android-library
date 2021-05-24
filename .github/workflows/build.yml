@@ -77,7 +77,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
       - name: Run Unit Tests
-        run: ./gradlew test --continue --stacktrace --parallel
+        run: ./gradlew test jacocoTestReport --continue --stacktrace --parallel
       - name: Codecov
         uses: codecov/codecov-action@v1
         with:
