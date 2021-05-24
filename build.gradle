@@ -59,16 +59,15 @@ subprojects {
             }
             repositories {
                 maven {
+                    name "cruGlobalMavenRepository"
+
                     if (project.version.endsWith('-SNAPSHOT')) {
                         url "https://cruglobal.jfrog.io/cruglobal/list/maven-cru-android-public-snapshots-local/"
                     } else {
                         url "https://cruglobal.jfrog.io/cruglobal/list/maven-cru-android-public-releases-local/"
                     }
 
-                    credentials {
-                        username cruGlobalMavenRepositoryUsername
-                        password cruGlobalMavenRepositoryPassword
-                    }
+                    credentials(PasswordCredentials)
                 }
             }
         }
