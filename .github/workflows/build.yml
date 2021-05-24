@@ -71,3 +71,10 @@ jobs:
           key: ${{ runner.os }}-maven-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-maven-
+      - name: Run Unit Tests
+        run: ./gradlew test --continue --stacktrace --parallel
+      - name: Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          fail_ci_if_error: true
+          verbose: true
