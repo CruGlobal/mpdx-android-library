@@ -44,10 +44,7 @@ android {
         mavenCentral()
         jcenter()
     }
-
-    task sourcesJar(type: Jar) {
-        from android.sourceSets.main.java.srcDirs
-    }
+    
     afterEvaluate {
         publishing {
             publications {
