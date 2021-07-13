@@ -1,5 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.mpdx.android">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission-sdk-23 android:name="android.permission.USE_BIOMETRIC"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
+    <!-- Used by ContactEditorFragment to import a contact -->
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
+    <!-- Used by CoachingNotificationReceiver to reschedule notification alarm -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application>
+        <activity
+            android:name=".features.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Mpdx"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".core.modal.ModalActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".features.contacts.contactdetail.ContactDetailActivity"
+            android:configChanges="orientation"
+            android:label="@string/contacts_lowercase"
+            android:parentActivityName=".features.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".features.contacts.contacteditor.ContactEditorActivity"
+            android:parentActivityName=".features.contacts.contactdetail.ContactDetailActivity"
+            android:screenOrientation="userPortrait"
+            android:theme="@style/Theme.Mpdx" />
+
+        <activity
+            android:name=".features.tasks.taskdetail.TaskDetailActivity"
+            android:configChanges="orientation"
+            android:parentActivityName=".features.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Mpdx"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".features.tasks.editor.TaskEditorActivity"
+            android:screenOrientation="userPortrait"
+            android:parentActivityName=".features.tasks.taskdetail.TaskDetailActivity"
+            android:theme="@style/Theme.Mpdx" />
+
+        <activity
+            android:name=".features.appeals.details.AppealDetailsActivity"
+            android:configChanges="orientation"
+            android:label="@string/appeals_lowercase"
+            android:parentActivityName=".features.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".features.coaching.CoachingDetailActivity"
+            android:configChanges="orientation"
+            android:label="@string/coaching_lowercase"
+            android:parentActivityName=".features.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"/>
+
+        <activity
+            android:name=".features.filter.FiltersActivity"
+            android:exported="false"
+            android:screenOrientation="userPortrait"
+            android:theme="@style/Theme.Mpdx" />
+
+        <activity
+            android:name=".features.onboarding.OnboardingActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <receiver android:name=".utils.NotificationPublisher" />
+        <receiver android:name=".features.coaching.notifications.CoachingNotificationReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED" />
+            </intent-filter>
+        </receiver>
+    </application>
 </manifest>
