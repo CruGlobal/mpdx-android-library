@@ -1,0 +1,14 @@
+<!-- source: Streamline Icons 01-Interface Essential/43-Remove-Add/add-circle.svg 20px -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="20dp"
+    android:height="20dp"
+    android:autoMirrored="true"
+    android:viewportHeight="20"
+    android:viewportWidth="20">
+    <path
+        android:fillColor="@color/tintable"
+        android:pathData="M10,19.5833c5.2925,0 9.5833,-4.2908 9.5833,-9.5833S15.2925,0.4167 10,0.4167S0.4167,4.7075 0.4167,10C0.4225,15.29 4.71,19.5775 10,19.5833zM5,9.1667l3.9583,0c0.115,0 0.2083,-0.0933 0.2083,-0.2083L9.1667,5c0,-0.46 0.3733,-0.8333 0.8333,-0.8333s0.8333,0.3733 0.8333,0.8333l0,3.9583c0,0.115 0.0933,0.2083 0.2083,0.2083L15,9.1667c0.46,0 0.8333,0.3733 0.8333,0.8333s-0.3733,0.8333 -0.8333,0.8333l-3.9583,0C10.9267,10.8333 10.8333,10.9267 10.8333,11.0417L10.8333,15c0,0.46 -0.3733,0.8333 -0.8333,0.8333s-0.8333,-0.3733 -0.8333,-0.8333l0,-3.9583c0,-0.115 -0.0933,-0.2083 -0.2083,-0.2083L5,10.8333c-0.46,0 -0.8333,-0.3733 -0.8333,-0.8333S4.54,9.1667 5,9.1667z"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="0" />
+</vector>

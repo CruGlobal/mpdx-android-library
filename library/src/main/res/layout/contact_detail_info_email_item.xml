@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="email"
+            type="org.mpdx.android.features.contacts.viewmodel.EmailAddressViewModel" />
+        <variable
+            name="listener"
+            type="org.mpdx.android.features.contacts.contactdetail.info.ContactPersonEmailAdapter.EmailSelectedListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> listener.onEmailSelected(email.email)}">
+
+        <TextView
+            android:id="@+id/contact_top_email_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@{email.email}"
+            android:textColor="@color/primary_gray"
+            android:textSize="@dimen/contacts_info_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/email_check_image_view"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strikethroughIf="@{email.isHistoric}"
+            tools:text="email@cru.org" />
+
+        <ImageView
+            android:id="@+id/email_check_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:visibleIf="@{email.primary}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible"
+            app:srcCompat="@drawable/cru_icon_check" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

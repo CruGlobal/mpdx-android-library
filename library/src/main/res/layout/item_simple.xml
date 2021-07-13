@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:id="@+id/simple_text"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/listPreferredItemHeight"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    tools:text="@tools:sample/full_names"
+    android:gravity="center_vertical"
+    android:padding="16dp"
+    android:textColor="@color/black"
+    android:textSize="16sp"
+    xmlns:tools="http://schemas.android.com/tools" />

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="progressGoal" type="org.mpdx.android.features.dashboard.view.monthly_goal.MonthlyGoalViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:contentPadding="8dp"
+        app:contentPaddingBottom="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/monthly_goal_progress_bar"
+                style="@style/Balance_Progress.Monthly_Goal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:max="@{progressGoal.monthlyGoal}"
+                android:progress="@{progressGoal.received}"
+                android:secondaryProgress="@{progressGoal.pledged}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/monthly_goal_value"
+                tools:max="100"
+                tools:progress="50"
+                tools:secondaryProgress="75" />
+
+            <TextView
+                android:id="@+id/monthly_goal_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/dashboard_monthly_goal_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/monthly_goal_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@{progressGoal.monthlyGoalCurrency}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/monthly_goal_label"
+                tools:text="$5,700 USD" />
+
+
+            <TextView
+                android:id="@+id/monthly_gifts_started_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/dashboard_monthly_gifted_started_label"
+                app:layout_constraintBottom_toBottomOf="@id/monthly_gifts_started_barrier"
+                app:layout_constraintEnd_toStartOf="@+id/monthly_gifts_started_value"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintStart_toEndOf="@+id/monthly_gifts_started_image"
+                app:layout_constraintTop_toBottomOf="@id/monthly_goal_progress_bar" />
+
+            <TextView
+                android:id="@+id/monthly_gifts_started_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{progressGoal.monthlyGiftStartedCurrency}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintStart_toEndOf="@id/monthly_gifts_started_label"
+                app:layout_constraintTop_toBottomOf="@id/monthly_goal_progress_bar"
+                tools:text="$3,200 (52%)" />
+
+            <TextView
+                android:id="@+id/monthly_commitments_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/dashboard_monthly_commitments_label"
+                app:layout_constraintBottom_toBottomOf="@id/monthly_commitments_barrier"
+                app:layout_constraintEnd_toStartOf="@+id/monthly_gifts_started_value"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintStart_toEndOf="@+id/monthly_commitments_image"
+                app:layout_constraintTop_toBottomOf="@id/monthly_gifts_started_barrier" />
+
+            <TextView
+                android:id="@+id/monthly_commitments_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{progressGoal.monthlyCommitmentCurrency}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintStart_toEndOf="@id/monthly_commitments_label"
+                app:layout_constraintTop_toBottomOf="@id/monthly_gifts_started_barrier"
+                tools:text="$5,088 (76%)" />
+
+            <TextView
+                android:id="@+id/below_goal_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/dasboard_below_goal_label"
+                app:layout_constraintBottom_toBottomOf="@id/below_goal_barrier"
+                app:layout_constraintEnd_toStartOf="@+id/monthly_gifts_started_value"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintStart_toEndOf="@+id/below_goal_image"
+                app:layout_constraintTop_toBottomOf="@id/monthly_commitments_barrier" />
+
+            <TextView
+                android:id="@+id/below_goal_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{progressGoal.monthlyBelowGoalCurrency}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintStart_toEndOf="@id/monthly_commitments_label"
+                app:layout_constraintTop_toBottomOf="@id/monthly_commitments_barrier"
+                tools:text="$600 (24%)" />
+
+            <TextView
+                android:id="@+id/gift_not_started_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/dashboard_gifts_not_started_label"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/dark_blue"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/below_goal_barrier"
+                tools:visibility="visible" />
+
+
+            <View
+                android:id="@+id/below_goal_image"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/monthly_commitments_barrier" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/monthly_gifts_started_image"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:padding="5dp"
+                app:layout_constraintBottom_toBottomOf="@id/monthly_gifts_started_barrier"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/monthly_goal_progress_bar"
+                app:srcCompat="@drawable/monthly_goal_solid_indicator" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/monthly_commitments_image"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:padding="5dp"
+                app:layout_constraintBottom_toBottomOf="@id/monthly_commitments_barrier"
+                app:layout_constraintHorizontal_weight="2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/monthly_gifts_started_barrier"
+                app:srcCompat="@drawable/monthly_goal_empty_indicator" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/monthly_gifts_started_barrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="monthly_gifts_started_image,monthly_gifts_started_label,monthly_gifts_started_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/monthly_commitments_barrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="monthly_commitments_image,monthly_commitments_label,monthly_commitments_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <!-- TODO Not Clear what this text should link to will activate it in another PR -->
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/below_goal_barrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="below_goal_image,below_goal_label,below_goal_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.text.TextUtils" />
+
+        <variable name="phoneNumber" type="org.mpdx.android.features.contacts.viewmodel.PhoneNumberViewModel" />
+        <variable name="selected" type="org.ccci.gto.android.common.androidx.lifecycle.SetLiveData&lt;String>" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:minHeight="56dp"
+        android:onClick="@{() -> checkbox.toggle()}">
+
+        <!-- CheckBoxes have an intrinsic 4dp of padding around the actual checkbox -->
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="20dp"
+            android:checked="@{selected.contains(phoneNumber.model.id)}"
+            android:onCheckedChanged="@{(v, isChecked) -> isChecked ? selected.add(phoneNumber.model.id) : selected.remove(phoneNumber.model.id)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nameLabel"
+            style="?attr/materialAlertDialogChoiceTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:text="@{phoneNumber.person.fullName}"
+            app:layout_constraintBottom_toTopOf="@id/numberLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/checkbox"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/numberLabel"
+            style="?attr/materialAlertDialogChoiceTextSecondaryStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@{(TextUtils.isEmpty(phoneNumber.location) ? `` : phoneNumber.location + ` `) + phoneNumber.formattedNumber}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/nameLabel"
+            app:layout_constraintStart_toStartOf="@id/nameLabel"
+            app:layout_constraintTop_toBottomOf="@+id/nameLabel"
+            tools:text="@tools:sample/us_phones" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

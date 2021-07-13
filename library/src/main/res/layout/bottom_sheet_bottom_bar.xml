@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/bottom_bar_height">
+
+    <LinearLayout
+        android:id="@+id/more_option_notifications"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_bar_more_option_height"
+        android:layout_marginBottom="1dp"
+        android:background="@color/bottomBarBackgroundColor">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="18dp"
+            android:gravity="center_vertical"
+            android:src="@drawable/cru_icon_notifications"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:text="@string/notifications"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="18dp"
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_chevron_right_white"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/more_option_appeals"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_bar_more_option_height"
+        android:background="@color/bottomBarBackgroundColor"
+        android:layout_marginBottom="1dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="18dp"
+            android:gravity="center_vertical"
+            android:src="@drawable/cru_icon_appeals"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:text="@string/appeals"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="18dp"
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_chevron_right_white"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/more_option_coaching"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_bar_more_option_height"
+        android:background="@color/bottomBarBackgroundColor"
+        android:layout_marginBottom="1dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:padding="18dp"
+            android:src="@drawable/cru_icon_coaching"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:text="@string/menu_title_coaching"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="18dp"
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_chevron_right_white"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white" />
+</LinearLayout>

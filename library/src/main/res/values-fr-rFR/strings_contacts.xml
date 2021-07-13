@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Contact Editor -->
+    <string name="contact_editor_title_new">nouveau contact</string>
+    <string name="contact_editor_section_commitment">promesse</string>
+    <string name="contact_editor_hint_name">Nom de famille, Prénom</string>
+    <string name="contact_editor_error_contact_name_blank">Un nom doit être renseigné pour enregistrer !</string>
+    <string name="contact_editor_error_email_blank">Une adresse e-mail doit être renseignée pour enregistrer !</string>
+    <string name="contact_editor_error_phone_blank">Un numéro de téléphone doit être renseigné pour enregistrer !</string>
+    <!-- Contact Editor: To Rename -->
+    <string name="contact_commitment_amount">SAISIR LE MONTANT</string>
+    <string name="contact_commitment_currency">SÉLECTIONNER LA DEVISE</string>
+    <string name="contact_select_commitment_frequency">SÉLECTIONNEZ UNE FRÉQUENCE DE PROMESSE</string>
+    <string name="contact_commitment_received_lowercase">promesse reçue</string>
+    <string name="contact_likely_text">susceptible de donner</string>
+    <string name="contact_address_communications">COMMUNICATIONS</string>
+    <string name="contact_address_greeting">salutation</string>
+    <string name="contact_address_envelope_name">nom sur l\'enveloppe</string>
+    <string name="contact_address_appeal">appel</string>
+    <string name="new_contact_phone_hint">ajouter le téléphone</string>
+    <string name="new_contact_email_hint">ajouter l\'e-mail</string>
+    <string name="contact_address_street_hint">adresse postale</string>
+    <string name="contact_address_city">ville</string>
+    <string name="contact_address_state">état</string>
+    <string name="contact_address_postal_code">code postal</string>
+    <string name="contact_address_country">pays</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/bottom_nav_dashboard"
+        android:title="@string/dashboard"
+        android:icon="@drawable/bottom_nav_icon_dashboard"/>
+    <item android:id="@+id/bottom_nav_task"
+        android:title="@string/tasks"
+        android:icon="@drawable/bottom_nav_icon_tasks"/>
+    <item android:id="@+id/bottom_nav_contacts"
+        android:title="@string/contacts"
+        android:icon="@drawable/bottom_nav_icon_contacts"/>
+    <item android:id="@+id/bottom_nav_donations"
+        android:title="@string/donations"
+        android:icon="@drawable/bottom_nav_icon_donations"/>
+    <item android:id="@+id/bottom_nav_more"
+        android:title="@string/more"
+        android:icon="@drawable/bottom_nav_icon_more"/>
+</menu>

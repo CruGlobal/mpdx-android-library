@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="task_notification_unit_minutes">Minutes</string>
+    <string name="task_notification_unit_hours">Hours</string>
+    <string name="task_result_received">Received</string>
+    <string name="task_result_done">Done</string>
+
+    <!-- Task Details -->
+    <eat-comment />
+    <plurals name="task_details_contacts">
+        <item quantity="one">%d Contact</item>
+        <item quantity="other">%d Contacts</item>
+    </plurals>
+
+    <!-- Task Editor -->
+    <eat-comment />
+    <string name="task_editor_title_finish">Finish Task</string>
+    <string name="task_editor_header_contacts">Contacts</string>
+    <string name="task_editor_hint_assigned_user">Assigned To</string>
+    <string name="task_editor_hint_notification">Notification</string>
+    <string name="task_editor_hint_due_date">Due Date</string>
+    <string name="task_editor_hint_completed_at_time">Time</string>
+    <string name="task_editor_action_add_contact">Add Contact</string>
+    <string name="task_editor_action_add_tag">Add Tag</string>
+    <string name="task_editor_action_save">Save</string>
+    <string name="task_editor_unsaved_dialog">Your changes have not been saved</string>
+    <string name="task_editor_unsaved_dialog_action_save">Save</string>
+    <string name="task_editor_unsaved_dialog_action_discard">Discard</string>
+
+    <!-- Task Editor: To Rename -->
+    <eat-comment />
+    <string name="new_task">new task</string>
+    <string name="edit_task">edit task</string>
+    <string name="log_task_label">log task</string>
+    <string name="task_subject">Task Name</string>
+    <string name="time_hint">Time</string>
+    <string name="activity_type_hint">Action</string>
+    <string name="tags_hint">Tags</string>
+    <string name="add_comment_hint">Add Comment</string>
+    <string name="log_task_completed_date_string">Completed Date</string>
+    <string name="log_task_next_action_hint">Next Action</string>
+    <string name="task_without_date_and_time">Please select the task completed date and time</string>
+    <string name="log_task_in_future_error">Please select a time and date that is in past for Log Task.</string>
+</resources>

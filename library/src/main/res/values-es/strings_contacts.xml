@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Contact Editor -->
+    <string name="contact_editor_title_new">Contacto nuevo</string>
+    <string name="contact_editor_title_edit">Editar contacto</string>
+    <string name="contact_editor_section_commitment">Compromiso</string>
+    <string name="contact_editor_hint_name">Apellido, nombre</string>
+    <string name="contact_editor_action_import_contact">importar desde Contactos Telefónicos</string>
+    <string name="contact_editor_error_contact_name_blank">Se debe introducir un nombre para guardar.</string>
+    <string name="contact_editor_error_email_blank">Debe introducir una dirección de correo electrónico para guardar.</string>
+    <string name="contact_editor_error_phone_blank">Debe introducir un número de teléfono para guardar.</string>
+    <!-- Contact Editor: To Rename -->
+    <string name="contact_commitment_amount">INTRODUZCA EL IMPORTE</string>
+    <string name="contact_commitment_currency">SELECCIONE LA MONEDA</string>
+    <string name="contact_select_commitment_frequency">SELECCIONE UNA FRECUENCIA DE COMPROMISO</string>
+    <string name="contact_commitment_received_lowercase">Compromiso recibido</string>
+    <string name="contact_likely_text">Probabilidad de donación</string>
+    <string name="contact_address_communications">COMUNICACIONES</string>
+    <string name="contact_address_greeting">Saludo</string>
+    <string name="contact_address_envelope_name">Nombre de sobre</string>
+    <string name="contact_address_appeal">Apelación</string>
+    <string name="contact_add_tags">Agregar una etiqueta</string>
+    <string name="new_contact_phone_hint">Agregar teléfono</string>
+    <string name="new_contact_email_hint">Agregar correo electrónico</string>
+    <string name="contact_address_street_hint">Dirección postal</string>
+    <string name="contact_address_city">Ciudad</string>
+    <string name="contact_address_state">Estado</string>
+    <string name="contact_address_postal_code">Código postal</string>
+    <string name="contact_address_country">País</string>
+</resources>

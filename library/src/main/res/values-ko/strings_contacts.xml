@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Contact Editor -->
+    <string name="contact_editor_title_new">새 연락처</string>
+    <string name="contact_editor_section_commitment">투입액</string>
+    <string name="contact_editor_hint_name">이름, 성</string>
+    <string name="contact_editor_error_contact_name_blank">저장할 이름을 입력하세요!</string>
+    <string name="contact_editor_error_email_blank">저장하려면 이메일 주소를 입력해야 합니다!</string>
+    <string name="contact_editor_error_phone_blank">저장하려면 전화 번호를 입력해야 합니다!</string>
+    <!-- Contact Editor: To Rename -->
+    <string name="contact_commitment_amount">금액 입력</string>
+    <string name="contact_commitment_currency">통화 입력</string>
+    <string name="contact_select_commitment_frequency">투입 빈도 선택</string>
+    <string name="contact_commitment_received_lowercase">받은 투입액</string>
+    <string name="contact_likely_text">기부 가능</string>
+    <string name="contact_address_communications">의사소통</string>
+    <string name="contact_address_greeting">인사</string>
+    <string name="contact_address_envelope_name">봉투 이름</string>
+    <string name="contact_address_appeal">기금</string>
+    <string name="new_contact_phone_hint">전화번호 추가</string>
+    <string name="new_contact_email_hint">이메일 추가</string>
+    <string name="contact_address_street_hint">거리 주소</string>
+    <string name="contact_address_city">도시</string>
+    <string name="contact_address_state">주</string>
+    <string name="contact_address_postal_code">우편번호</string>
+    <string name="contact_address_country">국가</string>
+</resources>

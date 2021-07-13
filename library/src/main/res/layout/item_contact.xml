@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class=".ContactItemBinding">
+        <import type="androidx.databinding.ObservableField" />
+        <import type="kotlin.text.StringsKt" />
+        <import type="org.mpdx.android.features.contacts.ContactClickListener" />
+        <import type="org.mpdx.android.utils.StringUtilsKt" />
+
+        <variable name="repository" type="org.mpdx.android.features.contacts.repository.ContactsRepository" />
+        <variable name="contactClickListener" type="ObservableField&lt;ContactClickListener&gt;" />
+        <variable name="disableHeader" type="boolean" />
+        <variable name="previous" type="org.mpdx.android.features.contacts.viewmodel.ContactViewModel" />
+        <variable name="contact" type="org.mpdx.android.features.contacts.viewmodel.ContactViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/contact_list_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/tint_gray"
+            android:gravity="center"
+            android:textColor="@color/primary_blue"
+            android:textSize="@dimen/contact_detail_large_textsize"
+            android:text="@{contact.isStarred ? @string/starred : StringsKt.firstOrNull(contact.name ?? ``).toString().toUpperCase()}"
+            app:visibleIf="@{!disableHeader &amp;&amp; (previous.model == null || (!contact.isStarred &amp;&amp; (previous.isStarred || !StringUtilsKt.firstEquals(previous.name, contact.name, true))))}"
+            tools:text="@string/starred"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:onClick="@{() -> contactClickListener.onContactClick(contact.model)}">
+
+            <org.ccci.gto.android.common.picasso.view.SimplePicassoImageView
+                android:id="@+id/contact_image"
+                android:layout_width="@dimen/contact_image_width"
+                android:layout_height="@dimen/contact_image_height"
+                android:layout_margin="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:picassoUri="@{contact.avatar}"
+                app:placeholder="@drawable/cru_icon_avatar"
+                app:transform="@{`jp.wasabeef.picasso.transformations.CropCircleTransformation`}"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/contact_name_text"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/contacts_info_padding"
+                android:layout_marginLeft="@dimen/contacts_info_padding"
+                android:fontFamily="sans-serif-light"
+                android:gravity="bottom"
+                android:singleLine="true"
+                android:text="@{contact.name}"
+                android:textSize="@dimen/contacts_info_text_size"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/contact_status_text"
+                app:layout_constraintEnd_toStartOf="@id/contact_item_star_image"
+                app:layout_constraintStart_toEndOf="@id/contact_image"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Janelle Stewart" />
+
+            <TextView
+                android:id="@+id/contact_status_text"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_below="@+id/contact_name_text"
+                android:layout_marginStart="@dimen/contacts_info_padding"
+                android:layout_marginLeft="@dimen/contacts_info_padding"
+                android:layout_toEndOf="@id/contact_image"
+                android:layout_toRightOf="@id/contact_image"
+                android:fontFamily="sans-serif-light"
+                android:gravity="top"
+                android:text="@{contact.status}"
+                android:textSize="@dimen/contacts_detail_small_textsize"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/contact_item_star_image"
+                app:layout_constraintStart_toEndOf="@id/contact_image"
+                app:layout_constraintTop_toBottomOf="@id/contact_name_text"
+                tools:text="Partner - Pray" />
+
+            <ImageView
+                android:id="@+id/contact_item_star_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="@dimen/contacts_info_padding"
+                android:layout_marginRight="@dimen/contacts_info_padding"
+                android:onClick="@{() -> repository.toggleStarred(contact.model.id)}"
+                android:padding="8dp"
+                android:src="@{contact.isStarred ? @drawable/star_fill : @drawable/star_empty}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/star_fill" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>

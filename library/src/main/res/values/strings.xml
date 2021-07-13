@@ -1,0 +1,466 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">MPDX</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="tasks">Tasks</string>
+    <string name="contacts">Contacts</string>
+    <string name="donations">Donations</string>
+    <string name="appeals">Appeals</string>
+    <string name="notifications">Notifications</string>
+    <string name="more">More</string>
+    <string name="dashboard_lowercase">dashboard</string>
+    <string name="donations_lowercase">donations</string>
+    <string name="contacts_lowercase">contacts</string>
+    <string name="tasks_lowercase">tasks</string>
+    <string name="appeals_lowercase">appeals</string>
+    <string name="dashboard_overall_goal">%1$sGoal</string>
+    <string name="dashboard_account_label">My account balance</string>
+    <string name="connect_lowercase">connect</string>
+    <string name="care_commitments_lowercase">care &amp; commitments</string>
+
+
+    <!-- Tasks -->
+    <eat-comment />
+    <string name="current_tasks_lowercase">current tasks</string>
+    <string name="task_history_lowercase">task history</string>
+    <string name="contact_name_unavailable">Contact Name Unavailable</string>
+    <string name="no_contacts">No Contacts</string>
+    <string name="multiple_contacts">Multiple Contacts</string>
+    <string name="deleted">deleted</string>
+    <string name="overdue">OVERDUE</string>
+    <string name="today">TODAY</string>
+    <string name="tomorrow">TOMORROW</string>
+    <string name="upcoming">UPCOMING</string>
+    <string name="no_due_date">NO DUE DATE</string>
+    <string name="none">none</string>
+    <string name="add">add</string>
+    <string name="task_subject_hint">enter a task subject</string>
+    <string name="no_subject_description">%1$s %2$s</string>
+    <string name="task_detail">TASK DETAIL</string>
+    <string name="select_contact_hint">contact</string>
+    <string name="select_user_hint">user</string>
+    <string name="date_hint">date</string>
+    <string name="edit">edit</string>
+    <string name="comments">COMMENTS</string>
+    <string name="tags">TAGS</string>
+    <string name="alert">alert</string>
+    <string name="alert_definition_title">How do you want to be notified?</string>
+    <string name="hours_label">Hours:</string>
+    <string name="minutes_label">Minutes:</string>
+    <string name="mode_label">Mode:</string>
+    <string name="alert_mode_none">None</string>
+    <string name="alert_mode_email">Email</string>
+    <string name="alert_mode_mobile">Mobile</string>
+    <string name="alert_mode_both">Both</string>
+    <plurals name="hours_unit">
+        <item quantity="one">%d hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
+    <plurals name="minutes_unit">
+        <item quantity="one">%d minute</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
+    <string name="alert_status_text">%s before</string>
+    <string name="alert_no_status">No notification set</string>
+    <string name="alert_grouped">%s and %d more</string>
+    <string name="hour_minute_mix">%dhr %dmin</string>
+    <string name="due_date">DUE DATE</string>
+    <string name="completed_on">COMPLETED ON</string>
+    <string name="completed_task_result_title">RESULT</string>
+    <string name="call">call</string>
+    <string name="text">text</string>
+    <string name="directions">directions</string>
+    <string name="todo">to do</string>
+    <string name="talk_to_in_person">talk to in person</string>
+    <string name="no_action_set">no action set</string>
+    <string name="letter">letter</string>
+    <string name="newsletter_physical">newsletter - physical</string>
+    <string name="newsletter_email">newsletter - email</string>
+    <string name="pre_call_letter">pre call letter</string>
+    <string name="reminder_letter">reminder letter</string>
+    <string name="support_letter">support letter</string>
+    <string name="thank">thank</string>
+    <string name="prayer_request">prayer request</string>
+    <string name="appointment">appointment</string>
+    <string name="text_message">text message</string>
+    <string name="facebook_message">facebook message</string>
+    <string name="email">email</string>
+    <string name="complete">complete</string>
+    <string name="delete">delete</string>
+    <string name="info">info</string>
+    <string name="notes">notes</string>
+    <string name="contacts_edit">edit</string>
+    <string name="notes_save">save note</string>
+    <string name="notes_canceled">Notes Canceled</string>
+    <string name="notes_cancel">Cancel</string>
+    <string name="task_deleted">Task deleted</string>
+    <string name="task_completed">Task completed</string>
+    <string name="no_phone_numbers">No phone numbers available</string>
+    <string name="no_email_addresses">No email addresses available</string>
+    <string name="no_facebook_accounts">No Facebook Accounts available</string>
+    <string name="select_facebook_account">Select a Facebook Account</string>
+    <string name="no_email_client_found">No email client found</string>
+    <string name="task_added">Task added</string>
+    <string name="task_logged">Task logged</string>
+    <string name="no_tags">No tags available</string>
+    <string name="time_without_date">Please select a due date</string>
+    <string name="save">save</string>
+    <string name="task_edited">Task saved</string>
+    <string name="task_completed_error">Your task was completed locally and will be synchronized later</string>
+    <string name="tasks_view_all">view all</string>
+    <string name="tasks_empty">No completed tasks could be loaded.</string>
+    <string name="task_count_text">Total Tasks: %1$d</string>
+    <string name="task_save_error_message">The task was not successfully saved</string>
+
+    <!-- Contact Info -->
+    <eat-comment />
+    <string name="search_title">Search</string>
+    <string name="search_hint">Search by name</string>
+    <string name="people">people</string>
+    <string name="return_to_app_title">You left MPDX to <i>%1$s</i> <b>%2$s</b>. Tap OK to log that action</string>
+    <string name="return_to_app_add_info">Add Info</string>
+    <string name="result_attempted_left_message">Attempted - Left Message</string>
+    <string name="result_attempted">Attempted</string>
+    <string name="result_completed">Completed</string>
+    <string name="result_appointment_scheduled">Appointment Scheduled</string>
+
+    <!-- Contact Detail Tasks -->
+    <eat-comment />
+    <string name="contact_associated_tasks">ASSOCIATED TASKS</string>
+    <string name="contact_view_task_history">view task history</string>
+    <string name="contact_new_task">new task</string>
+
+    <!-- Contact Detail Info -->
+    <eat-comment />
+    <string name="contact_view_members">MEMBERS OF HOUSEHOLD</string>
+    <string name="contact_view_envelope_name">Envelope name</string>
+    <string name="contact_view_greeting">Greeting</string>
+    <string name="contact_view_primary_address">Primary address</string>
+    <string name="contact_view_newsletter">Newsletter</string>
+    <string name="contact_view_partner_accounts">Partner Accounts</string>
+    <string name="contact_view_email">Email</string>
+    <string name="contact_no_email">No email addresses found</string>
+    <string name="contact_no_phone_number">No phone numbers found</string>
+    <string name="contact_count_text">Total Contacts: %1$d</string>
+    <string name="call_or_text">Call or Text Message</string>
+    <string name="call_or_text_number">Call or text mobile number %1$s?</string>
+
+    <!-- Donations -->
+    <eat-comment />
+    <string name="donation_view_donation_salary">Salary Currency</string>
+    <string name="donation_view_tendered_salary">Donation Currency</string>
+    <string name="donation_add_title">Add Donation</string>
+    <string name="donation_edit_title">View/Edit Donation</string>
+    <string name="donation_add_donation_details_header">Donation Details</string>
+    <string name="donation_add_donation_details_amount_hint">donation amount</string>
+    <string name="donation_add_donation_details_currency">currency - %1$s</string>
+    <string name="donation_add_donation_details_currency_select">select a currency</string>
+    <string name="donation_add_donation_details_select_donor">select donor (required)</string>
+    <string name="donation_add_donation_date_header">Date of Donation</string>
+    <string name="donation_add_donation_date_hint">select date</string>
+    <string name="donation_add_donation_appeal_header">Appeal (Optional)</string>
+    <string name="donation_add_donation_appeal_type_hint">appeal</string>
+    <string name="donation_add_donation_appeal_select">Select an Appeal</string>
+    <string name="donation_add_donation_appeal_amount_hint">appeal amount (leave blank for full amount)</string>
+    <string name="donation_add_donation_designation_header">Designation (Required)</string>
+    <string name="donation_add_donation_designation_select">Select Designation Account</string>
+    <string name="donation_add_donation_designation_hint">select account</string>
+    <string name="donation_add_donation_memo_header">Memo (Optional)</string>
+    <string name="donation_add_donation_memo_hint">Add a Memo</string>
+    <string name="donation_saved">Donation saved!</string>
+    <string name="add_donation_no_amount">Please enter an amount</string>
+    <string name="add_donation_no_currency">Please select a currency</string>
+    <string name="add_donation_no_date">Please select a date</string>
+    <string name="add_donation_no_donor">Please select a donor</string>
+    <string name="add_donation_no_designation">Please select a designation</string>
+    <string name="add_donation_error">Your donation was saved locally and will be synchronized later</string>
+    <string name="donation_count_text">Total Donations: %1$,.2f %2$s</string>
+
+    <!-- Contact - Info Tab -->
+    <eat-comment />
+    <string name="contact_my_notes">MY NOTES</string>
+
+    <!-- Contact - Donation Tab -->
+    <eat-comment />
+    <string name="contact_view_more_donations">view more donations</string>
+    <string name="contact_donation_error">The donation(s) you selected is invalid</string>
+    <string name="contact_no_donation_date">Date Unavailable</string>
+    <string name="donations_last_gifts">LAST %d GIFTS</string>
+
+    <!-- Fingerprint -->
+    <eat-comment />
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="fingerprint_skip">skip</string>
+    <string name="overdue_or_due_today">OVERDUE OR DUE TODAY</string>
+    <string name="commitments_unfulfilled">COMMITMENTS UNFULFILLED</string>
+    <string name="care">CARE</string>
+
+    <!-- Task Filters -->
+    <eat-comment />
+    <string name="filter">Filter</string>
+    <string name="filter_contact_status">Contact Status</string>
+    <string name="filter_action_type">Action Type</string>
+    <string name="filter_contact_referrer">Contact Referrer</string>
+    <string name="filter_contact_church">Contact Church</string>
+    <string name="filter_contact_likely_to_give">Contact Likely to Give</string>
+    <string name="filter_contact_timezone">Contact Timezone</string>
+    <string name="filter_task_contact_city">Contact City</string>
+    <string name="filter_task_contact_state">Contact State</string>
+    <string name="filter_task_tags">Tags</string>
+    <string name="filter_notification_types">Notification Type</string>
+    <string name="toolbar_filter_tasks">filter tasks</string>
+
+    <!-- Onboarding -->
+    <eat-comment />
+    <string name="pin_and_fingerprint_verification">PIN &amp; Fingerprint Verification</string>
+    <string name="pin_and_fingerprint_description">Help us protect your information &amp; privacy by setting a 4 digit mobile unlock code. A fingerprint option is available for fingerprint capable devices.</string>
+    <string name="pin_create">Please create a 4 digit mobile unlock code</string>
+    <string name="confirm_pin">confirm pin</string>
+    <string name="get_started">get started</string>
+    <string name="fingerprint_touch_sensor">Enter PIN and touch sensor to confirm</string>
+    <string name="fingerprint_prompt">Use your fingerprint for future unlocks?</string>
+    <string name="fingerprint_help">Your mobile unlock code will be required to enable fingerprint unlock which can be used</string>
+    <string name="fingerprint_enrolled">Fingerprint successfully enrolled!</string>
+    <string name="fingerprint_failed">Uh oh, try again!</string>
+    <string name="invalid_pin">Please enter a valid PIN</string>
+    <string name="incorrect_pin">Incorrect PIN entered</string>
+    <string name="pin_enter">Please enter your mobile unlock code</string>
+    <string name="fingerprint_enabled">Fingerprint enabled</string>
+    <string name="unlock_with_pin">unlock with pin</string>
+    <string name="use_fingerprint_on_device">Enter PIN or use fingerprint on device to unlock</string>
+
+    <!-- Settings -->
+    <eat-comment />
+    <string name="settings">Settings</string>
+    <string name="settings_lowercase">settings</string>
+    <string name="settings_logout">Logout</string>
+    <string name="settings_notifications">Notification Preferences</string>
+    <string name="settings_notifications_task_due">Task Due</string>
+    <string name="settings_notifications_coaching_weekly">Weekly Coaching Reminder</string>
+    <string name="settings_account_list">Account List</string>
+    <string name="version">Version</string>
+    <string name="change_account_list">change account list</string>
+    <string name="change_account_list_dialog">Are you sure you want to change the account to %s? Current data will be deleted and onboarding with the new account will start</string>
+    <string name="change_account_list_notification_dialog">This contact is under a different account. Would you like to switch to that account now?</string>
+    <string name="yes">yes</string>
+    <string name="logout_dialog">Are you sure you want to logout?</string>
+    <string name="offline_error">You are not allowed to do this action while offline</string>
+    <string name="current_account_list">Current account is already set to %s</string>
+    <string name="privacy_policy">Privacy Policy</string>
+
+    <!--CareCommittments-->
+    <eat-comment />
+    <string name="first_gift_not_received">%s first gift not received</string>
+    <string name="gifts_not_received_label">gifts not received</string>
+    <string name="partners_thirty_days_late">%s partners thirty days late</string>
+    <string name="partners_all_late_label">all partners late</string>
+    <string name="partners_thirty_days_late_label">partners thirty days late</string>
+    <string name="partners_sixty_days_late">%s partners sixty days late</string>
+    <string name="partners_sixty_days_late_label">partners sixty days late</string>
+    <string name="days_since_last_newsletter">%s days since your last newsletter</string>
+    <string name="days_since_last_newsletter_html">&lt;b&gt;%s&lt;/b&gt; days since your last newsletter</string>
+    <string name="days_since_last_newsletter_never">0 newsletters sent out</string>
+    <string name="days_since_last_newsletter_label">days since your last newsletter</string>
+    <plurals name="upcoming_birthdays">
+        <item quantity="one">%1$d upcoming birthday</item>
+        <item quantity="other">%1$d upcoming birthdays</item>
+    </plurals>
+    <string name="birthdays_this_week_label">birthdays this week</string>
+    <plurals name="upcoming_anniversaries">
+        <item quantity="one">%1$d upcoming anniversary</item>
+        <item quantity="other">%1$d upcoming anniversaries</item>
+    </plurals>
+    <string name="anniversaries_this_week_label">anniversaries this week</string>
+    <string name="care_commitment_titles"><![CDATA[Care & Commitments]]></string>
+    <string name="connect_title">Connect</string>
+    <string name="connect_screen_see_all">See all %s</string>
+
+    <!-- Appeals -->
+    <eat-comment />
+    <string name="primary_appeals_title">PRIMARY</string>
+    <string name="secondary_appeals_title">APPEALS</string>
+    <string name="appeals_empty">You do not have any appeals at this time.</string>
+
+    <!-- Coaching -->
+    <eat-comment />
+    <string name="coaching_weekly_notification">It\'s time for your weekly coaching check-in.</string>
+    <string name="appeals_asked">asked</string>
+    <string name="appeals_add_commitment">ADD COMMITMENT</string>
+    <string name="appeals_edit_commitment">EDIT COMMITMENT</string>
+    <string name="appeals_commitment_info">COMMITMENT INFO</string>
+    <string name="appeals_amount_received">AMOUNT RECEIVED</string>
+    <string name="appeals_donation_amount">DONATION AMOUNT</string>
+    <string name="appeals_edit_donation">EDIT DONATION</string>
+    <string name="appeals_committed">committed</string>
+    <string name="appeals_received">received</string>
+    <string name="appeals_given">given</string>
+    <string name="appeals_totals">TOTALS</string>
+    <string name="appeals_total_committed_label">Committed</string>
+    <string name="appeals_total_given_label">Given</string>
+    <string name="appeals_total_received_label">Received</string>
+    <string name="appeals_add_commitment_button">Add Commitment</string>
+    <string name="appeals_add_contact_to_appeal_button">Add Contact to Appeal</string>
+    <string name="add_commitment_title">add a commitment</string>
+    <string name="edit_commitment_title">edit a commitment</string>
+    <string name="add_commitment_contact_header">CONTACT (Required)</string>
+    <string name="add_commitment_expected_date_header">EXPECTED DATE (Required)</string>
+    <string name="add_commitment_received_header">received</string>
+    <string name="add_commitment_amount_header">AMOUNT (Required)</string>
+    <string name="add_commitment_amount_hint">in default currency</string>
+    <string name="add_commitment_delete_commitment_label">Delete Commitment</string>
+    <string name="add_commitment_error_no_date">You must specify a date</string>
+    <string name="add_commitment_error_no_amount">You must specify an amount</string>
+    <string name="add_commitment_error_no_contact">You must select a contact</string>
+    <string name="add_commitment_pledge_saved">Commitment saved!</string>
+    <string name="add_commitment_pledge_delete_failed">Your commitment was deleted locally and will be synchronized later</string>
+    <string name="coaching_lowercase">coaching</string>
+    <string name="coaching_received">%1$s  %2$s received</string>
+    <string name="coaching_committed">%1$s  %2$s committed</string>
+    <string name="coaching_goal">%1$s goal</string>
+    <string name="coaching_account_balance">account balance</string>
+    <string name="coaching_stat_completed">completed</string>
+    <string name="coaching_stat_scheduled">scheduled</string>
+    <string name="coaching_stat_active">active</string>
+    <string name="coaching_stat_referrals">referrals</string>
+    <string name="coaching_stat_referrals_on_hand">gained</string>
+    <string name="coaching_stat_precall">pre-call</string>
+    <string name="coaching_stat_header_correspondence">written</string>
+    <string name="coaching_stat_reminders">reminders</string>
+    <string name="coaching_stat_support_letters">support</string>
+    <string name="coaching_stat_thank_yous">thanks</string>
+    <string name="coaching_stat_appointments">appts produced</string>
+    <string name="coaching_stat_attempted">outgoing</string>
+    <string name="coaching_stat_talktoinperson">talked to</string>
+    <string name="coaching_stat_received">received</string>
+    <string name="coaching_stat_sent">sent</string>
+    <string name="coaching_stat_monthly_gained">monthly gained</string>
+    <string name="coaching_stat_monthly_lost">monthly lost</string>
+    <string name="coaching_stat_special_gained">special gained</string>
+    <string name="coaching_tab_month">Month</string>
+    <string name="coaching_tab_week">Week</string>
+    <string name="coaching_connectivity_error">Sorry, coaching requires an internet connection.  The displayed data may not be accurate.</string>
+    <string name="stat_contacts">contacts</string>
+    <string name="stat_appointments">appointments</string>
+    <string name="stat_phone_calls">phone calls</string>
+    <string name="stat_messaging">messaging</string>
+
+    <!-- New Contact -->
+    <eat-comment />
+    <string name="contact_add_a_person_dialog_title">Add a Person</string>
+    <string name="contact_add_a_person_dialog_message">You can add this person manually, or add them from your phone\'s contact list</string>
+    <string name="contact_add_a_person_dialog_manually_button">Add manually</string>
+    <string name="contact_add_a_person_dialog_from_phone_button">Add from phone</string>
+    <string name="contacts_add">done</string>
+    <string name="contact_not_found">Oops! It looks like this contact doesn\'t exist in this MPDX account. Please switch to the correct account or look up this contact on the web.</string>
+    <string name="okay">okay</string>
+    <string name="donation_line" translatable="false">%1$s - %2$s</string>
+    <string name="contact_0_days_late">On-time</string>
+    <string name="contact_0_to_30_days_late">0–30 days late</string>
+    <string name="contact_30_to_60_days_late">30–60 days late</string>
+    <string name="contact_60_plus_days_late">60+ days late</string>
+
+    <!-- Help -->
+    <eat-comment />
+    <string name="menu_title_help">Help</string>
+    <string name="menu_title_coaching">Coaching</string>
+    <string name="email_app_selection">Select an email application</string>
+    <string name="help_available_options">Available Help Options</string>
+    <string name="help_option_web">Consult the Knowledge Base</string>
+    <string name="help_option_email">Email Our Help Team</string>
+    <string name="app_not_found">Application not found</string>
+
+    <!-- Notifications -->
+    <eat-comment />
+    <string name="notification_tab_unread">Unread</string>
+    <string name="notification_tab_all">All</string>
+    <string name="notifications_empty">No notifications could be loaded</string>
+    <string name="loading_account_list_for_contact">This contact is under a different account.  Would you like to switch to that account now?</string>
+
+    <!-- New Strings -->
+    <eat-comment />
+    <string name="balance_committed">%1$s   %2$s committed</string>
+    <string name="balanced_received">%1$s   %2$s received</string>
+    <plurals name="donation_frequency">
+        <item quantity="one">Every Month</item>
+        <item quantity="other">Every %d Months</item>
+    </plurals>
+    <plurals name="donation_frequency_weeks">
+        <item quantity="one">Every Week</item>
+        <item quantity="other">Every %d Weeks</item>
+    </plurals>
+    <string name="message_auth_failed">Authentication failed.  This may be due to a bad connection or a service failure on our side.</string>
+    <string name="message_auth_expired">Your session has expired, please log back in</string>
+    <string name="no_account_list_error_message">Hey there! It looks like you haven’t completed your account setup. Can you visit mpdx.org on your computer, finish the walkthrough, then come see me again. Thanks!</string>
+    <string name="no_default_account_list_error_message">Oops! It looks like there’s something missing on your account. Can you go to your preferences at mpdx.org on your computer and select a default account list? After you’ve done that, come back and try again. Thanks!</string>
+    <string name="no_organization_or_default_account_list_error_message">Hmm. Looks like you aren’t connected to any Organizations. Can you go to “Connect Services” in Settings on MPDX.org, add an Organization, then come back this way? Thanks!</string>
+    <string name="log_task_result">RESULT (required)</string>
+    <string name="log_task_result_hint_no_activity">choose an activity type first</string>
+    <string name="log_task_result_hint">result type</string>
+    <string name="log_task_next_action">NEXT ACTION</string>
+    <string name="log_task_next_action_none">None</string>
+    <string name="no_notes_tap_to_edit">No Notes (Tap to Edit)</string>
+    <string name="notifications_task_due_channel_description">Some action is required for this task</string>
+    <string name="contact_action_no_phone">Sorry, no phone number is available for this contact.</string>
+    <string name="contact_action_no_email">Sorry, no email address is available for this contact.</string>
+    <string name="contact_action_no_address">Sorry, no address is available for this contact.</string>
+    <string name="fab_new_task">new task</string>
+    <string name="fab_log_task">log task</string>
+    <string name="fab_new_donation">new donation</string>
+    <string name="push_notification_channel_id">push notification</string>
+    <string name="push_notification_channel_description">Communication from remote server</string>
+    <string name="periodic_checkup_question">How\'s your MPDX experience been lately?</string>
+    <string name="periodic_checkup_thanks">Thanks for your feedback!</string>
+    <string name="tags_title">Tags</string>
+    <string name="address_donation_services_message">This address is provided by Donation Services and cannot be edited here. See MPDX.org for more info.</string>
+    <string name="contact_view_phone">Phone</string>
+    <string name="contact_status_filter_all_hidden_button">All Hidden</string>
+    <string name="contact_status_filter_all_active_button">All Active</string>
+    <string name="contact_status_filter_all_button">All</string>
+    <string name="filter_clear_menu">clear</string>
+    <string name="exclude_contact_message">This contact has been previously excluded from this appeal.  Are you certain you wish to add them?</string>
+    <string name="confirm">Confirm</string>
+    <string name="starred">Starred</string>
+    <string name="contact_view_social_media">Social Media</string>
+    <string name="biometric_dialog_touch_sensor">Use preferred biometric sensor to access MPDX</string>
+    <string name="biometric_prompt">Use biometrics (fingerprint, retina, face) for future unlocks?</string>
+    <string name="biometric_help">Your mobile unlock code will be required to enable biometric unlock which can be used</string>
+    <string name="biometric_touch_sensor">Enter PIN and click confirm to enable biometric</string>
+    <string name="use_biometric_on_device">Enter PIN or click fingerprint for Biometric to unlock</string>
+    <string name="biometric_enabled">Biometric enabled</string>
+    <string name="biometric_error">Biometric authentication failed.</string>
+    <string name="retry">Retry</string>
+    <string name="select_email_dialog">Select an Email Address</string>
+    <string name="select_multiple_email_dialog">Select Email Addresses</string>
+    <string name="select_phone_numbers_dialog">Select Phone Numbers</string>
+    <string name="account_balance">Account Balance</string>
+    <string name="account_balance_view_donations">View Donations</string>
+    <string name="dashboard_appeal">Appeal</string>
+    <string name="dashboard_goal">Goal</string>
+    <string name="dashboard_still_needed">Still needed</string>
+    <string name="dashboard_view_all_appeals">View All Appeals</string>
+    <string name="dashboard_monthly_goal_label">Monthly Goal</string>
+    <string name="dashboard_monthly_gifted_started_label">Monthly Gifted Started</string>
+    <string name="dashboard_monthly_commitments_label">Monthly Commitments</string>
+    <string name="dasboard_below_goal_label">Below Goal</string>
+    <string name="dashboard_gifts_not_started_label">Gifts Not Started</string>
+    <string name="weekly_activity">Weekly Activity</string>
+    <string name="view_activity_detail">View Activity Detail</string>
+    <string name="correspondence">Correspondence</string>
+    <string name="capital_appointment">Appointments</string>
+    <string name="messages">Messages</string>
+    <string name="calls">Calls</string>
+    <string name="appointments_produced">Appointments Produced</string>
+    <string name="completed">Completed</string>
+    <string name="monthly_activity">Monthly Activity</string>
+    <string name="donations_for_month">Donations for each Month</string>
+    <string name="commitments">Commitments</string>
+    <string name="dashboard_monthly_activity">Monthly Activity</string>
+    <string name="dashboard_referrals">Referrals</string>
+    <string name="view_all_referrals">View All Referrals ( %d )</string>
+    <string name="dashboard_to_do_week">To Do This Week</string>
+    <string name="tasks_due_this_week">Tasks Due This Week</string>
+    <string name="late_commitment">Late Commitments</string>
+    <string name="partner_care_prayer">Partner Care (Prayer)</string>
+    <string name="partner_care_celebrations">Partner Care (Celebrations)</string>
+</resources>

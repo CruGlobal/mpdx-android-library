@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">MPDX</string>
+    <string name="dashboard">Pannello di controllo</string>
+    <string name="tasks">Attività</string>
+    <string name="contacts">Contatti</string>
+    <string name="donations">Donazioni</string>
+    <string name="dashboard_lowercase">Pannello di controllo</string>
+    <string name="donations_lowercase">donazioni</string>
+    <string name="contacts_lowercase">contatti</string>
+    <string name="tasks_lowercase">attività</string>
+    <string name="dashboard_overall_goal">%1$s obiettivo</string>
+    <string name="dashboard_account_label">Il saldo del mio conto</string>
+    <string name="connect_lowercase">Connetti</string>
+    <string name="care_commitments_lowercase">donazioni ricorrenti</string>
+    <!-- Tasks -->
+    <string name="current_tasks_lowercase">attività attuali</string>
+    <string name="task_history_lowercase">cronologia delle attività</string>
+    <string name="no_contacts">Nessun contatto</string>
+    <string name="multiple_contacts">Contatti multipli</string>
+    <string name="deleted">cancellato</string>
+    <string name="overdue">IN RITARDO</string>
+    <string name="today">OGGI</string>
+    <string name="tomorrow">DOMANI</string>
+    <string name="upcoming">IMMINENTE</string>
+    <string name="no_due_date">NESSUNA DATA DI SCADENZA</string>
+    <string name="none">nessuno</string>
+    <string name="add">aggiungi</string>
+    <string name="task_subject_hint">inserisci l\'oggetto dell\'attività</string>
+    <string name="task_detail">DETTAGLI DELL\'ATTIVITÀ</string>
+    <string name="select_contact_hint">contatto</string>
+    <string name="date_hint">data</string>
+    <string name="edit">modifica</string>
+    <string name="comments">COMMENTI</string>
+    <string name="tags">TAG</string>
+    <string name="alert">avviso</string>
+    <string name="alert_definition_title">Come vuoi essere avvisato?</string>
+    <string name="hours_label">Ore:</string>
+    <string name="minutes_label">Minuti:</string>
+    <string name="mode_label">Modalità:</string>
+    <string name="alert_mode_none">Nessuno</string>
+    <string name="alert_mode_email">E-mail</string>
+    <string name="alert_mode_mobile">Cellulare</string>
+    <string name="alert_mode_both">Entrambi</string>
+    <plurals name="hours_unit">
+        <item quantity="one">%d ora</item>
+        <item quantity="other">%d ore</item>
+    </plurals>
+    <plurals name="minutes_unit">
+        <item quantity="one">%d minuto</item>
+        <item quantity="other">%d minuti</item>
+    </plurals>
+    <string name="alert_status_text">%s prima</string>
+    <string name="alert_no_status">Nessuna notifica impostata</string>
+    <string name="alert_grouped">%s e %d altri</string>
+    <string name="hour_minute_mix">%dh %dmin</string>
+    <string name="due_date">DATA DI SCADENZA</string>
+    <string name="call">chiama</string>
+    <string name="text">testo</string>
+    <string name="todo">da fare</string>
+    <string name="talk_to_in_person">parla di persona</string>
+    <string name="no_action_set">nessuna azione impostata</string>
+    <string name="letter">lettera</string>
+    <string name="newsletter_physical">newsletter - cartacea</string>
+    <string name="newsletter_email">newsletter - e-mail</string>
+    <string name="pre_call_letter">lettera pre-chiamata</string>
+    <string name="reminder_letter">lettera di promemoria</string>
+    <string name="support_letter">richiesta di supporto</string>
+    <string name="thank">ringraziamento</string>
+    <string name="prayer_request">richiesta di preghiera</string>
+    <string name="appointment">appuntamento</string>
+    <string name="text_message">sms</string>
+    <string name="facebook_message">messaggio facebook</string>
+    <string name="email">e-mail</string>
+    <string name="complete">completa</string>
+    <string name="delete">cancella</string>
+    <string name="info">info</string>
+    <string name="notes">appunti</string>
+    <string name="contacts_edit">modifica</string>
+    <string name="notes_save">salva l\'appunto</string>
+    <string name="notes_canceled">Appunti cancellati</string>
+    <string name="notes_cancel">Annulla</string>
+    <string name="task_deleted">Attività cancellata</string>
+    <string name="task_completed">Attività completata</string>
+    <string name="no_phone_numbers">Nessun numero di telefono disponibile</string>
+    <string name="no_email_addresses">Nessun indirizzo e-mail disponibile</string>
+    <string name="no_email_client_found">Nessun client e-mail trovato</string>
+    <string name="task_added">Attività aggiunta</string>
+    <string name="no_tags">Nessuna tag disponibile</string>
+    <string name="time_without_date">Seleziona una data di scadenza</string>
+    <string name="save">salva</string>
+    <string name="task_edited">Attività salvata</string>
+    <string name="task_completed_error">L\'attività è stata completata localmente e verrà sincronizzata più tardi</string>
+    <string name="tasks_view_all">visualizza tutti</string>
+    <string name="tasks_empty">Non è stato possibile caricare nessuna attività completata.</string>
+    <!-- Contact Info -->
+    <string name="search_title">Cerca</string>
+    <string name="search_hint">Cerca per nome</string>
+    <string name="people">persone</string>
+    <!-- Contact Detail Tasks -->
+    <string name="contact_associated_tasks">ATTIVITÀ ASSOCIATE</string>
+    <string name="contact_view_task_history">visualizza la cronologia delle attività</string>
+    <string name="contact_new_task">nuova attività</string>
+    <!-- Contact Detail Info -->
+    <string name="contact_view_members">MEMBRI DEL NUCLEO FAMILIARE</string>
+    <string name="contact_view_envelope_name">Nome sulla busta</string>
+    <string name="contact_view_greeting">Saluto</string>
+    <string name="contact_view_primary_address">Indirizzo principale</string>
+    <string name="contact_view_newsletter">Newsletter</string>
+    <string name="contact_view_partner_accounts">Account partner</string>
+    <string name="contact_view_email">E-mail</string>
+    <string name="contact_no_email">Nessun indirizzo e-mail trovato</string>
+    <string name="contact_no_phone_number">Nessun numero di telefono trovato</string>
+    <string name="call_or_text">Chiamata o SMS</string>
+    <string name="call_or_text_number">Chiama o invia un SMS al numero di cellulare %1$s?</string>
+    <!-- Donations -->
+    <string name="donation_view_donation_salary">Valuta dello stipendio</string>
+    <string name="donation_view_tendered_salary">Valuta della donazione</string>
+    <!-- Contact - Info Tab -->
+    <string name="contact_my_notes">I MIEI APPUNTI</string>
+    <!-- Contact - Donation Tab -->
+    <string name="contact_view_more_donations">visualizza altre donazioni</string>
+    <string name="contact_no_donation_date">Data non disponibile</string>
+    <string name="donations_last_gifts">ULTIME %d DONAZIONI</string>
+    <!-- Fingerprint -->
+    <string name="cancel">Annulla</string>
+    <string name="ok">OK</string>
+    <string name="fingerprint_skip">salta</string>
+    <string name="overdue_or_due_today">IN RITARDO O IN SCADENZA OGGI</string>
+    <string name="commitments_unfulfilled">DONAZIONI RICORRENTI NON ONORATE</string>
+    <string name="care">PICCOLE ATTENZIONI</string>
+    <!-- Task Filters -->
+    <string name="filter">Filtro</string>
+    <string name="filter_contact_status">Stato del contatto</string>
+    <string name="filter_action_type">Tipo di azione</string>
+    <string name="filter_contact_referrer">Referente del contatto</string>
+    <string name="filter_contact_church">Chiesa del contatto</string>
+    <string name="filter_contact_likely_to_give">Contatto propenso a donare</string>
+    <string name="filter_contact_timezone">Fuso orario del contatto</string>
+    <string name="filter_task_contact_city">Città del contatto</string>
+    <string name="filter_task_contact_state">Stato del contatto</string>
+    <string name="toolbar_filter_tasks">filtra le attività</string>
+    <!-- Onboarding -->
+    <string name="pin_and_fingerprint_verification">Verifica PIN e impronta</string>
+    <string name="pin_and_fingerprint_description">Aiutaci a proteggere le tue informazioni e la tua privacy impostando un codice di sblocco del cellulare a 4 cifre. È disponibile un\'opzione di impronta digitale per i dispositivi predisposti per questa funzione.</string>
+    <string name="pin_create">Crea un codice di 4 cifre per sbloccare il cellulare</string>
+    <string name="confirm_pin">conferma il pin</string>
+    <string name="get_started">inizia</string>
+    <string name="fingerprint_touch_sensor">Inserisci il PIN e tocca il sensore per confermare</string>
+    <string name="fingerprint_prompt">In futuro vuoi usare l\'impronta per sbloccare?</string>
+    <string name="fingerprint_help">Per abilitare lo sblocco tramite impronta digitale, è necessario inserire il codice di sblocco del cellulare</string>
+    <string name="fingerprint_enrolled">Impronta registrata!</string>
+    <string name="fingerprint_failed">Ops, riprova!</string>
+    <string name="invalid_pin">Inserisci un PIN valido</string>
+    <string name="incorrect_pin">PIN inserito errato</string>
+    <string name="pin_enter">Inserisci il codice di sblocco del cellulare</string>
+    <string name="fingerprint_enabled">Impronta attivata</string>
+    <string name="unlock_with_pin">sblocca col pin</string>
+    <string name="use_fingerprint_on_device">Inserisci il PIN o usa l\'impronta digitale sul dispositivo per sbloccarlo</string>
+    <!-- Settings -->
+    <string name="settings">Impostazioni</string>
+    <string name="settings_lowercase">impostazioni</string>
+    <string name="settings_logout">Esci</string>
+    <string name="settings_notifications">Preferenze per le notifiche</string>
+    <string name="settings_notifications_task_due">Attività scadute</string>
+    <string name="settings_account_list">Lista degli account</string>
+    <string name="version">Versione</string>
+    <string name="change_account_list">modifica la lista degli account</string>
+    <string name="change_account_list_dialog">Sei sicuro di voler passare l\'account a %s? I dati attuali verranno cancellati e si avvierà l\'assunzione dei dati con il nuovo account</string>
+    <string name="yes">sì</string>
+    <string name="logout_dialog">Sei sicuro di voler uscire?</string>
+    <string name="offline_error">Non puoi compiere questa azione se sei offline</string>
+    <string name="current_account_list">L\'account attuale è già impostato su %s</string>
+    <string name="privacy_policy">Informativa sulla privacy</string>
+    <!--CareCommittments-->
+    <string name="first_gift_not_received">%s primo regalo non ricevuto</string>
+    <string name="gifts_not_received_label">donazioni non ricevute</string>
+    <string name="partners_thirty_days_late">%s partner in ritardo di 30 giorni</string>
+    <string name="partners_thirty_days_late_label">partner in ritardo di 30 giorni</string>
+    <string name="partners_sixty_days_late">%s partner in ritardo di 60 giorni</string>
+    <string name="partners_sixty_days_late_label">partner in ritardo di 60 giorni</string>
+    <string name="days_since_last_newsletter">%s giorni dalla tua ultima newsletter</string>
+    <string name="days_since_last_newsletter_never">0 newsletter inviate</string>
+    <string name="days_since_last_newsletter_label">giorni dalla tua ultima newsletter</string>
+    <string name="birthdays_this_week_label">compleanni di questa settimana</string>
+    <string name="anniversaries_this_week_label">anniversari di questa settimana</string>
+    <string name="care_commitment_titles"><![CDATA[Piccole attenzioni e donazioni ricorrenti]]></string>
+    <string name="connect_title">Connetti</string>
+    <string name="connect_screen_see_all">Vedi tutti e %s</string>
+    <!-- Appeals -->
+    <!-- Coaching -->
+    <!-- New Contact -->
+    <string name="contacts_add">fatto</string>
+    <string name="contact_not_found">Ops! Sembra che questo contatto non esista in questo account MPDX. Passa all\'account corretto o cerca questo contatto sul web.</string>
+    <string name="okay">ok</string>
+    <!-- Help -->
+    <!-- Notifications -->
+    <!-- New Strings -->
+    <string name="balance_committed">%1$s   %2$s impegnati</string>
+    <string name="balanced_received">%1$s   %2$s ricevuti</string>
+    <plurals name="donation_frequency">
+        <item quantity="one">Ogni mese</item>
+        <item quantity="other">Ogni %d mesi</item>
+    </plurals>
+    <plurals name="donation_frequency_weeks">
+        <item quantity="one">Ogni settimana</item>
+        <item quantity="other">Ogni %d settimane</item>
+    </plurals>
+    <string name="message_auth_expired">Sessione scaduta, effettua nuovamente l\'accesso</string>
+    <string name="no_account_list_error_message">Ehilà! Sembra che tu non abbia completato la configurazione dell\'account. Puoi visitare mpdx.org dal tuo computer, seguire le istruzioni e poi tornare a trovarmi. Grazie!</string>
+    <string name="no_default_account_list_error_message">Ops! Sembra che manchi qualcosa nel tuo account. Puoi andare alle preferenze su mpdx.org dal tuo computer e selezionare un elenco di account predefiniti? Dopodiché, torna qui e riprova. Grazie!</string>
+    <string name="no_organization_or_default_account_list_error_message">Hmm. Pare che tu non sia collegato a nessuna organizzazione. Puoi andare in “Servizi congiunti” nelle Impostazioni su MPDX.org, aggiungere un\'organizzazione e poi tornare qui? grazie!</string>
+    <string name="no_notes_tap_to_edit">Nessuna nota (tocca per modificare)</string>
+    <string name="notifications_task_due_channel_description">Questa attività richiede qualche azione</string>
+</resources>

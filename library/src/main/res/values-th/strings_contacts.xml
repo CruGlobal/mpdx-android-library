@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Contact Editor -->
+    <string name="contact_editor_title_new">รายชื่อติดต่อใหม่</string>
+    <string name="contact_editor_section_commitment">สัญญาบริจาค</string>
+    <string name="contact_editor_hint_name">นามสกุล ชื่อ</string>
+    <string name="contact_editor_error_contact_name_blank">ต้องใส่ชื่อจึงจะบันทึกได้!</string>
+    <string name="contact_editor_error_email_blank">ต้องใส่ที่อยู่อีเมลจึงจะบันทึกได้!</string>
+    <string name="contact_editor_error_phone_blank">ต้องใส่เบอร์โทรจึงจะบันทึกได้!</string>
+    <!-- Contact Editor: To Rename -->
+    <string name="contact_commitment_amount">ระบุจำนวน</string>
+    <string name="contact_commitment_currency">เลือกสกุลเงิน</string>
+    <string name="contact_select_commitment_frequency">เลือกความถี่ของสัญญาบริจาค</string>
+    <string name="contact_commitment_received_lowercase">ได้รับสัญญาบริจาค</string>
+    <string name="contact_likely_text">เป็นไปได้ที่จะให้</string>
+    <string name="contact_address_communications">การสื่อสาร</string>
+    <string name="contact_address_greeting">การทักทาย</string>
+    <string name="contact_address_envelope_name">ชื่อบนซอง</string>
+    <string name="contact_address_appeal">การอนุเคราะห์</string>
+    <string name="new_contact_phone_hint">เพิ่มเบอร์โทร</string>
+    <string name="new_contact_email_hint">เพิ่มอีเมล</string>
+    <string name="contact_address_street_hint">ที่อยู่</string>
+    <string name="contact_address_city">เมือง</string>
+    <string name="contact_address_state">รัฐ</string>
+    <string name="contact_address_postal_code">รหัสไปรษณีย์</string>
+    <string name="contact_address_country">ประเทศ</string>
+</resources>

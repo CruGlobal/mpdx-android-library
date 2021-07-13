@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">MPDX</string>
+    <string name="dashboard">Панель мониторинга</string>
+    <string name="tasks">Задачи</string>
+    <string name="contacts">Контакты</string>
+    <string name="donations">Пожертвования</string>
+    <string name="dashboard_lowercase">панель мониторинга</string>
+    <string name="donations_lowercase">пожертвования</string>
+    <string name="contacts_lowercase">контакты</string>
+    <string name="tasks_lowercase">задачи</string>
+    <string name="dashboard_overall_goal">Цель — %1$s</string>
+    <string name="dashboard_account_label">Баланс моей учетной записи</string>
+    <string name="connect_lowercase">подключиться</string>
+    <string name="care_commitments_lowercase">забота и пожертвования</string>
+    <!-- Tasks -->
+    <string name="current_tasks_lowercase">текущие задачи</string>
+    <string name="task_history_lowercase">история задач</string>
+    <string name="no_contacts">Нет контактов</string>
+    <string name="multiple_contacts">Несколько контактов</string>
+    <string name="deleted">удалено</string>
+    <string name="overdue">ПРОСРОЧЕНО</string>
+    <string name="today">СЕГОДНЯ</string>
+    <string name="tomorrow">ЗАВТРА</string>
+    <string name="upcoming">ЗАПЛАНИРОВ.</string>
+    <string name="no_due_date">НЕТ ДАТЫ ОПЛАТЫ</string>
+    <string name="none">нет</string>
+    <string name="add">добавить</string>
+    <string name="task_subject_hint">укажите тему задачи</string>
+    <string name="task_detail">СВЕДЕНИЯ О ЗАДАЧЕ</string>
+    <string name="select_contact_hint">контакт</string>
+    <string name="date_hint">дата</string>
+    <string name="edit">редактировать</string>
+    <string name="comments">КОММЕНТАРИИ</string>
+    <string name="tags">ТЕГИ</string>
+    <string name="alert">сигнал</string>
+    <string name="alert_definition_title">Каким образом вы хотите получать уведомления?</string>
+    <string name="hours_label">Часы:</string>
+    <string name="minutes_label">Минуты:</string>
+    <string name="mode_label">Режим:</string>
+    <string name="alert_mode_none">Нет</string>
+    <string name="alert_mode_email">Эл. почта</string>
+    <string name="alert_mode_mobile">Мобильный телефон</string>
+    <string name="alert_mode_both">И то, и то</string>
+    <plurals name="hours_unit">
+        <item quantity="one">%d час</item>
+        <item quantity="other">%d ч.</item>
+        <item quantity="few">%d ч.</item>
+        <item quantity="many">%d ч.</item>
+    </plurals>
+    <plurals name="minutes_unit">
+        <item quantity="one">%d минута</item>
+        <item quantity="other">%d мин.</item>
+        <item quantity="few">%d мин.</item>
+        <item quantity="many">%d мин.</item>
+    </plurals>
+    <string name="alert_status_text">За %s</string>
+    <string name="alert_no_status">Уведомления не настроены</string>
+    <string name="alert_grouped">%s и еще %d</string>
+    <string name="hour_minute_mix">%d ч. %d мин.</string>
+    <string name="due_date">ДАТА ОПЛАТЫ</string>
+    <string name="call">звонок</string>
+    <string name="text">текст</string>
+    <string name="todo">задания</string>
+    <string name="talk_to_in_person">поговорить лично</string>
+    <string name="no_action_set">действия не заданы</string>
+    <string name="letter">письмо</string>
+    <string name="newsletter_physical">новостная рассылка — почтовая</string>
+    <string name="newsletter_email">новостная рассылка — эл. почта</string>
+    <string name="pre_call_letter">письмо перед звонком</string>
+    <string name="reminder_letter">письмо с напоминанием</string>
+    <string name="support_letter">сопровождающее письмо</string>
+    <string name="thank">благодарность</string>
+    <string name="prayer_request">просьба о молитве</string>
+    <string name="appointment">встреча</string>
+    <string name="text_message">текстовое сообщение</string>
+    <string name="facebook_message">сообщение Facebook</string>
+    <string name="email">эл. почта</string>
+    <string name="complete">завершено</string>
+    <string name="delete">удалить</string>
+    <string name="info">информация</string>
+    <string name="notes">записи</string>
+    <string name="contacts_edit">редактировать</string>
+    <string name="notes_save">сохранить запись</string>
+    <string name="notes_canceled">Записи отменены</string>
+    <string name="notes_cancel">Отмена</string>
+    <string name="task_deleted">Задача удалена</string>
+    <string name="task_completed">Задача завершена</string>
+    <string name="no_phone_numbers">Нет доступных телефонных номеров</string>
+    <string name="no_email_addresses">Отсутствуют доступные адреса эл. почты</string>
+    <string name="no_email_client_found">Отсутствует клиент эл. почты</string>
+    <string name="task_added">Задача добавлена</string>
+    <string name="no_tags">Нет доступных тегов</string>
+    <string name="time_without_date">Выберите дату истечения</string>
+    <string name="save">сохранить</string>
+    <string name="task_edited">Задача сохранена</string>
+    <string name="task_completed_error">Ваше задание завершено на этом устройстве и будет синхронизировано позднее</string>
+    <string name="tasks_view_all">просмотреть все</string>
+    <string name="tasks_empty">Нет завершенных задач для загрузки.</string>
+    <!-- Contact Info -->
+    <string name="search_title">Поиск</string>
+    <string name="search_hint">Поиск по имени</string>
+    <string name="people">люди</string>
+    <!-- Contact Detail Tasks -->
+    <string name="contact_associated_tasks">СВЯЗАННЫЕ ЗАДАЧИ</string>
+    <string name="contact_view_task_history">просмотреть историю задач</string>
+    <string name="contact_new_task">новое задание</string>
+    <!-- Contact Detail Info -->
+    <string name="contact_view_members">ЧЛЕНЫ СЕМЬИ</string>
+    <string name="contact_view_envelope_name">Имя на конверте</string>
+    <string name="contact_view_greeting">Приветствие</string>
+    <string name="contact_view_primary_address">Основной адрес</string>
+    <string name="contact_view_newsletter">Новостная рассылка</string>
+    <string name="contact_view_partner_accounts">Учетные записи партнеров</string>
+    <string name="contact_view_email">Электронная почта</string>
+    <string name="contact_no_email">Не найдены адреса эл. почты</string>
+    <string name="contact_no_phone_number">Не найдены телефонные номера</string>
+    <string name="call_or_text">Звонок или текстовое сообщение</string>
+    <string name="call_or_text_number">Позвонить или отправить текстовое сообщение на номер %1$s?</string>
+    <!-- Donations -->
+    <string name="donation_view_donation_salary">Валюта заработной платы</string>
+    <string name="donation_view_tendered_salary">Валюта пожертвований</string>
+    <!-- Contact - Info Tab -->
+    <string name="contact_my_notes">МОИ ЗАПИСИ</string>
+    <!-- Contact - Donation Tab -->
+    <string name="contact_view_more_donations">просмотреть другие пожертвования</string>
+    <string name="contact_no_donation_date">Дата недоступна</string>
+    <string name="donations_last_gifts">ПОСЛЕДНИЕ %d ПОДАРКОВ</string>
+    <!-- Fingerprint -->
+    <string name="cancel">Отмена</string>
+    <string name="ok">ОК</string>
+    <string name="fingerprint_skip">пропустить</string>
+    <string name="overdue_or_due_today">ПРОСРОЧЕНО ИЛИ СРОК ЗАКАНЧИВАЕТСЯ СЕГОДНЯ</string>
+    <string name="commitments_unfulfilled">ПОЖЕРТВОВАНИЯ НЕ ПОСТУПИЛИ</string>
+    <string name="care">ЗАБОТА</string>
+    <!-- Task Filters -->
+    <string name="filter">Фильтр</string>
+    <string name="filter_contact_status">Статус контакта</string>
+    <string name="filter_action_type">Тип действия</string>
+    <string name="filter_contact_referrer">Рекомендатель контакта</string>
+    <string name="filter_contact_church">Церковь контакта</string>
+    <string name="filter_contact_likely_to_give">Контакт способен на пожертвования</string>
+    <string name="filter_contact_timezone">Часовой пояс контакта</string>
+    <string name="filter_task_contact_city">Город контакта</string>
+    <string name="filter_task_contact_state">Регион контакта</string>
+    <string name="toolbar_filter_tasks">фильтровать задачи</string>
+    <!-- Onboarding -->
+    <string name="pin_and_fingerprint_verification">ПИН-код и проверка отпечатка пальца</string>
+    <string name="pin_and_fingerprint_description">Защитите свою информацию и конфиденциальность с помощью 4-значного кода разблокировки мобильного устройства. Вариант с отпечатком пальца доступен для устройств с распознаванием отпечатка пальца.</string>
+    <string name="pin_create">Придумайте 4-значный код разблокировки мобильного устройства</string>
+    <string name="confirm_pin">подтвердить пин-код</string>
+    <string name="get_started">приступим</string>
+    <string name="fingerprint_touch_sensor">Введите ПИН-код и коснитесь датчика для подтверждения</string>
+    <string name="fingerprint_prompt">Использовать ваш отпечаток пальца для разблокировки устройства в будущем?</string>
+    <string name="fingerprint_help">Код разблокировки необходим для активации разблокировки по отпечатку пальца</string>
+    <string name="fingerprint_enrolled">Отпечаток пальца успешно зарегистрирован!</string>
+    <string name="fingerprint_failed">Ой, попробуйте еще раз!</string>
+    <string name="invalid_pin">Введите действующий ПИН-код</string>
+    <string name="incorrect_pin">Введен неверный ПИН-код</string>
+    <string name="pin_enter">Придумайте код разблокировки мобильного устройства</string>
+    <string name="fingerprint_enabled">Отпечаток пальца активирован</string>
+    <string name="unlock_with_pin">разблокировать с помощью ПИН-кода</string>
+    <string name="use_fingerprint_on_device">Введите ПИН-код или используйте отпечаток пальца для разблокировки устройства</string>
+    <!-- Settings -->
+    <string name="settings">Настройки</string>
+    <string name="settings_lowercase">настройки</string>
+    <string name="settings_logout">Выход</string>
+    <string name="settings_notifications">Настройки уведомлений</string>
+    <string name="settings_notifications_task_due">Срок выполнения задачи</string>
+    <string name="settings_account_list">Список учетных записей</string>
+    <string name="version">Версия</string>
+    <string name="change_account_list">изменить список учетных записей</string>
+    <string name="change_account_list_dialog">Вы действительно хотите изменить учетную запись на %s? Существующие данные будут удалены, начнется синхронизация с новой учетной записью.</string>
+    <string name="yes">да</string>
+    <string name="logout_dialog">Вы действительно хотите выйти?</string>
+    <string name="offline_error">Вы не можете совершить это действие в автономном режиме</string>
+    <string name="current_account_list">Текущая учетная запись уже установлена как %s</string>
+    <string name="privacy_policy">Политика конфиденциальности</string>
+    <!--CareCommittments-->
+    <string name="first_gift_not_received">Первый подарок %s не получен</string>
+    <string name="gifts_not_received_label">подарки не получены</string>
+    <string name="partners_thirty_days_late">Партнеры, задерживающие на 30 дней: %s</string>
+    <string name="partners_thirty_days_late_label">партнеры опаздывают на тридцать дней</string>
+    <string name="partners_sixty_days_late">Партнеры, задерживающие на 60 дней: %s</string>
+    <string name="partners_sixty_days_late_label">партнеры опаздывают на шестьдесят дней</string>
+    <string name="days_since_last_newsletter">%s дн. с момента последней почтовой рассылки</string>
+    <string name="days_since_last_newsletter_never">Отправлено 0 новостных рассылок</string>
+    <string name="days_since_last_newsletter_label">дн. с момента последней почтовой рассылки</string>
+    <string name="birthdays_this_week_label">дни рождения на этой неделе</string>
+    <string name="anniversaries_this_week_label">юбилеи на этой неделе</string>
+    <string name="care_commitment_titles"><![CDATA[Забота и пожертвования]]></string>
+    <string name="connect_title">Подключиться</string>
+    <string name="connect_screen_see_all">Просмотреть все %s</string>
+    <!-- Appeals -->
+    <!-- Coaching -->
+    <!-- New Contact -->
+    <string name="contacts_add">готово</string>
+    <string name="contact_not_found">Ой! Похоже, этого контакта нет в учетной записи MPDX. Переключитесь на другую учетную запись или выполните поиск этого контакта в сети.</string>
+    <string name="okay">ок</string>
+    <!-- Help -->
+    <!-- Notifications -->
+    <!-- New Strings -->
+    <string name="balance_committed">Обязательства %1$s %2$s</string>
+    <string name="balanced_received">Получено %1$s %2$s</string>
+    <plurals name="donation_frequency">
+        <item quantity="few">Каждые %d месяца</item>
+        <item quantity="one">Каждые %d месяц</item>
+        <item quantity="other">Каждые %d месяцев</item>
+        <item quantity="many">Каждые %d месяцев</item>
+    </plurals>
+    <plurals name="donation_frequency_weeks">
+        <item quantity="one">Каждые %d недель</item>
+        <item quantity="other">Каждые %d нед.</item>
+        <item quantity="few">Каждые %d нед.</item>
+        <item quantity="many">Каждые %d нед.</item>
+    </plurals>
+    <string name="message_auth_expired">Сеанс завершен по истечении времени ожидания, войдите в систему заново</string>
+    <string name="no_account_list_error_message">Здравствуйте! Похоже, вы не завершили настройку учетной записи. Откройте mpdx.org на своем компьютере, введите все необходимые данные и возвращайтесь. Спасибо!</string>
+    <string name="no_default_account_list_error_message">Похоже, в вашей учетной записи не хватает данных. Войдите в настройки mpdx.org на своем компьютере и выберите список учетных записей по умолчанию, а затем вернитесь сюда и попробуйте еще раз. Спасибо!</string>
+    <string name="no_organization_or_default_account_list_error_message">Похоже, вы не подключены к организациям. Откройте раздел «Подключить услуги» в настройках MPDX.org, добавьте организацию и возвращайтесь. Спасибо!</string>
+    <string name="no_notes_tap_to_edit">Нет заметок (нажмите, чтобы изменить)</string>
+    <string name="notifications_task_due_channel_description">Для этой задачи необходимы действия</string>
+</resources>

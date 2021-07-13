@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Task Editor -->
+    <!-- Task Editor: To Rename -->
+    <string name="new_task">nuova attività</string>
+    <string name="edit_task">modifica l\'attività</string>
+    <string name="log_task_label">Registra attività</string>
+    <string name="task_subject">OGGETTO DELL\'ATTIVITÀ</string>
+    <string name="time_hint">ora</string>
+    <string name="activity_type_hint">tipo di attività</string>
+    <string name="tags_hint">tag</string>
+    <string name="add_comment_hint">aggiungi commento</string>
+    <string name="log_task_completed_date_string">Data di conclusione</string>
+    <string name="task_without_date_and_time">Seleziona la data e l\'ora di conclusione dell\'attività</string>
+    <string name="log_task_in_future_error">Per registrare l\'attività, seleziona un orario e una data già passati.</string>
+</resources>

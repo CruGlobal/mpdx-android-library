@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ThemeOverlay.Mpdx.MaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="materialAlertDialogTitleTextStyle">@style/MaterialAlertDialog.Mpdx.Title.Text</item>
+        <item name="materialAlertDialogChoiceTextStyle">@style/MaterialAlertDialog.Mpdx.Choice.Text</item>
+        <item name="materialAlertDialogChoiceTextSecondaryStyle">@style/MaterialAlertDialog.Mpdx.Choice.Text.Secondary
+        </item>
+    </style>
+
+    <declare-styleable name="MaterialAlertDialogTheme.Mpdx">
+        <attr name="materialAlertDialogChoiceTextStyle" format="reference" />
+        <attr name="materialAlertDialogChoiceTextSecondaryStyle" format="reference" />
+    </declare-styleable>
+
+    <style name="MaterialAlertDialog.Mpdx.Title.Text" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="MaterialAlertDialog.Mpdx.Choice.Text" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="MaterialAlertDialog.Mpdx.Choice.Text.Secondary" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+</resources>

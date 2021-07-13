@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="viewModel" type="org.mpdx.android.features.dashboard.view.appeal.AppealDashboardViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        android:layout_margin="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/dashboard_appeal_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/dashboard_appeal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/dashboard_appeal_given_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{viewModel.appealLabel}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dashboard_appeal_title"
+                tools:text="$750 USD (75%)" />
+
+            <TextView
+                android:id="@+id/dashboard_appeal_name_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{viewModel.appealName}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dashboard_appeal_given_label"
+                tools:text="2020 End of Year Ask" />
+
+            <ProgressBar
+                android:id="@+id/dashboard_appeal_progress_bar"
+                style="@style/Balance_Progress.Monthly_Goal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:max="@{viewModel.goalValue}"
+                android:progress="@{viewModel.givenValue}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dashboard_appeal_name_label"
+                tools:max="1000"
+                tools:progress="750" />
+
+            <TextView
+                android:id="@+id/dashboard_appeal_goal_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/dashboard_goal"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintBottom_toTopOf="@id/dashboard_appeal_goal_still_barrier"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dashboard_appeal_progress_bar" />
+
+            <TextView
+                android:id="@+id/dashboard_appeal_goal_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@{viewModel.goalCurrency}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/dashboard_appeal_goal_still_barrier"
+                app:layout_constraintStart_toEndOf="@+id/dashboard_appeal_goal_label"
+                app:layout_constraintTop_toBottomOf="@+id/dashboard_appeal_progress_bar"
+                tools:text="$1000" />
+
+            <TextView
+                android:id="@+id/dashboard_appeal_still_needed_text"
+                visibleIf="@{viewModel.stillNeeded}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{viewModel.stillNeededCurrency}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/dashboard_appeal_goal_still_barrier"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dashboard_appeal_progress_bar"
+                tools:text="$250" />
+
+            <TextView
+                android:id="@+id/dashboard_appeal_still_needed_label"
+                visibleIf="@{viewModel.stillNeeded}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/dashboard_still_needed"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constraintBottom_toTopOf="@id/dashboard_appeal_goal_still_barrier"
+                app:layout_constraintEnd_toStartOf="@+id/dashboard_appeal_still_needed_text"
+                app:layout_constraintTop_toBottomOf="@+id/dashboard_appeal_progress_bar" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/dashboard_appeal_goal_still_barrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="dashboard_appeal_still_needed_label,dashboard_appeal_still_needed_text,dashboard_appeal_goal_text,dashboard_appeal_goal_label"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp" />
+
+            <TextView
+                android:id="@+id/dashboard_appeal_view_all_appeals"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/dashboard_view_all_appeals"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/dark_blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dashboard_appeal_goal_still_barrier" />
+
+            <!-- TODO add click event after #1730 is merged in -->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

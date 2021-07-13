@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Contact Editor -->
+    <string name="contact_editor_title_new">nuovo contatto</string>
+    <string name="contact_editor_section_commitment">donazione ricorrente</string>
+    <string name="contact_editor_section_addresses">Indirizzi</string>
+    <string name="contact_editor_hint_name">Cognome, nome</string>
+    <string name="contact_editor_error_contact_name_blank">Per salvare devi inserire un nome!</string>
+    <string name="contact_editor_error_email_blank">Per salvare devi inserire un indirizzo e-mail!</string>
+    <string name="contact_editor_error_phone_blank">Per salvare devi inserire un numero di telefono!</string>
+    <!-- Contact Editor: To Rename -->
+    <string name="contact_commitment_amount">Importo</string>
+    <string name="contact_commitment_currency">Valuta</string>
+    <string name="contact_select_commitment_frequency">Frequenza delle donazioni ricorrenti</string>
+    <string name="contact_commitment_received_lowercase">donazione ricorrente ricevuta</string>
+    <string name="contact_likely_text">Propensi a donare</string>
+    <string name="contact_address_communications">COMUNICAZIONI</string>
+    <string name="contact_address_greeting">Saluto</string>
+    <string name="contact_address_envelope_name">nome sulla busta</string>
+    <string name="contact_address_appeal">Appello</string>
+    <string name="new_contact_phone_hint">aggiungi telefono</string>
+    <string name="new_contact_email_hint">aggiungi e-mail</string>
+    <string name="contact_address_street_hint">via</string>
+    <string name="contact_address_city">Città</string>
+    <string name="contact_address_state">stato</string>
+    <string name="contact_address_postal_code">CAP</string>
+    <string name="contact_address_country">Paese</string>
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Contact Editor -->
+    <eat-comment />
+    <string name="contact_editor_title_new">New Contact</string>
+    <string name="contact_editor_title_edit">Edit Contact</string>
+    <string name="contact_editor_section_details">Details</string>
+    <string name="contact_editor_section_commitment">Commitment</string>
+    <string name="contact_editor_section_addresses">Addresses</string>
+    <string name="contact_editor_section_people">People</string>
+    <string name="contact_editor_section_tags">Tags</string>
+    <string name="contact_editor_hint_locale">Language</string>
+    <string name="contact_editor_hint_name">Last Name, First Name</string>
+    <string name="contact_editor_hint_newsletter">Newsletter</string>
+    <string name="contact_editor_hint_status">Status</string>
+    <string name="contact_editor_hint_person_first_name">First Name</string>
+    <string name="contact_editor_hint_person_last_name">Last Name</string>
+    <string name="contact_editor_hint_address_location">Location</string>
+    <string name="contact_editor_hint_address_primary">Primary</string>
+    <string name="contact_editor_hint_email">Email Address</string>
+    <string name="contact_editor_hint_email_primary">Primary</string>
+    <string name="contact_editor_hint_phone">Phone Number</string>
+    <string name="contact_editor_hint_phone_primary">Primary</string>
+    <string name="contact_editor_action_add_address">Add Address</string>
+    <string name="contact_editor_action_delete_address">Delete Address</string>
+    <string name="contact_editor_action_import_contact">Import from Phonebook</string>
+    <string name="contact_editor_action_person_add">Add Person</string>
+    <string name="contact_editor_action_person_delete">Delete Person</string>
+    <string name="contact_editor_label_person_no_name">(no name)</string>
+    <string name="contact_editor_label_commitment_no_commitment">(no commitment)</string>
+    <string name="contact_editor_unsaved_dialog">Your changes have not been saved</string>
+    <string name="contact_editor_unsaved_dialog_action_save">Save</string>
+    <string name="contact_editor_unsaved_dialog_action_discard">Discard</string>
+    <string name="contact_editor_errors_toast">Please fill in the required fields before saving</string>
+    <string name="contact_editor_error_contact_name_blank">Contact name cannot be blank</string>
+    <string name="contact_editor_error_email_blank">Email Address cannot be blank</string>
+    <string name="contact_editor_error_email_invalid">Invalid Email Address</string>
+    <string name="contact_editor_error_email_exists">Email Already Exists</string>
+    <string name="contact_editor_error_person_first_name_blank">First Name cannot be blank</string>
+    <string name="contact_editor_error_phone_blank">Number cannot be blank</string>
+
+    <!-- Contact Editor: To Rename -->
+    <eat-comment />
+    <string name="contact_commitment_amount">Amount</string>
+    <string name="contact_commitment_currency">Currency</string>
+    <string name="contact_select_commitment_frequency">Commitment Frequency</string>
+    <string name="contact_commitment_received_lowercase">Commitment Received</string>
+    <string name="contact_likely_text">Likely to Give</string>
+    <string name="contact_address_communications">Communications</string>
+    <string name="contact_address_greeting">Greeting</string>
+    <string name="contact_address_envelope_name">Envelope Name</string>
+    <string name="contact_address_appeal">Appeal</string>
+    <string name="contact_add_tags">Add Tag</string>
+    <string name="new_contact_phone_hint">Add Phone Number</string>
+    <string name="new_contact_email_hint">Add Email Address</string>
+    <string name="contact_address_street_hint">Street Address</string>
+    <string name="contact_address_city">City</string>
+    <string name="contact_address_state">State</string>
+    <string name="contact_address_postal_code">Postal Code</string>
+    <string name="contact_address_country">Country</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Task Details -->
+    <!-- Task Editor -->
+    <!-- Task Editor: To Rename -->
+    <string name="new_task">новая задача</string>
+    <string name="edit_task">редактировать задание</string>
+    <string name="log_task_label">Зарегистрировать задачу</string>
+    <string name="task_subject">ТЕМА ЗАДАЧИ</string>
+    <string name="time_hint">время</string>
+    <string name="activity_type_hint">вид деятельности</string>
+    <string name="tags_hint">теги</string>
+    <string name="add_comment_hint">добавить комментарий</string>
+    <string name="log_task_completed_date_string">Дата завершения</string>
+    <string name="task_without_date_and_time">Выберите дату и время выполнения задачи</string>
+    <string name="log_task_in_future_error">Выберите дату и время в прошлом, чтобы зарегистрировать задачу.</string>
+</resources>

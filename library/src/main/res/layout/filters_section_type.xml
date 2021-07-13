@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="androidx.databinding.ObservableField" />
+        <import type="org.mpdx.android.features.filter.OnTypeClickedListener" />
+
+        <variable name="type" type="org.mpdx.android.features.filter.model.Filter.Type" />
+        <variable name="typeClickListener" type="ObservableField&lt;OnTypeClickedListener>" />
+    </data>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:minHeight="48dp"
+        android:onClick="@{() -> typeClickListener.onTypeClicked(type)}"
+        android:text="@{type != null ? context.getString(type.label) : ``}" />
+</layout>

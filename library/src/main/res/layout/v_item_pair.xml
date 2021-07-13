@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="androidx.cardview.widget.CardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="@dimen/cardview_default_elevation">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingStart="10dp">
+
+        <ImageView
+            android:id="@+id/image"
+            tools:src="@drawable/cru_icon_facebook"
+            android:layout_width="15dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:scaleType="center"/>
+
+        <TextView
+            android:id="@+id/text"
+            tools:text="Email"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textColor="@color/primary_gray"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+</merge>

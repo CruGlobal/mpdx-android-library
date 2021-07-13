@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="PhoneNumberItemBinding">
+        <variable
+            name="nameAndPhoneNumber"
+            type="String"/>
+        <variable
+            name="location"
+            type="String"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/phone_number_item_container"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/name_and_number"
+            tools:text="Janelle Stewart (678) 631-8384"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{nameAndPhoneNumber}"
+            android:textColor="@color/primary_gray"
+            android:textSize="15sp"/>
+
+        <TextView
+            tools:text="Mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{location}"
+            android:textColor="@color/opacity_primary_gray_50"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+</layout>

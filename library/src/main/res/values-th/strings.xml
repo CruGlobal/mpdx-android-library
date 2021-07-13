@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">MPDX</string>
+    <string name="dashboard">แดชบอร์ด</string>
+    <string name="tasks">งาน</string>
+    <string name="contacts">รายชื่อติดต่อ</string>
+    <string name="donations">เงินบริจาค</string>
+    <string name="dashboard_lowercase">แดชบอร์ด</string>
+    <string name="donations_lowercase">เงินบริจาค</string>
+    <string name="contacts_lowercase">รายชื่อติดต่อ</string>
+    <string name="tasks_lowercase">งาน</string>
+    <string name="dashboard_overall_goal">เป้าหมาย %1$s</string>
+    <string name="dashboard_account_label">ยอดดุลบัญชี</string>
+    <string name="connect_lowercase">เชื่อมต่อ</string>
+    <string name="care_commitments_lowercase">ความใส่ใจและเงินสัญญาช่วยเหลือ</string>
+    <!-- Tasks -->
+    <string name="current_tasks_lowercase">งานปัจจุบัน</string>
+    <string name="task_history_lowercase">ประวัติงาน</string>
+    <string name="no_contacts">ไม่มีรายชื่อติดต่อ</string>
+    <string name="multiple_contacts">รายชื่อติดต่อหลายรายการ</string>
+    <string name="deleted">ลบแล้ว</string>
+    <string name="overdue">เกินกำหนด</string>
+    <string name="today">วันนี้</string>
+    <string name="tomorrow">พรุ่งนี้</string>
+    <string name="upcoming">เร็วๆ นี้</string>
+    <string name="no_due_date">ไม่มีวันครบกำหนด</string>
+    <string name="none">ไม่มี</string>
+    <string name="add">เพิ่ม</string>
+    <string name="task_subject_hint">ป้อนชื่องาน</string>
+    <string name="task_detail">รายละเอียดงาน</string>
+    <string name="select_contact_hint">รายชื่อติดต่อ</string>
+    <string name="date_hint">วันที่</string>
+    <string name="edit">แก้ไข</string>
+    <string name="comments">ความคิดเห็น</string>
+    <string name="tags">แท็ก</string>
+    <string name="alert">เตือน</string>
+    <string name="alert_definition_title">คุณต้องการให้แจ้งเตือนด้วยวิธีใด</string>
+    <string name="hours_label">ชั่วโมง:</string>
+    <string name="minutes_label">นาที:</string>
+    <string name="mode_label">โหมด:</string>
+    <string name="alert_mode_none">ไม่มี</string>
+    <string name="alert_mode_email">อีเมล</string>
+    <string name="alert_mode_mobile">มือถือ</string>
+    <string name="alert_mode_both">ทั้งสอง</string>
+    <plurals name="hours_unit">
+        <item quantity="other">%d ชั่วโมง</item>
+    </plurals>
+    <plurals name="minutes_unit">
+        <item quantity="other">%d นาที</item>
+    </plurals>
+    <string name="alert_status_text">%s ก่อนหน้า</string>
+    <string name="alert_no_status">ไม่มีการตั้งค่าการแจ้งเตือน</string>
+    <string name="alert_grouped">%s และอีก %d</string>
+    <string name="hour_minute_mix">%d ชม. %d น.</string>
+    <string name="due_date">วันครบกำหนด</string>
+    <string name="call">โทร</string>
+    <string name="text">ข้อความ</string>
+    <string name="todo">สิ่งที่ต้องทำ</string>
+    <string name="talk_to_in_person">คุยส่วนตัว</string>
+    <string name="no_action_set">ไม่มีการตั้งค่าการดำเนินการ</string>
+    <string name="letter">จดหมาย</string>
+    <string name="newsletter_physical">จดหมายข่าว - ฉบับตีพิมพ์</string>
+    <string name="newsletter_email">จดหมายข่าว - อีเมล</string>
+    <string name="pre_call_letter">จดหมายก่อนโทร</string>
+    <string name="reminder_letter">จดหมายเตือน</string>
+    <string name="support_letter">จดหมายช่วยเหลือ</string>
+    <string name="thank">ขอบคุณ</string>
+    <string name="prayer_request">ขออธิษฐาน</string>
+    <string name="appointment">นัดหมาย</string>
+    <string name="text_message">ข้อความ</string>
+    <string name="facebook_message">ข้อความ Facebook</string>
+    <string name="email">อีเมล</string>
+    <string name="complete">เสร็จสมบูรณ์</string>
+    <string name="delete">ลบ</string>
+    <string name="info">ข้อมูล</string>
+    <string name="notes">หมายเหตุ</string>
+    <string name="contacts_edit">แก้ไข</string>
+    <string name="notes_save">บันทึกหมายเหตุ</string>
+    <string name="notes_canceled">ยกเลิกหมายเหตุแล้ว</string>
+    <string name="notes_cancel">ยกเลิก</string>
+    <string name="task_deleted">ลบงานแล้ว</string>
+    <string name="task_completed">งานเสร็จสมบูรณ์</string>
+    <string name="no_phone_numbers">ไม่มีเบอร์โทร</string>
+    <string name="no_email_addresses">ไม่มีที่อยู่อีเมล</string>
+    <string name="no_email_client_found">ไม่พบที่อยู่อีเมล</string>
+    <string name="task_added">เพิ่มงานแล้ว</string>
+    <string name="no_tags">ไม่มีแท็ก</string>
+    <string name="time_without_date">โปรดเลือกวันครบกำหนด</string>
+    <string name="save">บันทึก</string>
+    <string name="task_edited">บันทึกงานแล้ว</string>
+    <string name="task_completed_error">งานของคุณเสร็จสิ้นแล้วและจะซิงค์ข้อมูลในภายหลัง</string>
+    <string name="tasks_view_all">ดูทั้งหมด</string>
+    <string name="tasks_empty">ไม่มีงานที่ทำเสร็จที่สามารถโหลดได้</string>
+    <!-- Contact Info -->
+    <string name="search_title">ค้นหา</string>
+    <string name="search_hint">ค้นหาตามชื่อ</string>
+    <string name="people">บุคคล</string>
+    <!-- Contact Detail Tasks -->
+    <string name="contact_associated_tasks">งานที่เกี่ยวข้อง</string>
+    <string name="contact_view_task_history">ดูประวัติงาน</string>
+    <string name="contact_new_task">งานใหม่</string>
+    <!-- Contact Detail Info -->
+    <string name="contact_view_members">สมาชิกในครัวเรือน</string>
+    <string name="contact_view_envelope_name">ชื่อบนซอง</string>
+    <string name="contact_view_greeting">การทักทาย</string>
+    <string name="contact_view_primary_address">ที่อยู่หลัก</string>
+    <string name="contact_view_newsletter">จดหมายข่าว</string>
+    <string name="contact_view_partner_accounts">บัญชีพาร์ทเนอร์</string>
+    <string name="contact_view_email">อีเมล</string>
+    <string name="contact_no_email">ไม่พบที่อยู่อีเมล</string>
+    <string name="contact_no_phone_number">ไม่พบเบอร์โทร</string>
+    <string name="call_or_text">โทรหรือส่งข้อความ</string>
+    <string name="call_or_text_number">โทรหรือส่งข้อความไปที่เบอร์ %1$s ไหม</string>
+    <!-- Donations -->
+    <string name="donation_view_donation_salary">สกุลเงินเงินเดือน</string>
+    <string name="donation_view_tendered_salary">สกุลเงินเงินบริจาค</string>
+    <!-- Contact - Info Tab -->
+    <string name="contact_my_notes">หมายเหตุของฉัน</string>
+    <!-- Contact - Donation Tab -->
+    <string name="contact_view_more_donations">ดูการบริจาคอื่นๆ</string>
+    <string name="contact_no_donation_date">ไม่มีวันที่</string>
+    <string name="donations_last_gifts">ของขวัญ %d ชิ้นสุดท้าย</string>
+    <!-- Fingerprint -->
+    <string name="cancel">ยกเลิก</string>
+    <string name="ok">ตกลง</string>
+    <string name="fingerprint_skip">ข้าม</string>
+    <string name="overdue_or_due_today">เกินกำหนดหรือถึงกำหนดวันนี้</string>
+    <string name="commitments_unfulfilled">สัญญาบริจาคที่ไม่สำเร็จ</string>
+    <string name="care">ความใส่ใจ</string>
+    <!-- Task Filters -->
+    <string name="filter">ตัวกรอง</string>
+    <string name="filter_contact_status">สถานะการติดต่อ</string>
+    <string name="filter_action_type">ประเภทการดำเนินการ</string>
+    <string name="filter_contact_referrer">ผู้แนะนำ</string>
+    <string name="filter_contact_church">ติดต่อโบสถ์</string>
+    <string name="filter_contact_likely_to_give">เป็นไปได้ที่จะให้</string>
+    <string name="filter_contact_timezone">เขตเวลา</string>
+    <string name="filter_task_contact_city">เมือง</string>
+    <string name="filter_task_contact_state">รัฐ</string>
+    <string name="toolbar_filter_tasks">กรองงาน</string>
+    <!-- Onboarding -->
+    <string name="pin_and_fingerprint_verification">PIN และการยืนยันลายนิ้วมือ</string>
+    <string name="pin_and_fingerprint_description">ช่วยเราปกป้องข้อมูลและความเป็นส่วนตัวของคุณโดยตั้งค่ารหัสผ่านปลดล็อคมือถือ 4 หลัก หรือใช้ลายนิ้วมือในอุปกรณ์ที่รองรับระบบนี้</string>
+    <string name="pin_create">โปรดสร้างรหัสปลดล็อคมือถือ 4 หลัก</string>
+    <string name="confirm_pin">ยืนยัน PIN</string>
+    <string name="get_started">เริ่มต้นใช้งาน</string>
+    <string name="fingerprint_touch_sensor">ป้อน PIN แล้วแตะเซนเซอร์เพื่อยืนยัน</string>
+    <string name="fingerprint_prompt">ใช้ลายนิ้วมือเพื่อปลดล็อคอุปกรณ์ไหม</string>
+    <string name="fingerprint_help">ต้องมีรหัสปลดล็อคมือถือ จึงจะใช้ระบบปลดล็อคด้วยลายนิ้วมือได้</string>
+    <string name="fingerprint_enrolled">ระบุลายนิ้วมือเรียบร้อยแล้ว!</string>
+    <string name="fingerprint_failed">อ๊ะ โปรดลองอีกครั้ง!</string>
+    <string name="invalid_pin">โปรดป้อน PIN ที่ถูกต้อง</string>
+    <string name="incorrect_pin">PIN ที่ป้อนไม่ถูกต้อง</string>
+    <string name="pin_enter">โปรดป้อนรหัสปลดล็อคมือถือ</string>
+    <string name="fingerprint_enabled">เปิดใช้ลายนิ้วมือแล้ว</string>
+    <string name="unlock_with_pin">ปลดล็อคด้วย PIN</string>
+    <string name="use_fingerprint_on_device">ป้อน PIN หรือใช้ลายนิ้วมือเพื่อปลดล็อค</string>
+    <!-- Settings -->
+    <string name="settings">การตั้งค่า</string>
+    <string name="settings_lowercase">การตั้งค่า</string>
+    <string name="settings_logout">ออกจากระบบ</string>
+    <string name="settings_notifications">การกำหนดลักษณะการแจ้งเตือน</string>
+    <string name="settings_notifications_task_due">วันกำหนดส่งงาน</string>
+    <string name="settings_account_list">รายชื่อบัญชี</string>
+    <string name="version">เวอร์ชัน</string>
+    <string name="change_account_list">เปลี่ยนรายชื่อบัญชี</string>
+    <string name="change_account_list_dialog">แน่ใจหรือไม่ว่าต้องการเปลี่ยนบัญชีเป็น %s ข้อมูลปัจจุบันจะถูกลบและจะเริ่มใช้บัญชีใหม่แทน</string>
+    <string name="yes">ใช่</string>
+    <string name="logout_dialog">แน่ใจหรือไม่ว่าต้องการออกจากระบบ</string>
+    <string name="offline_error">คุณไม่ได้รับอนุญาตให้ดำเนินการนี้ในขณะออฟไลน์</string>
+    <string name="current_account_list">บัญชีปัจจุบันตั้งค่าเป็น %s อยู่แล้ว</string>
+    <string name="privacy_policy">นโยบายความเป็นส่วนตัว</string>
+    <!--CareCommittments-->
+    <string name="first_gift_not_received">ไม่ได้รับของขวัญชิ้นแรก %s</string>
+    <string name="gifts_not_received_label">ไม่ได้รับของขวัญ</string>
+    <string name="partners_thirty_days_late">พาร์ทเนอร์ %s คนเกินกำหนด 30 วัน</string>
+    <string name="partners_thirty_days_late_label">พาร์ทเนอร์เกินกำหนด 30 วัน</string>
+    <string name="partners_sixty_days_late">พาร์ทเนอร์ %s คนเกินกำหนด 60 วัน</string>
+    <string name="partners_sixty_days_late_label">พาร์ทเนอร์เกินกำหนด 60 วัน</string>
+    <string name="days_since_last_newsletter">%s วันตั้งแต่จดหมายข่าวฉบับสุดท้าย</string>
+    <string name="days_since_last_newsletter_never">0 จดหมายข่าวที่ส่งออก</string>
+    <string name="days_since_last_newsletter_label">วันตั้งแต่จดหมายข่าวฉบับสุดท้าย</string>
+    <string name="birthdays_this_week_label">วันเกิดในสัปดาห์นี้</string>
+    <string name="anniversaries_this_week_label">วันครบรอบในสัปดาห์นี้</string>
+    <string name="care_commitment_titles"><![CDATA[ความใส่ใจและเงินสัญญาช่วยเหลือ]]></string>
+    <string name="connect_title">เชื่อมต่อ</string>
+    <string name="connect_screen_see_all">ดู %s ทั้งหมด</string>
+    <!-- Appeals -->
+    <!-- Coaching -->
+    <!-- New Contact -->
+    <string name="contacts_add">เสร็จ</string>
+    <string name="contact_not_found">อ๊ะ! ดูเหมือนว่ารายชื่อติดต่อนี้ไม่มีอยู่ในบัญชี MPDX นี้ โปรดเปลี่ยนไปใช้บัญชีที่ถูกต้องหรือค้นหารายชื่อติดต่อนี้ทางเว็บ</string>
+    <string name="okay">โอเค</string>
+    <!-- Help -->
+    <!-- Notifications -->
+    <!-- New Strings -->
+    <string name="balance_committed">สัญญาช่วยเหลือ %1$s %2$s</string>
+    <string name="balanced_received">ได้รับ %1$s %2$s</string>
+    <plurals name="donation_frequency">
+        <item quantity="other">ทุก %d เดือน</item>
+    </plurals>
+    <plurals name="donation_frequency_weeks">
+        <item quantity="other">ทุก %d สัปดาห์</item>
+    </plurals>
+    <string name="message_auth_expired">เซสชันหมดอายุแล้ว โปรดกลับเข้าสู่ระบบใหม่</string>
+    <string name="no_account_list_error_message">สวัสดี ดูเหมือนว่าคุณจะยังตั้งค่าบัญชีไม่เสร็จ โปรดไปที่ mpdx.org ในคอมพิวเตอร์เพื่อดำเนินการให้เสร็จก่อนแล้วกลับมาใหม่ ขอบคุณ!</string>
+    <string name="no_default_account_list_error_message">อ๊ะ ดูเหมือนว่าจะมีอะไรบางอย่างในบัญชีขาดหายไป โปรดไปที่หน้าค่ากำหนดของ mpdx.org ในคอมพิวเตอร์ แล้วเลือกรายการบัญชีเริ่มต้น หลังจากนั้น โปรดกลับมาแล้วลองอีกครั้ง ขอบคุณ!</string>
+    <string name="no_organization_or_default_account_list_error_message">อืม ดูเหมือนว่าคุณจะไม่ได้เชื่อมต่อกับองค์กรใดๆ เลย โปรดไปที่ \"เชื่อมต่อองค์กร\" ในการตั้งค่าของ MPDX.org แล้วเพิ่มองค์กร จากนั้นค่อยกลับมาใหม่ ขอบคุณ!</string>
+    <string name="no_notes_tap_to_edit">ไม่มีโน้ต (แตะเพื่อแก้ไข)</string>
+    <string name="notifications_task_due_channel_description">ต้องมีการดำเนินการบางอย่างสำหรับงานนี้</string>
+</resources>

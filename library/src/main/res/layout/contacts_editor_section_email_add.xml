@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="androidx.databinding.ObservableField" />
+        <import type="org.mpdx.android.features.contacts.contacteditor.ContactEditorCallbacks" />
+
+        <variable name="callbacks" type="ObservableField&lt;ContactEditorCallbacks&gt;" />
+        <variable name="person" type="org.mpdx.android.features.contacts.viewmodel.PersonViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/Widget.Mpdx.Form.Section.Fields"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants"
+        android:focusable="false"
+        android:minHeight="48dp"
+        android:onClick="@{() -> callbacks.onCreateEmailAddress(person)}">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/marginStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/contact_editor_start_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/marginEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/contact_editor_end_margin" />
+
+        <ImageView
+            android:id="@+id/add"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/label"
+            app:layout_constraintStart_toEndOf="@id/marginStart"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_add_circle"
+            app:tint="@color/primary_blue" />
+
+        <TextView
+            android:id="@+id/label"
+            style="@style/Widget.Mpdx.Form.Input.Action"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/new_contact_email_hint"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/marginEnd"
+            app:layout_constraintStart_toEndOf="@id/add"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

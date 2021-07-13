@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="androidx.databinding.ObservableField" />
+        <import type="org.mpdx.android.features.contacts.contacteditor.ContactEditorCallbacks" />
+
+        <variable name="callbacks" type="ObservableField&lt;ContactEditorCallbacks&gt;" />
+        <variable name="contact" type="org.mpdx.android.features.contacts.viewmodel.ContactViewModel" />
+        <variable name="person" type="org.mpdx.android.features.contacts.viewmodel.PersonViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/Widget.Mpdx.Form.Section.Fields"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/contact_editor_section_margin_bottom"
+        android:descendantFocusability="blocksDescendants"
+        android:focusable="false"
+        android:minHeight="48dp"
+        android:onClick="@{() -> callbacks.onDeletePerson(contact, person.model)}"
+        app:dataBindingFlagsHack="@{person.model}">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/marginStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/contact_editor_start_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/marginEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/contact_editor_end_margin" />
+
+        <ImageView
+            android:id="@+id/delete"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/label"
+            app:layout_constraintStart_toEndOf="@id/marginStart"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_remove_circle"
+            app:tint="@color/primary_red" />
+
+        <TextView
+            android:id="@+id/label"
+            style="@style/Widget.Mpdx.Form.Input.Action"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/contact_editor_action_person_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/marginEnd"
+            app:layout_constraintStart_toEndOf="@id/delete"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

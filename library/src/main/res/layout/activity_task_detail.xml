@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="androidx.lifecycle.LiveData" />
+        <import type="io.realm.RealmResults" />
+        <import type="org.mpdx.android.features.contacts.model.Contact" />
+        <import type="org.mpdx.android.features.tasks.databinding.TaskBindingConverters" />
+        <import type="org.mpdx.android.features.tasks.model.Comment" />
+        <import type="org.threeten.bp.format.FormatStyle" />
+
+        <variable name="contactClickListener" type="org.mpdx.android.features.contacts.ContactClickListener" />
+        <variable name="listener" type="org.mpdx.android.features.tasks.taskdetail.TaskDetailListener" />
+        <variable name="viewModel" type="org.mpdx.android.features.tasks.taskdetail.TaskDetailActivityViewModel" />
+        <variable name="task" type="org.mpdx.android.features.tasks.viewmodel.TaskViewModel" />
+        <variable name="contact" type="LiveData&lt;Contact&gt;" />
+        <variable name="comments" type="LiveData&lt;RealmResults&lt;Comment&gt;&gt;" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/task_detail_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/task_detail_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/task_detail_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/task_detail_subject"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="16dp"
+                        android:breakStrategy="balanced"
+                        android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:maxLines="2"
+                        android:text="@{task.subject}"
+                        android:textAlignment="center"
+                        android:textColor="@color/primary_gray"
+                        android:textSize="20sp"
+                        app:visibleIf="@{!task.isSubjectHidden}"
+                        tools:text="Call for commitment, have not heard from Janelle after our previous conversation in December." />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@color/shade_blue"
+                        android:elevation="@dimen/cardview_default_elevation"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        app:visibleIf="@{!task.isCompleted}">
+
+                        <TextView
+                            android:id="@+id/task_detail_delete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:drawableTop="@drawable/cru_icon_delete_taskdetail"
+                            android:drawablePadding="5dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center_horizontal"
+                            android:onClick="@{() -> listener.onTaskDelete(task.model.id)}"
+                            android:text="@string/delete"
+                            android:textColor="@color/white" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/dark_blue" />
+
+                        <TextView
+                            android:id="@+id/task_detail_complete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:drawableTop="@drawable/cru_icon_complete_taskdetail"
+                            android:drawablePadding="5dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center_horizontal"
+                            android:onClick="@{() -> listener.onTaskComplete(task.model.id)}"
+                            android:text="@string/complete"
+                            android:textColor="@color/white" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@color/dark_blue" />
+
+                        <TextView
+                            android:id="@+id/task_detail_action"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:drawableTop="@{viewModel.activityActionIcon}"
+                            android:drawablePadding="5dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center_horizontal"
+                            android:onClick="@{() -> listener.onActionClicked()}"
+                            android:text="@{viewModel.activityActionText}"
+                            android:textColor="@color/white"
+                            android:visibility="@{viewModel.activityActionVisibility}"
+                            tools:drawableTop="@drawable/cru_icon_call_task"
+                            tools:text="Call"
+                            tools:visibility="visible" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="@string/contacts"
+                        android:textAllCaps="true"
+                        android:textColor="@color/primary_blue"
+                        android:textSize="@dimen/task_detail_small_text_size" />
+
+                    <!-- TODO:  This is running a realm query on main Thread and needs to be changed. -->
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/contacts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:theme="@style/ThemeOverlay.Mpdx.Task.Details.Contacts"
+                        app:chipIconUrl="@{(contact) -> ((Contact) contact).getPeople().findFirst().avatarUrl}"
+                        app:chipOnClickTag="@{(contact) -> contactClickListener.onContactClick((Contact) contact)}"
+                        app:chips="@{viewModel.taskContactsNames}" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@color/tint_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="@{task.isCompleted ? @string/completed_on : @string/due_date, default=@string/due_date}"
+                        android:textAllCaps="true"
+                        android:textColor="@color/primary_blue"
+                        android:textSize="@dimen/task_detail_small_text_size" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="@{task.dueDate}"
+                            android:textColor="@color/dark_gray"
+                            app:dateStyle="@{FormatStyle.FULL}"
+                            app:visibleIf="@{!task.isCompleted}"
+                            tools:text="Wednesday, November 31, 2017" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-light"
+                            android:text="@{task.dueDate}"
+                            app:timeStyle="@{FormatStyle.SHORT}"
+                            app:visibleIf="@{!task.isCompleted}"
+                            tools:text="11:00 AM - 12:00 PM" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="@{task.completedAt}"
+                            android:textColor="@color/dark_gray"
+                            app:dateStyle="@{FormatStyle.FULL}"
+                            app:timeStyle="@{FormatStyle.SHORT}"
+                            app:visibleIf="@{task.isCompleted}" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@color/tint_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="@string/completed_task_result_title"
+                        android:textAllCaps="true"
+                        android:textColor="@color/primary_blue"
+                        android:textSize="@dimen/task_detail_small_text_size"
+                        app:visibleIfTaskHasResult="@{task.model}" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:visibleIfTaskHasResult="@{task.model}">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="@{TaskBindingConverters.taskResultLabel(context, task.result)}"
+                            android:textColor="@color/dark_gray" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="14dp"
+                        android:background="@color/tint_gray"
+                        app:visibleIfTaskHasResult="@{task.model}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/tags"
+                        android:textColor="@color/primary_blue"
+                        android:textSize="@dimen/task_detail_small_text_size" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/tags"
+                        style="@style/Widget.Mpdx.Tags"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        app:chipLayout="@{@layout/widget_tags_tag}"
+                        app:chips="@{task.tags}"
+                        app:visibleIf="@{task.tags.size > 0}" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@color/tint_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/comments"
+                        android:textColor="@color/primary_blue"
+                        android:textSize="@dimen/task_detail_small_text_size"
+                        app:visibleIf="@{comments.size &gt; 0}" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/comments"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:visibleIf="@{comments.size &gt; 0}"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/item_comment" />
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

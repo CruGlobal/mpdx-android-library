@@ -1,0 +1,64 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="tab_indicator_height">4dp</dimen>
+    <dimen name="current_task_item_margin">16dp</dimen>
+    <dimen name="bottom_bar_height">56dp</dimen>
+    <dimen name="bottom_bar_margin">7dp</dimen>
+    <dimen name="bottom_bar_more_option_height">60dp</dimen>
+
+    <!-- Task Detail -->
+    <dimen name="task_detail_small_text_size">12sp</dimen>
+    <dimen name="task_detail_large_text_size">16sp</dimen>
+
+    <!-- Add Task -->
+    <dimen name="add_task_header_text_size">12sp</dimen>
+    <dimen name="add_task_body_text_size">16sp</dimen>
+    <dimen name="add_task_item_margins">20dp</dimen>
+
+    <!--donations-->
+    <dimen name="donation_view_holder_padding_horizontal">16dp</dimen>
+    <dimen name="donation_view_holder_spacing">7dp</dimen>
+    <dimen name="donation_view_holder_date_text_size">12sp</dimen>
+    <dimen name="donation_view_holder_detail_text_size">14sp</dimen>
+    <dimen name="v_donations_header_text_size">8sp</dimen>
+    <dimen name="v_donations_list_header_padding_horizontal">6dp</dimen>
+    <dimen name="v_donations_list_header_padding_vertical">12dp</dimen>
+
+    <!-- Contacts info -->
+    <dimen name="contact_margin_bottom">4dp</dimen>
+    <dimen name="contacts_info_padding">16dp</dimen>
+    <dimen name="contacts_small_text_size">12sp</dimen>
+    <dimen name="contacts_info_layout_height">14dp</dimen>
+    <dimen name="contacts_info_margin_top">13dp</dimen>
+    <dimen name="contacts_info_text_size">16sp</dimen>
+    <dimen name="contacts_detail_small_textsize">12sp</dimen>
+    <dimen name="contact_image_height">40dp</dimen>
+    <dimen name="contact_image_width">40dp</dimen>
+
+    <!-- Contacts Details Info-->
+    <dimen name="contacts_button_height">44dp</dimen>
+    <dimen name="contacts_details_margin_left">16dp</dimen>
+    <dimen name="contacts_details_margin_right">16dp</dimen>
+    <dimen name="contacts_detail_contact_image">50dp</dimen>
+    <dimen name="contact_detail_large_textsize">20sp</dimen>
+    <dimen name="contacts_detail_bottom_margin">20dp</dimen>
+    <dimen name="contacts_detail_top_margin">23dp</dimen>
+
+    <!-- Contact Details Tasks Info -->
+    <dimen name="contact_tasks_margin_top">16dp</dimen>
+    <dimen name="connect_item_padding">4dp</dimen>
+
+    <!-- Add Contact -->
+    <dimen name="add_contact_item_margins">20dp</dimen>
+
+    <!-- Appeals -->
+    <dimen name="appeals_padding">16dp</dimen>
+
+    <!-- Coaching -->
+    <dimen name="coaching_date_selector_height">48dp</dimen>
+    <dimen name="coaching_date_selector_width">160dp</dimen>
+    <dimen name="coaching_stat_row_height">91dp</dimen>
+    <dimen name="coaching_stat_col_width">60dp</dimen>
+    <dimen name="coaching_stat_col_margin">7dp</dimen>
+</resources>

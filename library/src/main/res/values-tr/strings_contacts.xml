@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Contact Editor -->
+    <string name="contact_editor_title_new">yeni kişi</string>
+    <string name="contact_editor_section_commitment">Taahhüt</string>
+    <string name="contact_editor_hint_name">Soyad, Ad</string>
+    <string name="contact_editor_error_contact_name_blank">Kaydetmek için ad girilmelidir!</string>
+    <string name="contact_editor_error_email_blank">Kaydetmek için e-posta adresi girilmelidir!</string>
+    <string name="contact_editor_error_phone_blank">Kaydetmek için telefon numarası girilmelidir!</string>
+    <!-- Contact Editor: To Rename -->
+    <string name="contact_commitment_amount">MİKTAR GİRİN</string>
+    <string name="contact_commitment_currency">PARA BİRİMİ SEÇİN</string>
+    <string name="contact_select_commitment_frequency">BİR TAAHHÜT SIKLIĞI SEÇİN</string>
+    <string name="contact_commitment_received_lowercase">taahhüt alındı</string>
+    <string name="contact_likely_text">vermesi olası</string>
+    <string name="contact_address_communications">İLETİŞİM</string>
+    <string name="contact_address_greeting">selamlama</string>
+    <string name="contact_address_envelope_name">zarf adı</string>
+    <string name="contact_address_appeal">istek</string>
+    <string name="new_contact_phone_hint">telefon ekle</string>
+    <string name="new_contact_email_hint">e-posta ekle</string>
+    <string name="contact_address_street_hint">sokak adresi</string>
+    <string name="contact_address_city">şehir</string>
+    <string name="contact_address_state">eyalet</string>
+    <string name="contact_address_postal_code">posta kodu</string>
+    <string name="contact_address_country">ülke</string>
+</resources>

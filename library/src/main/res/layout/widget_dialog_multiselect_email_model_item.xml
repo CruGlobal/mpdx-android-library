@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.text.TextUtils" />
+
+        <variable name="email" type="org.mpdx.android.features.contacts.viewmodel.EmailAddressViewModel" />
+        <variable name="selected" type="org.ccci.gto.android.common.androidx.lifecycle.SetLiveData&lt;String>" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:minHeight="56dp"
+        android:onClick="@{() -> checkbox.toggle()}">
+
+        <!-- CheckBoxes have an intrinsic 4dp of padding around the actual checkbox -->
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="20dp"
+            android:checked="@{selected.contains(email.model.id)}"
+            android:onCheckedChanged="@{(v, isChecked) -> isChecked ? selected.add(email.model.id) : selected.remove(email.model.id)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nameLabel"
+            style="?attr/materialAlertDialogChoiceTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:text="@{email.person.fullName}"
+            app:layout_constraintBottom_toTopOf="@id/emailLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/checkbox"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/emailLabel"
+            style="?attr/materialAlertDialogChoiceTextSecondaryStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@{(TextUtils.isEmpty(email.location) ? `` : email.location + ` `) + email.email}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/nameLabel"
+            app:layout_constraintStart_toStartOf="@id/nameLabel"
+            app:layout_constraintTop_toBottomOf="@+id/nameLabel"
+            tools:text="test@test.com" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.text.TextUtils" />
+        <import type="android.widget.TextView" />
+        <import type="androidx.lifecycle.LiveData" />
+        <import type="io.realm.RealmResults" />
+        <import type="java.util.List" />
+        <import type="java.util.Map" />
+        <import type="org.mpdx.android.core.model.User"/>
+        <import type="org.mpdx.android.features.constants.Constants" />
+        <import type="org.mpdx.android.features.tasks.databinding.TaskBindingConverters" />
+        <import type="org.mpdx.android.features.tasks.editor.TaskEditorBindingConstants" />
+        <import type="org.threeten.bp.format.FormatStyle" />
+        <import type="org.threeten.bp.LocalTime" />
+        <import type="org.threeten.bp.ZonedDateTime" />
+
+        <variable name="callbacks" type="org.mpdx.android.features.tasks.editor.TaskEditorCallbacks" />
+        <variable name="task" type="org.mpdx.android.features.tasks.viewmodel.TaskViewModel" />
+        <variable name="user" type="org.mpdx.android.core.viewmodel.UserViewModel" />
+        <variable name="users" type="LiveData&lt;RealmResults&lt;User>>" />
+        <variable name="contacts" type="LiveData&lt;Map&lt;String, String&gt;&gt;" />
+        <variable name="tags" type="LiveData&lt;List&lt;String&gt;&gt;" />
+        <variable name="comment" type="org.mpdx.android.features.tasks.viewmodel.CommentViewModel" />
+        <variable name="isFinishTask" type="boolean" />
+    </data>
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="org.mpdx.android.features.tasks.editor.TaskEditorActivity">
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:title="@string/new_task" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/Widget.Mpdx.Form.Section.Fields"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/marginStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="16dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/centerVertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/marginEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="16dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/subject"
+                    style="@style/Widget.Mpdx.Form.Input.Text.Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:enabled="@{!isFinishTask}"
+                    android:hint="@string/task_subject"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintStart_toStartOf="@id/marginStart"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapSentences"
+                        android:text="@={task.subject}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/type"
+                    style="@style/Widget.Mpdx.Form.Input.DropDown.Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:enabled="@{!isFinishTask}"
+                    android:hint="@string/activity_type_hint"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintStart_toStartOf="@id/marginStart"
+                    app:layout_constraintTop_toBottomOf="@id/subject">
+
+                    <AutoCompleteTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:completionThreshold="@{999999}"
+                        android:text="@={task.typeLabel}"
+                        app:dropDownItemLayout="@{@layout/mtrl_dropdown_menu_popup_item}"
+                        app:dropDownItems="@{Constants.taskTypeValues}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/assigned_user"
+                    style="@style/Widget.Mpdx.Form.Input.Text.Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/task_editor_hint_assigned_user"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintStart_toStartOf="@id/marginStart"
+                    app:layout_constraintTop_toBottomOf="@id/type"
+                    app:visibleIf="@{users.size() > 1}">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:onClick="@{() -> callbacks.showUserSelector()}"
+                        android:text="@{user.fullName}"
+                        tools:text="@tools:sample/full_names" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/contacts_header"
+                    style="@style/Widget.Mpdx.Form.Input.Header"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/task_editor_header_contacts"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintStart_toStartOf="@id/marginStart"
+                    app:layout_constraintTop_toBottomOf="@id/assigned_user"
+                    app:visibleIf="@{!isFinishTask || contacts.size > 0}" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/contacts_list"
+                    style="@style/Widget.Mpdx.Tags"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:chipCloseOnClickTag="@{(tag) -> task.contacts.deleteModel((String) tag)}"
+                    app:chipLayout="@{isFinishTask ? @layout/widget_tags_tag : @layout/widget_tags_tag_closeable}"
+                    app:chips="@{contacts}"
+                    app:chipsBefore="@{@id/action_add_contact}"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintStart_toStartOf="@id/marginStart"
+                    app:layout_constraintTop_toBottomOf="@id/contacts_header"
+                    app:visibleIf="@{!isFinishTask || contacts.size > 0}">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/action_add_contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> callbacks.showAddContactSelector()}"
+                        android:text="@string/task_editor_action_add_contact"
+                        app:chipIcon="@drawable/ic_form_add_circle_20dp"
+                        app:chipIconTint="@color/primary_blue"
+                        app:visibleIf="@{!isFinishTask}" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/dueDate"
+                    style="@style/Widget.Mpdx.Form.Input.Date.Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/task_editor_hint_due_date"
+                    app:endIconOnClick="@{() -> task.setDueDate((ZonedDateTime) null)}"
+                    app:layout_constraintEnd_toStartOf="@id/dueTime"
+                    app:layout_constraintStart_toStartOf="@id/marginStart"
+                    app:layout_constraintTop_toBottomOf="@id/contacts_list"
+                    app:visibleIf="@{!task.isCompleted}">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> callbacks.showDueDateDatePicker()}"
+                        android:text="@{task.dueDateDate}"
+                        app:dateStyle="@{FormatStyle.MEDIUM}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/dueTime"
+                    style="@style/Widget.Mpdx.Form.Input.Date.Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:hint="@string/time_hint"
+                    app:endIconOnClick="@{() -> task.setDueDateTime((LocalTime) null)}"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintStart_toEndOf="@id/dueDate"
+                    app:layout_constraintTop_toBottomOf="@id/contacts_list"
+                    app:visibleIf="@{!task.isCompleted &amp;&amp; task.dueDate != null}">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> callbacks.showDueDateTimePicker()}"
+                        android:text="@{task.dueDateTime != LocalTime.MIDNIGHT ? task.dueDateTime : null}"
+                        app:timeStyle="@{FormatStyle.SHORT}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/dueDateBarrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="dueDate,dueTime" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/notificationType"
+                    style="@style/Widget.Mpdx.Form.Input.DropDown.Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:hint="@string/task_editor_hint_notification"
+                    app:layout_constraintEnd_toEndOf="@id/centerVertical"
+                    app:layout_constraintStart_toStartOf="@id/marginStart"
+                    app:layout_constraintTop_toBottomOf="@id/dueDateBarrier"
+                    app:visibleIf="@{!task.isCompleted}">
+
+                    <AutoCompleteTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:completionThreshold="@{999999}"
+                        android:text="@={TaskBindingConverters.taskNotificationTypeLabel(context, task.notificationType)}"
+                        app:dropDownItemLayout="@{@layout/mtrl_dropdown_menu_popup_item}"
+                        app:dropDownItems="@{TaskEditorBindingConstants.getNotificationTypes(context)}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/notificationTime"
+                    style="@style/Widget.Mpdx.Form.Input.Text.Layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    app:boxCornerRadiusBottomEnd="0dp"
+                    app:boxCornerRadiusTopEnd="0dp"
+                    app:layout_constraintEnd_toStartOf="@id/notificationTimeUnit"
+                    app:layout_constraintStart_toEndOf="@id/centerVertical"
+                    app:layout_constraintTop_toBottomOf="@id/dueDateBarrier"
+                    app:visibleIf="@{!task.isCompleted}">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/notificationTimeInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:minHeight="48dp"
+                        android:onTextChanged="@{() -> notificationTimeInput.requestLayout()}"
+                        android:paddingEnd="0dp"
+                        android:text="@={`` + task.notificationTime}"
+                        tools:text="0" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/notificationTimeUnit"
+                    style="@style/Widget.Mpdx.Form.Input.DropDown.Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:boxCornerRadiusBottomStart="0dp"
+                    app:boxCornerRadiusTopStart="0dp"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintStart_toEndOf="@id/notificationTime"
+                    app:layout_constraintTop_toBottomOf="@id/dueDateBarrier"
+                    app:layout_constraintWidth_min="wrap"
+                    app:visibleIf="@{!task.isCompleted}">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/notificationTimeUnitInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:completionThreshold="@{999999}"
+                        android:onClick="@{() -> notificationTime.requestFocus()}"
+                        android:paddingStart="3sp"
+                        android:text="@={TaskBindingConverters.chronoUnitLabel(context, task.notificationTimeUnit)}"
+                        app:dropDownItemLayout="@{@layout/mtrl_dropdown_menu_popup_item}"
+                        app:dropDownItems="@{TaskEditorBindingConstants.getNotificationTimeUnits(context)}"
+                        tools:text="@string/task_notification_unit_minutes" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/notificationBarrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="notificationType,notificationTime,notificationTimeUnit" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/completedAtDate"
+                    style="@style/Widget.Mpdx.Form.Input.Date.Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/log_task_completed_date_string"
+                    app:endIconMode="none"
+                    app:layout_constraintEnd_toStartOf="@id/completedAtTime"
+                    app:layout_constraintStart_toStartOf="@id/marginStart"
+                    app:layout_constraintTop_toBottomOf="@id/notificationBarrier"
+                    app:validation="@{task.completedAtValidation}"
+                    app:visibleIf="@{task.isCompleted}">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> callbacks.showCompletedAtDatePicker()}"
+                        android:text="@{task.completedAtDate}"
+                        app:dateStyle="@{FormatStyle.MEDIUM}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/completedAtTime"
+                    style="@style/Widget.Mpdx.Form.Input.Date.Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:hint="@string/task_editor_hint_completed_at_time"
+                    app:endIconOnClick="@{() -> task.setCompletedAtTime((LocalTime) null)}"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintStart_toEndOf="@id/completedAtDate"
+                    app:layout_constraintTop_toBottomOf="@id/notificationBarrier"
+                    app:visibleIf="@{task.isCompleted &amp;&amp; task.completedAt != null}">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> callbacks.showCompletedAtTimePicker()}"
+                        android:text="@{task.completedAtTime != LocalTime.MIDNIGHT ? task.completedAtTime : null}"
+                        app:timeStyle="@{FormatStyle.SHORT}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/completedAtBarrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="completedAtDate,completedAtTime" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/result"
+                    style="@style/Widget.Mpdx.Form.Input.DropDown.Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Result"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintStart_toStartOf="@id/marginStart"
+                    app:layout_constraintTop_toBottomOf="@id/completedAtBarrier"
+                    app:visibleIf="@{task.isCompleted}">
+
+                    <AutoCompleteTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:completionThreshold="@{999999}"
+                        android:text="@={TaskBindingConverters.taskResultLabel(context, task.result)}"
+                        app:dropDownItemLayout="@{@layout/mtrl_dropdown_menu_popup_item}"
+                        app:dropDownItems="@{TaskEditorBindingConstants.getTaskResultLabels(context, task.type)}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nextAction"
+                    style="@style/Widget.Mpdx.Form.Input.DropDown.Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/log_task_next_action_hint"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintStart_toStartOf="@id/marginStart"
+                    app:layout_constraintTop_toBottomOf="@id/result"
+                    app:visibleIf="@{task.isCompleted &amp;&amp; Constants.getNextActionsLabels(task.type).size > 0}">
+
+                    <AutoCompleteTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:completionThreshold="@{999999}"
+                        android:text="@={task.nextActionLabel}"
+                        app:dropDownItemLayout="@{@layout/mtrl_dropdown_menu_popup_item}"
+                        app:dropDownItems="@{Constants.getNextActionsLabels(task.type)}"
+                        app:dropDownItemsIncludeEmpty="@{true}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/tags_header"
+                    style="@style/Widget.Mpdx.Form.Input.Header"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tags_hint"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintStart_toStartOf="@id/marginStart"
+                    app:layout_constraintTop_toBottomOf="@id/nextAction"
+                    app:visibleIf="@{!isFinishTask &amp;&amp; task.tags.size > 0}" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/tags_list"
+                    style="@style/Widget.Mpdx.Tags"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:chipCloseOnClick="@{(v) -> callbacks.onRemoveTag(task, (TextView) v)}"
+                    app:chipLayout="@{@layout/tasks_editor_tags_tag_chip}"
+                    app:chips="@{task.tags}"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintStart_toStartOf="@id/marginStart"
+                    app:layout_constraintTop_toBottomOf="@id/tags_header"
+                    app:visibleIf="@{!isFinishTask &amp;&amp; task.tags.size > 0}" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/new_tag_layout"
+                    style="@style/Widget.Mpdx.Form.Input.Text.AutoComplete.Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/task_editor_action_add_tag"
+                    app:endIconDrawable="@drawable/ic_form_add_circle_20dp"
+                    app:endIconMode="dropdown_menu"
+                    app:endIconOnClick="@{() -> callbacks.onAddTag(task, newTag)}"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintStart_toStartOf="@id/marginStart"
+                    app:layout_constraintTop_toBottomOf="@id/tags_list"
+                    app:visibleIf="@{!isFinishTask}">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/new_tag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:completionThreshold="1"
+                        android:imeOptions="actionDone"
+                        android:onEditorAction="@{(v,a,e) -> callbacks.onAddTag(task, v)}"
+                        android:onItemClick="@{() -> callbacks.onAddTag(task, newTag)}"
+                        android:singleLine="true"
+                        app:dropDownItemLayout="@{@layout/mtrl_dropdown_menu_popup_item}"
+                        app:dropDownItems="@{tags}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/comment_layout"
+                    style="@style/Widget.Mpdx.Form.Input.Text.Layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/add_comment_hint"
+                    app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                    app:layout_constraintStart_toStartOf="@id/marginStart"
+                    app:layout_constraintTop_toBottomOf="@id/new_tag_layout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:text="@={comment.body}"
+                        tools:text="@tools:sample/lorem/random" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </FrameLayout>
+</layout>

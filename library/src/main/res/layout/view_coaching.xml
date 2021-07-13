@@ -1,0 +1,102 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class=".CoachingViewBinding">
+        <import type="org.mpdx.android.utils.CurrencyUtilsKt" />
+
+        <variable name="accountList" type="org.mpdx.android.features.coaching.viewmodel.AccountListViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_margin="5dp">
+
+        <TextView
+            android:id="@+id/coaching_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{accountList.name}"
+            android:textColor="@color/primary_blue"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/coaching_balance"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/coaching_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center_vertical"
+            android:text="@{accountList.balance ?? Double.valueOf(`0`)}"
+            android:textColor="@color/primary_blue"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:currency="@{accountList.currency}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="$3622.57" />
+
+        <ProgressBar
+            android:id="@+id/coaching_progress"
+            style="@style/Balance_Progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:max="@{Math.max(accountList.monthlyGoal, accountList.committed)}"
+            android:progress="@{accountList.received}"
+            android:secondaryProgress="@{accountList.committed}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/coaching_title"
+            tools:max="100"
+            tools:progress="50"
+            tools:secondaryProgress="75"/>
+
+        <TextView
+            android:id="@+id/coaching_received"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{@string/coaching_received(accountList.receivedPercent, CurrencyUtilsKt.formatCurrency(accountList.received, accountList.currency))}"
+            android:textColor="@color/primary_yellow"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/coaching_progress"
+            tools:text="3% $10.00 received" />
+
+        <TextView
+            android:id="@+id/coaching_committed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/coaching_committed(accountList.committedPercent, CurrencyUtilsKt.formatCurrency(accountList.committed, accountList.currency))}"
+            android:textColor="@color/primary_orange"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/coaching_received"
+            tools:text="4% $15.00 committed" />
+
+        <TextView
+            android:id="@+id/coaching_goal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontWeight="300"
+            android:text="@{@string/coaching_goal(CurrencyUtilsKt.formatCurrency(accountList.monthlyGoal, accountList.currency))}"
+            android:textColor="@color/primary_blue"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="$100.00" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

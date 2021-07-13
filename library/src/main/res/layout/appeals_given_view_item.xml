@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="androidx.databinding.ObservableField" />
+        <import type="org.mpdx.android.features.donations.DonationClickedListener" />
+        <import type="org.threeten.bp.format.FormatStyle" />
+
+        <variable name="listener" type="ObservableField&lt;DonationClickedListener&gt;" />
+        <variable name="donation" type="org.mpdx.android.features.donations.viewmodel.DonationViewModel" />
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="1dp"
+    android:background="@color/white"
+    android:onClick="@{() -> listener.onDonationClicked(donation.model)}"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/given_contact_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        android:text="@{donation.model.contact.name}"
+        android:textColor="#585254"
+        android:textSize="14sp"
+        tools:text="@tools:sample/full_names" />
+
+    <LinearLayout android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="right">
+
+        <TextView
+            android:id="@+id/given_info_date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{donation.donationDate}"
+            android:textColor="#5A5A5A"
+            android:textSize="12sp"
+            app:dateStyle="@{FormatStyle.SHORT}"
+            tools:text="2/29/2016" />
+
+        <TextView
+            android:id="@+id/given_info_amount_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text='@{donation.convertedAppealAmount}'
+            android:textColor="#05699B"
+            android:textSize="14sp"
+            app:currency="@{donation.convertedCurrency}" />
+    </LinearLayout>
+
+    <ImageView android:id="@+id/given_commitment_edit_item"
+        android:layout_width="23dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="87dp"
+        android:layout_marginStart="87dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/cru_icon_pencil" />
+</LinearLayout>
+</layout>

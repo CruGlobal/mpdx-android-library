@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="hasBiometric" type="boolean" />
+        <variable name="listeningForBiometric" type="boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/biometric_background"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/unlock_action_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:gravity="center_horizontal"
+            android:text="@{listeningForBiometric ? @string/use_fingerprint_on_device : @string/pin_enter}"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            tools:text="@string/use_biometric_on_device"
+            app:layout_constraintBottom_toTopOf="@id/pin_edit_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <EditText
+            android:id="@+id/pin_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:imeOptions="actionDone"
+            android:inputType="numberPassword"
+            android:maxLength="4"
+            android:minEms="4"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/unlock_pin_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/unlock_action_text" />
+
+        <Button
+            android:id="@+id/unlock_pin_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/primary_teal"
+            android:foreground="?attr/selectableItemBackground"
+            android:text="@string/unlock_with_pin"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/fingerprint_enabled"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pin_edit_text" />
+
+        <TextView
+            android:id="@+id/fingerprint_enabled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:drawablePadding="10dp"
+            android:drawableTop="@drawable/cru_fingerprint"
+            android:text="@string/biometric_enabled"
+            android:textColor="@color/white"
+            app:goneIf="@{!hasBiometric}"
+            app:invisibleIf="@{!listeningForBiometric}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/unlock_pin_button"
+            app:visibleIf="@{hasBiometric}" />
+
+        <ProgressBar
+            android:id="@+id/unlocking_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/unlock_pin_button"
+            tools:visibility="visible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

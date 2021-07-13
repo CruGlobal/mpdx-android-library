@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Task Editor -->
+    <!-- Task Editor: To Rename -->
+    <string name="new_task">nieuwe taak</string>
+    <string name="edit_task">taak bewerken</string>
+    <string name="log_task_label">Log Taak</string>
+    <string name="task_subject">ONDERWERP TAAK</string>
+    <string name="time_hint">tijd</string>
+    <string name="activity_type_hint">activiteitstype</string>
+    <string name="tags_hint">labels</string>
+    <string name="add_comment_hint">opmerking toevoegen</string>
+    <string name="log_task_completed_date_string">Voltooide datum</string>
+    <string name="task_without_date_and_time">Selecteer een einddatum en tijd voor de taak</string>
+    <string name="log_task_in_future_error">Selecteer een datum en tijd die in het verleden is voor het loggen van een taak.</string>
+</resources>

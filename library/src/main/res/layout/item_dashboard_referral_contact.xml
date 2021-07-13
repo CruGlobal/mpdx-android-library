@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="contact" type="org.mpdx.android.features.contacts.model.Contact" />
+        <variable name="listener" type="org.mpdx.android.features.dashboard.view.referral.DashBoardReferralClickListeners" />
+    </data>
+
+    <TextView android:id="@+id/contact_item_text"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/listPreferredItemHeight"
+        android:background="?attr/selectableItemBackground"
+        android:text="@{contact.name}"
+        android:onClick="@{() -> listener.onContactClicked(contact)}"
+        tools:text="@tools:sample/full_names"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"/>
+
+</layout>

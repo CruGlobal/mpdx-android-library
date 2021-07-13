@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="contact_editor_start_margin">16dp</dimen>
+    <dimen name="contact_editor_end_margin">56dp</dimen>
+    <dimen name="contact_editor_line_text_margin_horizontal">12dp</dimen>
+    <dimen name="contact_editor_section_margin_bottom">16dp</dimen><!-- Margin between sections -->
+    <dimen name="contact_editor_section_padding_top">0dp</dimen>
+    <dimen name="contact_editor_section_padding_bottom">12dp</dimen>
+
+    <color name="contact_editor_background">@color/background_gray</color>
+
+    <style name="Widget.Mpdx.Contact.Editor.Section.Header" parent="">
+        <item name="android:paddingLeft">@dimen/contact_editor_line_text_margin_horizontal</item>
+        <item name="android:paddingRight">@dimen/contact_editor_line_text_margin_horizontal</item>
+    </style>
+
+    <style name="Widget.Mpdx.Contact.Editor.Header.CollapsibleSummary.Layout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="android:layout_marginTop">@dimen/form_line_margin_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/form_line_margin_vertical</item>
+        <item name="boxStrokeColor">@color/transparent_state_list</item>
+        <item name="boxBackgroundColor">@color/form_input_background</item>
+    </style>
+
+    <style name="Widget.Mpdx.Contact.Editor.Label" parent="Widget.Mpdx.Form.Input.Base" />
+
+    <!-- region Switch Input -->
+    <style name="Widget.Mpdx.Contact.Editor.Input.Switch" parent="Widget.MaterialComponents.CompoundButton.Switch" />
+
+    <style name="Widget.Mpdx.Contact.Editor.Input.Switch.Label" parent="Widget.Mpdx.Form.Input.Base" />
+    <!-- endregion Switch Input -->
+
+    <!-- region Radio Input -->
+    <style name="Widget.Mpdx.Contact.Editor.Input.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton" />
+    <!-- endregion Radio Input -->
+</resources>

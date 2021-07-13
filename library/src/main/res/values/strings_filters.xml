@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="filters_filter_label">%1$s : %2$s</string>
+
+    <!-- Filter Selector -->
+    <eat-comment />
+    <string name="filters_selector_enabled_label">Enabled Filters</string>
+
+    <!-- Filter Selector: To Rename -->
+    <eat-comment />
+    <string name="toolbar_filter_contacts">filter contacts</string>
+    <string name="filter_by">Filter By</string>
+</resources>

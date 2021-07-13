@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Mpdx.RecyclerTabLayout" parent="">
+        <item name="android:layout_height">48dp</item>
+        <item name="rtl_tabMinWidth">90dp</item>
+        <item name="rtl_tabMaxWidth">360dp</item>
+        <item name="rtl_tabPaddingStart">16dp</item>
+        <item name="rtl_tabPaddingEnd">16dp</item>
+        <item name="rtl_tabTextAppearance">@style/TextAppearance.Mpdx.RecyclerTabLayout.Tab</item>
+        <item name="rtl_tabSelectedTextColor">?attr/colorPrimary</item>
+        <item name="rtl_tabIndicatorColor">?attr/colorPrimary</item>
+        <item name="rtl_tabIndicatorHeight">2dp</item>
+    </style>
+
+    <style name="TextAppearance.Mpdx.RecyclerTabLayout.Tab" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+</resources>

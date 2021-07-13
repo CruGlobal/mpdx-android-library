@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="item" type="org.mpdx.android.features.contacts.viewmodel.FacebookAccountViewModel" />
+        <variable name="listener" type="org.mpdx.android.features.contacts.contactdetail.info.adapter.FacebookAccountAdapter.FacebookSelectListener" />
+    </data>
+
+    <TextView
+        android:id="@+id/contact_social_media_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:drawablePadding="8dp"
+        android:onClick="@{() -> listener.openFacebookMessenger(item.username)}"
+        android:text="@{item.username}"
+        android:textColor="@color/primary_gray"
+        android:textSize="@dimen/contacts_info_text_size"
+        app:drawableStartCompat="@drawable/ic_contact_facebook_account"
+        tools:text="@tools:sample/first_names" />
+
+</layout>

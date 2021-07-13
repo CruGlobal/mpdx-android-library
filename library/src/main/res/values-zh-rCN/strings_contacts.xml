@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Contact Editor -->
+    <string name="contact_editor_title_new">新联系人</string>
+    <string name="contact_editor_section_commitment">委身的支持</string>
+    <string name="contact_editor_hint_name">姓，名</string>
+    <string name="contact_editor_error_contact_name_blank">必须输入名称才能保存</string>
+    <string name="contact_editor_error_email_blank">比如输入地址才能保存</string>
+    <string name="contact_editor_error_phone_blank">比如输入电话号码才能保存</string>
+    <!-- Contact Editor: To Rename -->
+    <string name="contact_commitment_amount">请输入金额</string>
+    <string name="contact_commitment_currency">选择一种货币</string>
+    <string name="contact_select_commitment_frequency">委身支持的频率</string>
+    <string name="contact_commitment_received_lowercase">已收到的委身支持</string>
+    <string name="contact_likely_text">支持可能性</string>
+    <string name="contact_address_communications">沟通</string>
+    <string name="contact_address_greeting">问候</string>
+    <string name="contact_address_envelope_name">信封姓名</string>
+    <string name="contact_address_appeal">上诉</string>
+    <string name="new_contact_phone_hint">添加电话号码</string>
+    <string name="new_contact_email_hint">添加邮件地址</string>
+    <string name="contact_address_street_hint">街道地址</string>
+    <string name="contact_address_city">城市</string>
+    <string name="contact_address_state">省</string>
+    <string name="contact_address_postal_code">邮政编码</string>
+    <string name="contact_address_country">国家</string>
+</resources>

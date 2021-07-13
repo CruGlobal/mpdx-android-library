@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="androidx.lifecycle.LiveData" />
+        <import type="io.realm.RealmResults" />
+        <import type="org.mpdx.android.features.contacts.model.Person" />
+
+        <variable name="callbacks" type="org.mpdx.android.features.contacts.contactdetail.info.ContactInfoViewListener" />
+        <variable name="contact" type="org.mpdx.android.features.contacts.viewmodel.ContactViewModel" />
+        <variable name="primaryAddress" type="org.mpdx.android.features.contacts.viewmodel.AddressViewModel" />
+        <variable name="primaryEmailAddress" type="LiveData&lt;org.mpdx.android.features.contacts.model.EmailAddress&gt;" />
+        <variable name="people" type="LiveData&lt;RealmResults&lt;Person&gt;&gt;" />
+        <variable
+            name="viewModel"
+            type="org.mpdx.android.features.contacts.contactdetail.info.ContactInfoViewModel"/>
+
+    </data>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/shade_blue"
+                android:elevation="@dimen/cardview_default_elevation"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/contact_detail_call_action"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:drawableTop="@drawable/cru_icon_contact_call"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:onClick="@{() -> viewModel.onPhoneCallClicked()}"
+                    android:text="@string/call"
+                    android:textColor="@color/white"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white" />
+
+                <TextView
+                    android:id="@+id/contact_detail_text_action"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:drawableTop="@drawable/cru_icon_contact_text"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:onClick="@{() -> viewModel.onTextMessageClicked()}"
+                    android:text="@string/text"
+                    android:textColor="@color/white"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white" />
+
+                <TextView
+                    android:id="@+id/contact_detail_email_action"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:drawableTop="@drawable/cru_icon_contact_email"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:onClick="@{() -> callbacks.onEmailAddressClicked(primaryEmailAddress)}"
+                    android:text="@string/email"
+                    android:textColor="@color/white"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white" />
+
+                <TextView
+                    android:id="@+id/contact_detail_directions_action"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:drawableTop="@drawable/cru_icon_contact_directions"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:onClick="@{() -> callbacks.openDirectionsTo(primaryAddress.model)}"
+                    android:text="@string/directions"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contacts_view_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/contacts_details_margin_left"
+                android:layout_marginLeft="@dimen/contacts_details_margin_left"
+                android:layout_marginEnd="@dimen/contacts_details_margin_right"
+                android:layout_marginRight="@dimen/contacts_details_margin_right"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/contacts_info_padding">
+
+                <TextView
+                    android:id="@+id/contact_members"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="22dp"
+                    android:text="@string/contact_view_members"
+                    android:textColor="@color/primary_blue"/>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:layout_height="320dp"
+                    android:background="@color/background_gray"
+                    app:visibleIf="@{people.size > 0}">
+
+                    <org.ccci.gto.android.common.viewpager.view.ChildHeightAwareViewPager
+                        android:id="@+id/people_viewpager"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="320dp" />
+
+                    <me.relex.circleindicator.CircleIndicator
+                        android:id="@+id/indicator"
+                        app:ci_drawable="@drawable/cru_pagination_selected"
+                        app:ci_drawable_unselected="@drawable/cru_pagination_unselected"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_gravity="bottom|center_horizontal"/>
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/contact_envelope_name_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/contact_view_envelope_name"
+                        android:textColor="@color/primary_blue"
+                        android:textSize="@dimen/contacts_small_text_size"/>
+
+                    <TextView
+                        android:id="@+id/contact_envelope_name_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="@{contact.envelopeGreeting}"
+                        tools:text="Elmo and Friends"
+                        android:textColor="@color/primary_gray"/>
+
+                    <TextView
+                        android:id="@+id/contact_greeting_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/contacts_info_margin_top"
+                        android:gravity="center_vertical"
+                        android:text="@string/contact_view_greeting"
+                        android:textColor="@color/primary_blue"
+                        android:textSize="@dimen/contacts_small_text_size"/>
+                    <TextView
+                        android:id="@+id/contact_greeting_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="@{contact.greeting}"
+                        tools:text="Hello! Elmo"
+                        android:textColor="@color/primary_gray"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/contact_primary_address_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="@dimen/contact_margin_bottom"
+                            android:text="@string/contact_view_primary_address"
+                            android:textColor="@color/primary_blue"
+                            android:textSize="@dimen/contacts_small_text_size"/>
+
+                        <TextView
+                            android:id="@+id/contact_street_address1_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{primaryAddress.model.line1}"
+                            android:onClick="@{() -> callbacks.onAddressClicked(primaryAddress.model)}"
+                            android:textColor="@color/primary_gray"
+                            android:textSize="@dimen/contacts_info_text_size"
+                            tools:text="123 Sesame St."
+                            app:strikethroughIf="@{primaryAddress.isHistoric}" />
+
+                        <TextView
+                            android:id="@+id/contact_city_state_zip_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="@{() -> callbacks.onAddressClicked(primaryAddress.model)}"
+                            android:text='@{primaryAddress.model.line2}'
+                            android:textColor="@color/primary_gray"
+                            android:textSize="@dimen/contacts_info_text_size"
+                            tools:text="Muppetville, CA 54321"
+                            app:strikethroughIf="@{primaryAddress.isHistoric}" />
+
+                        <TextView
+                            android:id="@+id/contact_country_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="@{() -> callbacks.onAddressClicked(primaryAddress.model)}"
+                            android:text="@{primaryAddress.model.line3}"
+                            android:textColor="@color/primary_gray"
+                            android:textSize="@dimen/contacts_info_text_size"
+                            tools:text="USA"
+                            app:strikethroughIf="@{primaryAddress.isHistoric}" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tags_title"
+                            android:textColor="@color/primary_blue"
+                            android:textSize="@dimen/contacts_small_text_size"
+                            app:visibleIf="@{contact.tags.size > 0}" />
+
+                        <com.google.android.material.chip.ChipGroup
+                            android:id="@+id/tags"
+                            style="@style/Widget.Mpdx.Tags"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:theme="@style/Theme.Mpdx"
+                            app:chipLayout="@{@layout/widget_tags_tag}"
+                            app:chips="@{contact.tags}"
+                            app:visibleIf="@{contact.tags.size > 0}" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/contact_newsletter_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="@dimen/contact_margin_bottom"
+                            android:text="@string/contact_view_newsletter"
+                            android:textColor="@color/primary_blue"
+                            android:textSize="@dimen/contacts_small_text_size"/>
+
+                        <TextView
+                            android:id="@+id/contact_newsletter_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="@{contact.newsletter}"
+                            android:textColor="@color/primary_gray"
+                            android:textSize="@dimen/contacts_info_text_size"/>
+
+                        <TextView
+                            android:id="@+id/contact_partner_accounts_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="@dimen/contact_margin_bottom"
+                            android:text="@string/contact_view_partner_accounts"
+                            android:textColor="@color/primary_blue"
+                            android:textSize="@dimen/contacts_small_text_size"/>
+
+                        <TextView
+                            android:id="@+id/contact_partner_accounts_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.donorAccountNumbers}"
+                            android:textColor="@color/primary_gray"
+                            android:textSize="@dimen/contacts_info_text_size"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

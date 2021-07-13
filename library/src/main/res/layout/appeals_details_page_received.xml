@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="androidx.lifecycle.LiveData" />
+        <import type="org.mpdx.android.features.appeals.model.Appeal" />
+
+        <variable name="appeal" type="LiveData&lt;Appeal&gt;" />
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#F7F7F7"
+        android:paddingTop="5dp"
+        android:paddingBottom="1dp"
+        android:paddingRight="20dp"
+        android:paddingEnd="20dp" >
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:gravity="bottom|end"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="11sp"
+            android:textColor="#ABABAB"
+            android:text="@string/appeals_amount_received" />
+
+        <TextView
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:gravity="bottom|end"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="11sp"
+            android:textColor="#ABABAB"
+            android:text="@string/appeals_edit_commitment" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pledges"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:text="@string/appeals_totals"
+        android:background="#F7F7F7" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/white" >
+        <TextView android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#585254"
+            android:textSize="14sp"
+            android:text="@string/appeals_total_received_label" />
+
+        <TextView
+            android:id="@+id/appeals_total_text"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="@{appeal.pledgesReceivedNotProcessed}"
+            android:textColor="#05699B"
+            android:textSize="14sp"
+            app:currency="@{appeal.currency}" />
+    </LinearLayout>
+</LinearLayout>
+</layout>

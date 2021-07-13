@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_new_task"
+        android:icon="@drawable/cru_icon_tasks"
+        android:title="@string/fab_new_task" />
+    <item
+        android:id="@+id/action_log_task"
+        android:icon="@drawable/cru_icon_pencil"
+        android:title="@string/fab_log_task"/>
+    <item
+        android:id="@+id/action_new_donation"
+        android:icon="@drawable/cru_icon_donations"
+        android:title="@string/fab_new_donation" />
+</menu>

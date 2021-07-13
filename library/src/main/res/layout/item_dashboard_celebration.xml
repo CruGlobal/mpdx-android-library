@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="androidx.databinding.ObservableField" />
+        <import type="org.mpdx.android.features.contacts.people.PersonSelectedListener" />
+
+        <variable name="selectedListener" type="ObservableField&lt;PersonSelectedListener&gt;" />
+        <variable name="isBirthDay" type="Boolean" />
+        <variable name="person" type="org.mpdx.android.features.contacts.viewmodel.PersonViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/people_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="2dp"
+        android:minHeight="72dp"
+        android:onClick="@{() -> selectedListener.onPersonSelected(person.model)}">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@{isBirthDay ? @drawable/birthday_cake : @drawable/revolving_hearts}"
+            tools:src="@drawable/birthday_cake" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@{person.fullName}"
+            android:textSize="@dimen/contacts_info_text_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/people_secondary_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/avatar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/people_secondary_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="@{isBirthDay ? person.birthday : person.anniversary}"
+            android:textSize="@dimen/contacts_detail_small_textsize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/name"
+            app:layout_constraintStart_toStartOf="@id/name"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            tools:text="@tools:sample/lorem" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

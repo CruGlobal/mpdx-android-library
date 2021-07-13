@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="form_line_margin_vertical">8dp</dimen>
+    <dimen name="form_line_text_padding_horizontal">12dp</dimen>
+    <dimen name="form_section_elevation">1dp</dimen>
+
+    <color name="form_input_background">@color/white</color>
+
+    <style name="Widget.Mpdx.Form.Section.Fields" parent="">
+        <item name="android:background">@color/form_input_background</item>
+        <item name="android:elevation" tools:targetApi="lollipop">@dimen/form_section_elevation</item>
+    </style>
+
+    <style name="Widget.Mpdx.Form.Input.Base" parent="">
+        <item name="android:layout_marginTop">@dimen/form_line_margin_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/form_line_margin_vertical</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:paddingLeft">@dimen/form_line_text_padding_horizontal</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingRight">@dimen/form_line_text_padding_horizontal</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <!-- region Header -->
+    <style name="Widget.Mpdx.Form.Input.Header" parent="">
+        <item name="android:layout_marginTop">@dimen/form_line_margin_vertical</item>
+        <item name="android:textAppearance">?attr/textAppearanceCaption</item>
+        <item name="android:paddingLeft">@dimen/form_line_text_padding_horizontal</item>
+        <item name="android:paddingRight">@dimen/form_line_text_padding_horizontal</item>
+    </style>
+    <!-- endregion Header -->
+
+    <!-- region Text Input -->
+    <style name="Widget.Mpdx.Form.Input.Text.Layout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="android:layout_marginTop">@dimen/form_line_margin_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/form_line_margin_vertical</item>
+    </style>
+    <!-- endregion Text Input -->
+
+    <!-- region AutoComplete Input -->
+    <style name="Widget.Mpdx.Form.Input.Text.AutoComplete.Layout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+        <item name="android:layout_marginTop">@dimen/form_line_margin_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/form_line_margin_vertical</item>
+        <item name="endIconMode">none</item>
+    </style>
+    <!-- endregion AutoComplete Input -->
+
+    <!-- region Date Input -->
+    <style name="Widget.Mpdx.Form.Input.Date.Layout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="android:layout_marginTop">@dimen/form_line_margin_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/form_line_margin_vertical</item>
+        <item name="endIconDrawable">@drawable/ic_form_clear_circle_20dp</item>
+        <item name="endIconMode">clear_text</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Mpdx.Form.Input.Date</item>
+    </style>
+
+    <style name="Widget.Mpdx.Form.Input.Date.TextView" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox.Dense">
+        <item name="android:editable">false</item>
+        <item name="android:focusable">false</item>
+    </style>
+
+    <style name="ThemeOverlay.Mpdx.Form.Input.Date" parent="ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox.Dense">
+        <item name="editTextStyle">@style/Widget.Mpdx.Form.Input.Date.TextView</item>
+    </style>
+    <!-- endregion Date Input -->
+
+    <!-- region DropDown Input -->
+    <style name="Widget.Mpdx.Form.Input.DropDown.Layout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+        <item name="android:layout_marginTop">@dimen/form_line_margin_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/form_line_margin_vertical</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Mpdx.Form.Input.DropDown</item>
+    </style>
+
+    <style name="Widget.Mpdx.Form.Input.DropDown.TextView" parent="Widget.MaterialComponents.AutoCompleteTextView.OutlinedBox.Dense">
+        <item name="android:editable">false</item>
+        <item name="android:focusable">false</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="ThemeOverlay.Mpdx.Form.Input.DropDown" parent="ThemeOverlay.MaterialComponents.AutoCompleteTextView.OutlinedBox.Dense">
+        <item name="autoCompleteTextViewStyle">@style/Widget.Mpdx.Form.Input.DropDown.TextView</item>
+    </style>
+    <!-- endregion DropDown Input -->
+
+    <!-- region Action -->
+    <style name="Widget.Mpdx.Form.Input.Action" parent="Widget.Mpdx.Form.Input.Base" />
+    <!-- endregion Action -->
+</resources>

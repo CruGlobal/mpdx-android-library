@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">MPDX</string>
+    <string name="dashboard">대시보드</string>
+    <string name="tasks">업무</string>
+    <string name="contacts">연락처</string>
+    <string name="donations">기부</string>
+    <string name="dashboard_lowercase">대시보드</string>
+    <string name="donations_lowercase">기부</string>
+    <string name="contacts_lowercase">연락처</string>
+    <string name="tasks_lowercase">업무</string>
+    <string name="dashboard_overall_goal">%1$s 목표</string>
+    <string name="dashboard_account_label">내 계정 잔액</string>
+    <string name="connect_lowercase">연결</string>
+    <string name="care_commitments_lowercase">케어 및 투입액</string>
+    <!-- Tasks -->
+    <string name="current_tasks_lowercase">현재 업무</string>
+    <string name="task_history_lowercase">업무 기록</string>
+    <string name="no_contacts">연락처 없음</string>
+    <string name="multiple_contacts">여러 개의 연락처</string>
+    <string name="deleted">삭제됨</string>
+    <string name="overdue">기한 경과</string>
+    <string name="today">오늘</string>
+    <string name="tomorrow">내일</string>
+    <string name="upcoming">다음</string>
+    <string name="no_due_date">만기일 없음</string>
+    <string name="none">없음</string>
+    <string name="add">추가</string>
+    <string name="task_subject_hint">업무 제목을 입력하세요</string>
+    <string name="task_detail">업무 정보</string>
+    <string name="select_contact_hint">연락처</string>
+    <string name="date_hint">날짜</string>
+    <string name="edit">편집</string>
+    <string name="comments">댓글</string>
+    <string name="tags">태그</string>
+    <string name="alert">알림</string>
+    <string name="alert_definition_title">어떻게 알림을 받고 싶으세요?</string>
+    <string name="hours_label">시간:</string>
+    <string name="minutes_label">분:</string>
+    <string name="mode_label">모드:</string>
+    <string name="alert_mode_none">없음</string>
+    <string name="alert_mode_email">이메일</string>
+    <string name="alert_mode_mobile">모바일</string>
+    <string name="alert_mode_both">둘 다</string>
+    <plurals name="hours_unit">
+        <item quantity="other">%d시간</item>
+    </plurals>
+    <plurals name="minutes_unit">
+        <item quantity="other">%d분</item>
+    </plurals>
+    <string name="alert_status_text">%s 전</string>
+    <string name="alert_no_status">알림 설정 없음</string>
+    <string name="alert_grouped">%s 및 %d 이상</string>
+    <string name="hour_minute_mix">%d시간 %d분</string>
+    <string name="due_date">만기일</string>
+    <string name="call">전화</string>
+    <string name="text">텍스트</string>
+    <string name="todo">할 일</string>
+    <string name="talk_to_in_person">직접 대화</string>
+    <string name="no_action_set">액션 설정 없음</string>
+    <string name="letter">편지</string>
+    <string name="newsletter_physical">뉴스레터 - 실제</string>
+    <string name="newsletter_email">뉴스레터 - 이메일</string>
+    <string name="pre_call_letter">전화 전 편지</string>
+    <string name="reminder_letter">알림 편지</string>
+    <string name="support_letter">지원 편지</string>
+    <string name="thank">감사</string>
+    <string name="prayer_request">기도자 요청</string>
+    <string name="appointment">약속</string>
+    <string name="text_message">문자 메시지</string>
+    <string name="facebook_message">Facebook 메시지</string>
+    <string name="email">이메일</string>
+    <string name="complete">완료</string>
+    <string name="delete">삭제</string>
+    <string name="info">정보</string>
+    <string name="notes">메모</string>
+    <string name="contacts_edit">편집</string>
+    <string name="notes_save">메모 저장</string>
+    <string name="notes_canceled">메모 취소됨</string>
+    <string name="notes_cancel">취소</string>
+    <string name="task_deleted">업무 삭제됨</string>
+    <string name="task_completed">업무 완료됨</string>
+    <string name="no_phone_numbers">전화번호 없음</string>
+    <string name="no_email_addresses">이용할 수 있는 이메일 주소 없음</string>
+    <string name="no_email_client_found">발견된 이메일 클라이언트 없음</string>
+    <string name="task_added">업무 추가됨</string>
+    <string name="no_tags">태그 없음</string>
+    <string name="time_without_date">만기일을 선택하세요</string>
+    <string name="save">저장</string>
+    <string name="task_edited">업무 저장됨</string>
+    <string name="task_completed_error">작업이 로컬에 추가되어 나중에 동기화됩니다</string>
+    <string name="tasks_view_all">모두 보기</string>
+    <string name="tasks_empty">불러올 수 있는 완료된 작업이 없습니다.</string>
+    <!-- Contact Info -->
+    <string name="search_title">검색</string>
+    <string name="search_hint">이름으로 검색</string>
+    <string name="people">사람</string>
+    <!-- Contact Detail Tasks -->
+    <string name="contact_associated_tasks">연결된 업무</string>
+    <string name="contact_view_task_history">업무 기록 보기</string>
+    <string name="contact_new_task">새 업무</string>
+    <!-- Contact Detail Info -->
+    <string name="contact_view_members">가족</string>
+    <string name="contact_view_envelope_name">봉투 이름</string>
+    <string name="contact_view_greeting">인사</string>
+    <string name="contact_view_primary_address">주 주소</string>
+    <string name="contact_view_newsletter">뉴스레터</string>
+    <string name="contact_view_partner_accounts">파트너 계정</string>
+    <string name="contact_view_email">이메일</string>
+    <string name="contact_no_email">이메일 주소 없음</string>
+    <string name="contact_no_phone_number">전화번호 없음</string>
+    <string name="call_or_text">통화 또는 문자 메시지</string>
+    <string name="call_or_text_number">휴대폰 번호 %1$s(으)로 통화 또는 문자를 보낼까요?</string>
+    <!-- Donations -->
+    <string name="donation_view_donation_salary">급여 통화</string>
+    <string name="donation_view_tendered_salary">기부 통화</string>
+    <!-- Contact - Info Tab -->
+    <string name="contact_my_notes">내 메모</string>
+    <!-- Contact - Donation Tab -->
+    <string name="contact_view_more_donations">기부 더 보기</string>
+    <string name="contact_no_donation_date">날짜 불가</string>
+    <string name="donations_last_gifts">마지막 %d개 선물</string>
+    <!-- Fingerprint -->
+    <string name="cancel">취소</string>
+    <string name="ok">확인</string>
+    <string name="fingerprint_skip">건너뛰기</string>
+    <string name="overdue_or_due_today">기간 만료 또는 오늘까지</string>
+    <string name="commitments_unfulfilled">성취되지 않은 투입액</string>
+    <string name="care">주의</string>
+    <!-- Task Filters -->
+    <string name="filter">필터</string>
+    <string name="filter_contact_status">연락처 상태</string>
+    <string name="filter_action_type">행동 유형</string>
+    <string name="filter_contact_referrer">연락처 참조자</string>
+    <string name="filter_contact_church">연락처 교회</string>
+    <string name="filter_contact_likely_to_give">기부 가능성 있는 연락처</string>
+    <string name="filter_contact_timezone">연락처 표준시간대</string>
+    <string name="filter_task_contact_city">연락처 도시</string>
+    <string name="filter_task_contact_state">연락처 주</string>
+    <string name="toolbar_filter_tasks">업무 필터</string>
+    <!-- Onboarding -->
+    <string name="pin_and_fingerprint_verification">PIN 및 지문 인증</string>
+    <string name="pin_and_fingerprint_description">4자리 휴대폰 잠금 해제 코드를 설정하여 귀하의 정보와 개인 정보를 지키세요. 지문 기능이 있는 장치에서는 지문 옵션도 사용할 수 있습니다.</string>
+    <string name="pin_create">4자리 휴대폰 잠금 해제 코드를 만드세요</string>
+    <string name="confirm_pin">PIN 확인</string>
+    <string name="get_started">시작하기</string>
+    <string name="fingerprint_touch_sensor">PIN을 입력하고 센서를 터치하여 확인</string>
+    <string name="fingerprint_prompt">다음 잠금 해제에 지문을 사용할까요?</string>
+    <string name="fingerprint_help">지문 잠금 해제를 활성화하려면 휴대폰 잠금 해제 코드가 필요합니다.</string>
+    <string name="fingerprint_enrolled">지문 등록 성공!</string>
+    <string name="fingerprint_failed">이런, 다시 시도하세요!</string>
+    <string name="invalid_pin">유효한 PIN을 입력하세요</string>
+    <string name="incorrect_pin">잘못된 PIN 입력됨</string>
+    <string name="pin_enter">휴대폰 잠금 해제 코드를 입력하세요</string>
+    <string name="fingerprint_enabled">지문 활성화됨</string>
+    <string name="unlock_with_pin">PIN으로 잠금 해제</string>
+    <string name="use_fingerprint_on_device">PIN을 입력하거나 장치에 지문을 사용하여 잠금 해제</string>
+    <!-- Settings -->
+    <string name="settings">설정</string>
+    <string name="settings_lowercase">설정</string>
+    <string name="settings_logout">로그아웃</string>
+    <string name="settings_notifications">알림 설정</string>
+    <string name="settings_notifications_task_due">작업 기한</string>
+    <string name="settings_account_list">계정 목록</string>
+    <string name="version">버전</string>
+    <string name="change_account_list">계정 목록 변경</string>
+    <string name="change_account_list_dialog">계정을 %s(으)로 변경하시겠습니까? 현재 데이터가 삭제되고 새로운 계정으로 시작됩니다</string>
+    <string name="yes">예</string>
+    <string name="logout_dialog">로그아웃하시겠습니까?</string>
+    <string name="offline_error">오프라인일 때는 이 작업이 허용되지 않습니다</string>
+    <string name="current_account_list">현재 계정은 이미 %s에 설정되었습니다</string>
+    <string name="privacy_policy">개인정보 보호정책</string>
+    <!--CareCommittments-->
+    <string name="first_gift_not_received">%s 첫 선물을 받지 않았습니다</string>
+    <string name="gifts_not_received_label">받지 않은 선물</string>
+    <string name="partners_thirty_days_late">30일 늦은 %s 파트너</string>
+    <string name="partners_thirty_days_late_label">30일 늦은 파트너</string>
+    <string name="partners_sixty_days_late">60일 늦은 %s 파트너</string>
+    <string name="partners_sixty_days_late_label">60일 늦은 파트너</string>
+    <string name="days_since_last_newsletter">마지막 뉴스레터 이후 %s일</string>
+    <string name="days_since_last_newsletter_never">0개의 뉴스레터 전송됨</string>
+    <string name="days_since_last_newsletter_label">일(마지막 뉴스레터 이후 )</string>
+    <string name="birthdays_this_week_label">이번 주 생일</string>
+    <string name="anniversaries_this_week_label">이번 주 기념일</string>
+    <string name="care_commitment_titles"><![CDATA[주의 및 투입액]]></string>
+    <string name="connect_title">연결</string>
+    <string name="connect_screen_see_all">%s 전체 보기</string>
+    <!-- Appeals -->
+    <!-- Coaching -->
+    <!-- New Contact -->
+    <string name="contacts_add">완료</string>
+    <string name="contact_not_found">이런! 이 연결은 이 MPDX 계정에 존재하지 않습니다. 올바른 계정으로 바꾸거나 웹에서 이 연락처를 찾아보세요.</string>
+    <string name="okay">확인</string>
+    <!-- Help -->
+    <!-- Notifications -->
+    <!-- New Strings -->
+    <string name="balance_committed">%1$s   %2$s 지불됨</string>
+    <string name="balanced_received">%1$s   %2$s 수령함</string>
+    <plurals name="donation_frequency">
+        <item quantity="other">%d월마다</item>
+    </plurals>
+    <plurals name="donation_frequency_weeks">
+        <item quantity="other">%d주 마다</item>
+    </plurals>
+    <string name="message_auth_expired">세션이 종료됐습니다. 다시 로그인해주세요</string>
+    <string name="no_account_list_error_message">안녕하세요! 계정 설정이 완료되지 않은 것 같네요. 컴퓨터에서 mpdx.org에 접속하셔서 안내 (walkthrough)를 완료한 후에 다시 찾아 주세요. 감사합니다!</string>
+    <string name="no_default_account_list_error_message">이런! 계정에 누락된 사항이 있는 것 같네요. 컴퓨터에서 mpdx.org의 환경설정으로 이동해서 디폴트 계정 리스트를 선택해 주실 수 있나요? 마친 다음에 돌아와서 다시 시도해 주세요. 감사합니다!</string>
+    <string name="no_organization_or_default_account_list_error_message">흠. 아직 어느 조직에도 소속되어 있지 않은 것 같군요. MPDX.org의 설정에서 \"서비스 접속\"으로 이동해서 조직을 추가한 다음, 다시 돌아와 주시겠어요? 감사합니다!</string>
+    <string name="no_notes_tap_to_edit">메모 없음 (탭해서 편집)</string>
+    <string name="notifications_task_due_channel_description">일부 액션에는 이 작업이 필요합니다</string>
+</resources>

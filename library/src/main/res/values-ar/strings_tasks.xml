@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Task Editor -->
+    <!-- Task Editor: To Rename -->
+    <string name="new_task">مهمة جديدة</string>
+    <string name="edit_task">تعديل مهمة</string>
+    <string name="log_task_label">دخول المهمة</string>
+    <string name="task_subject">موضوع المهمة</string>
+    <string name="time_hint">الزمن</string>
+    <string name="activity_type_hint">نوع النشاط</string>
+    <string name="tags_hint">وسوم</string>
+    <string name="add_comment_hint">إضافة تعليق</string>
+    <string name="log_task_completed_date_string">تاريخ تام</string>
+    <string name="task_without_date_and_time">يرجى تحديد تاريخ و زمن إنتهاء المهمة</string>
+    <string name="log_task_in_future_error">يرجى تحديد زمن و تاريخ ليس في الماضي من أجل دخول المهمة.</string>
+</resources>

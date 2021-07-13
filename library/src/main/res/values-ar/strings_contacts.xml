@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Contact Editor -->
+    <string name="contact_editor_title_new">جهة اتصال جديدة</string>
+    <string name="contact_editor_section_commitment">إيداع</string>
+    <string name="contact_editor_hint_name">اللقب، الإسم</string>
+    <string name="contact_editor_error_contact_name_blank">يجب إدخال اسم للحفظ!</string>
+    <string name="contact_editor_error_email_blank">يجب إدخال عنوان إلكتروني للحفظ!</string>
+    <string name="contact_editor_error_phone_blank">يجب إدخال رقم الهاتف للحفظ!</string>
+    <!-- Contact Editor: To Rename -->
+    <string name="contact_commitment_amount">أدخل المبلغ</string>
+    <string name="contact_commitment_currency">تحديد العملة</string>
+    <string name="contact_select_commitment_frequency">حدّد تواتر الإيداع</string>
+    <string name="contact_commitment_received_lowercase">تم استلام الإيداع</string>
+    <string name="contact_likely_text">منحهم محتمل</string>
+    <string name="contact_address_communications">الإتصالات</string>
+    <string name="contact_address_greeting">التحية</string>
+    <string name="contact_address_envelope_name">اسم الظرف</string>
+    <string name="contact_address_appeal">طلب</string>
+    <string name="new_contact_phone_hint">إضافة هاتف</string>
+    <string name="new_contact_email_hint">إضافة إيميل</string>
+    <string name="contact_address_street_hint">عنوان الشارع</string>
+    <string name="contact_address_city">المدينة</string>
+    <string name="contact_address_state">المحافظة</string>
+    <string name="contact_address_postal_code">الرمز البريدي</string>
+    <string name="contact_address_country">البلد</string>
+</resources>

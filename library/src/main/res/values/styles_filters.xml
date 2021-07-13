@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Mpdx.Filters.Action.Badge" parent="Widget.MaterialComponents.Badge">
+        <item name="backgroundColor">@color/primary_yellow</item>
+    </style>
+
+    <style name="Theme.Mpdx.Filters.Action" parent="Theme.Mpdx">
+        <item name="badgeStyle">@style/Widget.Mpdx.Filters.Action.Badge</item>
+    </style>
+</resources>

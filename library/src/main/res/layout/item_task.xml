@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="org.threeten.bp.format.FormatStyle" />
+        <import type="org.mpdx.android.utils.DrawableUtils"/>
+
+        <variable name="task" type="org.mpdx.android.features.tasks.viewmodel.TaskViewModel" />
+        <variable name="resolver" type="org.mpdx.android.utils.StringResolver" />
+        <variable name="listener" type="org.mpdx.android.features.tasks.BaseTaskListener" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:foreground="?attr/selectableItemBackground"
+        android:minHeight="72dp"
+        android:onClick="@{() -> listener.toTaskDetail(task.model.id, task.type)}">
+
+        <ImageView
+            android:id="@+id/task_type_icon_image"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:src="@{DrawableUtils.getDrawableForActivity(task.type)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/cru_icon_contact_call"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/contact_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-light"
+            android:lines="1"
+            android:text="@{(task.contacts.size > 1) ? @plurals/task_details_contacts(task.contacts.size, task.contacts.size) : task.model.getContactNameText(resolver)}"
+            android:textColor="@color/primary_gray"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/description"
+            app:layout_constraintEnd_toStartOf="@id/dateBarrier"
+            app:layout_constraintStart_toEndOf="@id/task_type_icon_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:lines="2"
+            android:maxLines="2"
+            android:text="@{task.isSubjectHidden ? task.typeLabel : task.subject}"
+            android:textColor="@color/primary_gray"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/contact_name"
+            app:layout_constraintStart_toStartOf="@id/contact_name"
+            app:layout_constraintTop_toBottomOf="@id/contact_name"
+            tools:text="@tools:sample/lorem/random" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/dateBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="start"
+            app:constraint_referenced_ids="dueDate,dueTime,completedDate,completedTime" />
+
+        <androidx.constraintlayout.widget.Group
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="dueDate,dueTime"
+            app:visibleIf="@{!task.isCompleted &amp;&amp; task.dueDate != null}"
+            tools:visibility="gone" />
+
+        <TextView
+            android:id="@+id/dueDate"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@{task.dueDate}"
+            android:textColor="@color/shade_gray"
+            android:textSize="12sp"
+            app:dateStyle="@{FormatStyle.SHORT}"
+            app:layout_constraintBaseline_toBaselineOf="@id/contact_name"
+            app:layout_constraintBottom_toTopOf="@id/dueTime"
+            app:layout_constraintEnd_toStartOf="@id/actionsBarrier"
+            tools:text="10.5.16" />
+
+        <TextView
+            android:id="@+id/dueTime"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="sans-serif"
+            android:text="@{task.dueDate}"
+            android:textColor="@color/shade_gray"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@id/actionsBarrier"
+            app:layout_constraintTop_toBottomOf="@id/dueDate"
+            app:timeStyle="@{FormatStyle.SHORT}"
+            tools:text="4:00PM" />
+
+        <androidx.constraintlayout.widget.Group
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="completedDate,completedTime"
+            app:visibleIf="@{task.isCompleted &amp;&amp; task.completedAt != null}"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/completedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@{task.completedAt}"
+            android:textColor="@color/shade_gray"
+            android:textSize="12sp"
+            app:dateStyle="@{FormatStyle.SHORT}"
+            app:layout_constraintBaseline_toBaselineOf="@id/contact_name"
+            app:layout_constraintBottom_toTopOf="@id/completedTime"
+            app:layout_constraintEnd_toStartOf="@id/actionsBarrier"
+            tools:text="10.5.16" />
+
+        <TextView
+            android:id="@+id/completedTime"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="sans-serif"
+            android:text="@{task.completedAt}"
+            android:textColor="@color/shade_gray"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@id/actionsBarrier"
+            app:layout_constraintTop_toBottomOf="@id/completedDate"
+            app:timeStyle="@{FormatStyle.SHORT}"
+            tools:text="4:00PM" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/actionsBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="start"
+            app:constraint_referenced_ids="action_complete_task_image" />
+
+        <androidx.constraintlayout.widget.Group
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="task_check_image,action_complete_task_image"
+            app:visibleIf="@{!task.isCompleted}"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/task_check_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="@{() -> listener.onTaskCompleted(task.model.id)}"
+            android:padding="8dp"
+            android:src="@drawable/cru_icon_circlecheck"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Space
+            android:id="@+id/action_complete_task_image"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            app:layout_constraintBottom_toBottomOf="@id/task_check_image"
+            app:layout_constraintEnd_toEndOf="@id/task_check_image"
+            app:layout_constraintStart_toStartOf="@id/task_check_image"
+            app:layout_constraintTop_toTopOf="@id/task_check_image" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

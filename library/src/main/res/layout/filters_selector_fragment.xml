@@ -1,0 +1,101 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="org.mpdx.android.features.filter.model.Filter.Type" />
+
+        <variable name="filterActions" type="org.mpdx.android.features.filter.selector.BulkFilterActions" />
+        <variable name="type" type="org.mpdx.android.features.filter.model.Filter.Type" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".core.modal.ModalActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:theme="@style/ToolbarTheme"
+            android:title="@{type.label}"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:title="filter contact" />
+
+        <androidx.constraintlayout.widget.Group
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="selectHidden,selectActive,selectAll"
+            app:visibleIf="@{type == Type.CONTACT_STATUS}" />
+
+        <Button
+            android:id="@+id/selectHidden"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="15dp"
+            android:background="@color/primary_blue"
+            android:gravity="center"
+            android:onClick="@{() -> filterActions.toggleContactStatusFilters(false)}"
+            android:padding="10dp"
+            android:text="@string/contact_status_filter_all_hidden_button"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@id/selectActive"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <Button
+            android:id="@+id/selectActive"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/primary_blue"
+            android:gravity="center"
+            android:onClick="@{() -> filterActions.toggleContactStatusFilters(true)}"
+            android:padding="10dp"
+            android:text="@string/contact_status_filter_all_active_button"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@id/selectAll"
+            app:layout_constraintStart_toEndOf="@id/selectHidden"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <Button
+            android:id="@+id/selectAll"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/primary_blue"
+            android:gravity="center"
+            android:onClick="@{() -> filterActions.toggleAllFilters(true)}"
+            android:padding="10dp"
+            android:text="@string/contact_status_filter_all_button"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/selectActive"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/bulkActions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="selectHidden,selectActive,selectAll" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/filters"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bulkActions"
+        tools:listitem="@android:layout/simple_list_item_multiple_choice" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

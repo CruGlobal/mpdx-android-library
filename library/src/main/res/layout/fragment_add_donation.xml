@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/fragment_add_donation_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/fragment_add_donation_toolbar"
+            app:tabMode="fixed"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:theme="@style/ToolbarTheme"
+            app:title="@string/donation_add_title"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/donation_add_donation_details_header"
+                android:layout_marginTop="@dimen/add_task_item_margins"
+                android:textAllCaps="true"
+                android:textColor="@color/primary_blue"
+                android:textSize="14sp"/>
+
+            <EditText
+                android:id="@+id/donation_add_donation_details_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/add_task_item_margins"
+                android:background="@android:color/transparent"
+                android:hint="@string/donation_add_donation_details_amount_hint"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:textColor="@color/dark_gray"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/donation_add_donation_currency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/add_contact_item_margins"
+                android:background="@android:color/transparent"
+                android:hint="@string/donation_add_donation_details_currency"
+                android:maxLines="1"
+                android:textColor="@color/dark_gray"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/donation_add_donation_select_donor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/add_task_item_margins"
+                android:layout_marginTop="@dimen/add_task_item_margins"
+                android:background="@android:color/transparent"
+                android:hint="@string/donation_add_donation_details_select_donor"
+                android:maxLines="1"
+                android:textColor="@color/dark_gray"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/dark_gray"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/add_task_item_margins"
+                android:text="@string/donation_add_donation_date_header"
+                android:textAllCaps="true"
+                android:textColor="@color/primary_blue"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/donation_add_donation_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/add_task_item_margins"
+                android:background="@android:color/transparent"
+                android:hint="@string/donation_add_donation_date_hint"
+                android:drawableLeft="@drawable/cru_icon_calendar"
+                android:drawableStart="@drawable/cru_icon_calendar"
+                android:drawablePadding="@dimen/add_task_item_margins"
+                android:maxLines="1"
+                android:textColor="@color/dark_gray"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/add_task_item_margins"
+                android:background="@color/dark_gray"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/donation_add_donation_appeal_header"
+                android:layout_marginTop="@dimen/add_task_item_margins"
+                android:textAllCaps="true"
+                android:textColor="@color/primary_blue"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/donation_add_donation_appeal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/add_task_item_margins"
+                android:background="@android:color/transparent"
+                android:hint="@string/donation_add_donation_appeal_type_hint"
+                android:maxLines="1"
+                android:textColor="@color/dark_gray"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/donation_add_donation_appeal_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/add_task_item_margins"
+                android:background="@android:color/transparent"
+                android:hint="@string/donation_add_donation_appeal_amount_hint"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                android:maxLines="1"
+                android:textColor="@color/dark_gray"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/add_task_item_margins"
+                android:background="@color/dark_gray"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/donation_add_donation_designation_header"
+                android:layout_marginTop="@dimen/add_task_item_margins"
+                android:textAllCaps="true"
+                android:textColor="@color/primary_blue"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/donation_add_donation_designation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/add_task_item_margins"
+                android:background="@android:color/transparent"
+                android:hint="@string/donation_add_donation_designation_hint"
+                android:maxLines="1"
+                android:textColor="@color/dark_gray"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/add_task_item_margins"
+                android:background="@color/dark_gray"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/donation_add_donation_memo_header"
+                android:layout_marginTop="@dimen/add_task_item_margins"
+                android:textAllCaps="true"
+                android:textColor="@color/primary_blue"
+                android:textSize="14sp"/>
+
+            <EditText
+                android:id="@+id/donation_add_donation_memo_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/add_task_item_margins"
+                android:background="@android:color/transparent"
+                android:drawableStart="@drawable/cru_icon_add_filled_with_yellow"
+                android:drawableLeft="@drawable/cru_icon_add_filled_with_yellow"
+                android:drawablePadding="@dimen/add_task_item_margins"
+                android:hint="@string/donation_add_donation_memo_hint"
+                android:inputType="textMultiLine"
+                android:maxLength="150"
+                android:textSize="@dimen/add_task_body_text_size"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/add_task_item_margins"
+                android:background="@color/dark_gray"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+</FrameLayout>

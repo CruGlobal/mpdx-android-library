@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">MPDX</string>
+    <string name="dashboard">Dasbor</string>
+    <string name="tasks">Tugas</string>
+    <string name="contacts">Kontak</string>
+    <string name="donations">Donasi</string>
+    <string name="dashboard_lowercase">Dasbor</string>
+    <string name="donations_lowercase">Donasi</string>
+    <string name="contacts_lowercase">Kontak</string>
+    <string name="tasks_lowercase">Tugas</string>
+    <string name="dashboard_overall_goal">%1$s Goal</string>
+    <string name="dashboard_account_label">Saldo akun saya</string>
+    <string name="connect_lowercase">Hubungkan</string>
+    <string name="care_commitments_lowercase">Peduli &amp; Komitmen</string>
+    <!-- Tasks -->
+    <string name="current_tasks_lowercase">Tugas saat ini</string>
+    <string name="task_history_lowercase">Riwayat Tugas</string>
+    <string name="no_contacts">Tidak ada kontak</string>
+    <string name="multiple_contacts">Berbagai Kontak</string>
+    <string name="deleted">sudah dihapus</string>
+    <string name="overdue">TERLAMBAT</string>
+    <string name="today">HARI INI</string>
+    <string name="tomorrow">BESOK</string>
+    <string name="upcoming">AKAN DATANG</string>
+    <string name="no_due_date">TIDAK ADA TANGGAL JATUH TEMPO</string>
+    <string name="none">Tidak ada</string>
+    <string name="add">Tambah</string>
+    <string name="task_subject_hint">Masukkan subyek tugas</string>
+    <string name="task_detail">RINCIAN TUGAS</string>
+    <string name="select_contact_hint">Kontak</string>
+    <string name="date_hint">Tanggal</string>
+    <string name="edit">Edit</string>
+    <string name="comments">KOMENTAR</string>
+    <string name="tags">TAG</string>
+    <string name="alert">Alert</string>
+    <string name="alert_definition_title">Bagaimana Anda ingin diberitahu?</string>
+    <string name="hours_label">Jam:</string>
+    <string name="minutes_label">Menit:</string>
+    <string name="mode_label">Mode:</string>
+    <string name="alert_mode_none">Tidak ada</string>
+    <string name="alert_mode_email">Email</string>
+    <string name="alert_mode_mobile">Seluler</string>
+    <string name="alert_mode_both">Dua-duanya</string>
+    <plurals name="hours_unit">
+        <item quantity="other">%d jam</item>
+    </plurals>
+    <plurals name="minutes_unit">
+        <item quantity="other">%d menit</item>
+    </plurals>
+    <string name="alert_status_text">%s sebelumnya</string>
+    <string name="alert_no_status">Tidak ada notifikasi yang ditetapkan</string>
+    <string name="alert_grouped">%s dan %d lagi</string>
+    <string name="hour_minute_mix">%d jam %d menit</string>
+    <string name="due_date">JATUH TEMPO</string>
+    <string name="call">Panggil</string>
+    <string name="text">Teks</string>
+    <string name="todo">Harus dilakukan</string>
+    <string name="talk_to_in_person">Bicara secara lansung</string>
+    <string name="no_action_set">Tidak ada aksi ditetapkan</string>
+    <string name="letter">Surat</string>
+    <string name="newsletter_physical">Surat kabar - Fisik</string>
+    <string name="newsletter_email">Surat kabar - Email</string>
+    <string name="pre_call_letter">Surat pra panggilan</string>
+    <string name="reminder_letter">Surat Pengingat</string>
+    <string name="support_letter">Surat Pendukung</string>
+    <string name="thank">Terima kasih</string>
+    <string name="prayer_request">Permintaan doa</string>
+    <string name="appointment">Janji temu</string>
+    <string name="text_message">Pesan Teks</string>
+    <string name="facebook_message">Pesan facebook</string>
+    <string name="email">Email</string>
+    <string name="complete">Selesai</string>
+    <string name="delete">Hapus</string>
+    <string name="info">Info</string>
+    <string name="notes">Catatan</string>
+    <string name="contacts_edit">Edit</string>
+    <string name="notes_save">Simpan Catatan</string>
+    <string name="notes_canceled">Catatan Dibatalkan</string>
+    <string name="notes_cancel">Batal</string>
+    <string name="task_deleted">Tugas Dihapus</string>
+    <string name="task_completed">Tugas Selesai</string>
+    <string name="no_phone_numbers">Nomor telepon tidak tersedia</string>
+    <string name="no_email_addresses">Tidak ada alamat email yang tersedia</string>
+    <string name="no_email_client_found">Tidak ada email klien yang ditemukan</string>
+    <string name="task_added">Tugas Ditambahkan</string>
+    <string name="no_tags">Tidak ada tugas tersedia</string>
+    <string name="time_without_date">Silahkan pilih tanggal jatuh tempo</string>
+    <string name="save">Simpan</string>
+    <string name="task_edited">Tugas Disimpan</string>
+    <string name="task_completed_error">Tugas Anda diselesaikan secara lokal akan disinkronisasi nanti</string>
+    <string name="tasks_view_all">Tampilkan Semua</string>
+    <string name="tasks_empty">Tidak ada tugas selesai untuk dimuat.</string>
+    <!-- Contact Info -->
+    <string name="search_title">Cari</string>
+    <string name="search_hint">Cari berdasarkan nama</string>
+    <string name="people">Orang</string>
+    <!-- Contact Detail Tasks -->
+    <string name="contact_associated_tasks">TUGAS TERKAIT</string>
+    <string name="contact_view_task_history">Tampilkan riwayat tugas</string>
+    <string name="contact_new_task">Tugas Baru</string>
+    <!-- Contact Detail Info -->
+    <string name="contact_view_members">ANGGOTA RUMAH TANGGA</string>
+    <string name="contact_view_envelope_name">Nama Amplop</string>
+    <string name="contact_view_greeting">Salam</string>
+    <string name="contact_view_primary_address">Alamat utama</string>
+    <string name="contact_view_newsletter">Buletin</string>
+    <string name="contact_view_partner_accounts">Akun Mitra</string>
+    <string name="contact_view_email">Email</string>
+    <string name="contact_no_email">Tidak ada alamat email yang ditemukan</string>
+    <string name="contact_no_phone_number">Tidak ada nomor telepon yang ditemukan</string>
+    <string name="call_or_text">Panggil atau Pesan Teks</string>
+    <string name="call_or_text_number">Panggil atau pesan teks ke nomor %1$s?</string>
+    <!-- Donations -->
+    <string name="donation_view_donation_salary">Mata uang Gaji</string>
+    <string name="donation_view_tendered_salary">Mata uang Donasi</string>
+    <!-- Contact - Info Tab -->
+    <string name="contact_my_notes">CATATAN SAYA</string>
+    <!-- Contact - Donation Tab -->
+    <string name="contact_view_more_donations">Tampilkan donasi lainnya</string>
+    <string name="contact_no_donation_date">Tanggal Tidak tersedia</string>
+    <string name="donations_last_gifts">%d HADIAH TERAKHIR</string>
+    <!-- Fingerprint -->
+    <string name="cancel">Batal</string>
+    <string name="ok">OKE</string>
+    <string name="fingerprint_skip">Lewati</string>
+    <string name="overdue_or_due_today">TERLAMBAT ATAU JATUH TEMPO HARI INI</string>
+    <string name="commitments_unfulfilled">KOMITMEN TIDAK TERPENUHI</string>
+    <string name="care">PEDULI</string>
+    <!-- Task Filters -->
+    <string name="filter">Filter</string>
+    <string name="filter_contact_status">Status Kontak</string>
+    <string name="filter_action_type">Jenis Aksi</string>
+    <string name="filter_contact_referrer">Hubungi Perujuk</string>
+    <string name="filter_contact_church">Hubungi Gereja</string>
+    <string name="filter_contact_likely_to_give">Hubungi Kemungkinan Memberi</string>
+    <string name="filter_contact_timezone">Hubungi Zona waktu</string>
+    <string name="filter_task_contact_city">Hubungi Kota</string>
+    <string name="filter_task_contact_state">Hubungi Negara bagian</string>
+    <string name="toolbar_filter_tasks">Filter tugas</string>
+    <!-- Onboarding -->
+    <string name="pin_and_fingerprint_verification">PIN &amp; Verifikasi Sidik jari</string>
+    <string name="pin_and_fingerprint_description">Bantu kami untuk melindungi informasi &amp; privasi Anda dnegan menetapkan kode 4 digit untuk membuka ponsel. Pilihan sidik jari tersedia untuk perangkat dengan fitur sidik jari.</string>
+    <string name="pin_create">Silahkan tetapkan kode 4 digit untuk membuka ponsel</string>
+    <string name="confirm_pin">Konfirmasi pin</string>
+    <string name="get_started">Mulai</string>
+    <string name="fingerprint_touch_sensor">Masukkan PIN dan sentuh sensor untuk konfirmasi</string>
+    <string name="fingerprint_prompt">Gunakan sidik jari di masa yang akan datang untuk membuka?</string>
+    <string name="fingerprint_help">Kode membuka ponsel dibutuhkan untuk mengaktifkan sidik jari  untuk membuka kunci yang bisa digunakan</string>
+    <string name="fingerprint_enrolled">Sidik jari sudah berhasil didaftarkan!</string>
+    <string name="fingerprint_failed">Coba lagi!</string>
+    <string name="invalid_pin">Silahkan masukkan PIN yang valid</string>
+    <string name="incorrect_pin">PIN Salah</string>
+    <string name="pin_enter">Silahkan masukkan kode membuka ponsel Anda</string>
+    <string name="fingerprint_enabled">Sidik jari sudah diaktifkan</string>
+    <string name="unlock_with_pin">Buka dengan pin</string>
+    <string name="use_fingerprint_on_device">Masukkan PIN atau gunakan sidik jari pada perangkat untuk membuka</string>
+    <!-- Settings -->
+    <string name="settings">Pengaturan</string>
+    <string name="settings_lowercase">Pengaturan</string>
+    <string name="settings_logout">Keluar</string>
+    <string name="settings_notifications">Preferensi Notifikasi</string>
+    <string name="settings_notifications_task_due">Jatuh Tempo Tugas</string>
+    <string name="settings_account_list">Daftar Akun</string>
+    <string name="version">Versi</string>
+    <string name="change_account_list">Ubah daftar akun</string>
+    <string name="change_account_list_dialog">Anda yakin mau mengganti akun ke %s? Data saat ini akan dihapus dan disetor ke akun yang baru</string>
+    <string name="yes">Ya</string>
+    <string name="logout_dialog">Anda yakin ingin keluar?</string>
+    <string name="offline_error">Anda tidak diizinkan melakukan aksi ini saat offline</string>
+    <string name="current_account_list">Akun saat ini sudah ditetapkan ke %s</string>
+    <string name="privacy_policy">Kebijakan Privasi</string>
+    <!--CareCommittments-->
+    <string name="first_gift_not_received">%s hadiah pertama tidak diterima</string>
+    <string name="gifts_not_received_label">Hadiah tidak diterima</string>
+    <string name="partners_thirty_days_late">%s mitra terlambat 30 hari</string>
+    <string name="partners_thirty_days_late_label">Mitra terlambat 30 hari</string>
+    <string name="partners_sixty_days_late">%s mitra terlambat 60 hari</string>
+    <string name="partners_sixty_days_late_label">Mitra terlambat 60 hari</string>
+    <string name="days_since_last_newsletter">%s hari sejak surat kabar terakhir Anda</string>
+    <string name="days_since_last_newsletter_never">0 Buletin terkirim</string>
+    <string name="days_since_last_newsletter_label">hari sejak surat kabar terakhir Anda</string>
+    <string name="birthdays_this_week_label">Ulang tahun minggu ini</string>
+    <string name="anniversaries_this_week_label">Hari jadi minggu ini</string>
+    <string name="care_commitment_titles"><![CDATA[Peduli & Komitmen]]></string>
+    <string name="connect_title">Hubungkan</string>
+    <string name="connect_screen_see_all">Lihat semua %s</string>
+    <!-- Appeals -->
+    <!-- Coaching -->
+    <!-- New Contact -->
+    <string name="contacts_add">Selesai</string>
+    <string name="contact_not_found">Ups! Sepertinya kontak tidak ada dalam akun MPDX ini. Silakan beralih ke akun yang tepat atau cari akun ini di situs web.</string>
+    <string name="okay">Oke</string>
+    <!-- Help -->
+    <!-- Notifications -->
+    <!-- New Strings -->
+    <string name="balance_committed">%1$s   %2$s berkomitmen</string>
+    <string name="balanced_received">%1$s   %2$s diterima</string>
+    <plurals name="donation_frequency">
+        <item quantity="other">Setiap %d Bulan</item>
+    </plurals>
+    <plurals name="donation_frequency_weeks">
+        <item quantity="other">Setiap %d Minggu</item>
+    </plurals>
+    <string name="message_auth_expired">Sesi Anda sudah kedaluwarsa, silakan masuk kembali</string>
+    <string name="no_account_list_error_message">Halo! Sepertinya Anda belum selesai menyelesaikan akun. Kunjungi mpdx.org di komputer Anda, selesaikan walkthrough dan datang lagi. Terima kasih!</string>
+    <string name="no_default_account_list_error_message">Ups! Sepertinya ada yang kurang dengan akun Anda. Silakan ke preferensi di mpdx.org pada komputer Anda dan pilih daftar akun default, lalu kembali dan coba lagi. Terima kasih!</string>
+    <string name="no_organization_or_default_account_list_error_message">Hmm. Sepertinya Anda tidak terhubung dengan Organisasi. Kunjungi \"Layanan Hubungan\" pada Pengaturan MPDX.org, tambahkan Organisasi, lalu kembali ke sini. Terima kasih!</string>
+    <string name="no_notes_tap_to_edit">Tidak ada Catatan (Ketuk untuk Edit)</string>
+    <string name="notifications_task_due_channel_description">Beberapa aksi diperlukan untuk tugas ini</string>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Contact Editor -->
+    <string name="contact_editor_title_new">Kontak Baru</string>
+    <string name="contact_editor_section_commitment">KOMITMEN</string>
+    <string name="contact_editor_hint_name">Nama Belakang, Nama Depan</string>
+    <string name="contact_editor_error_contact_name_blank">Nama harus dimasukkan untuk menyimpan!</string>
+    <string name="contact_editor_error_email_blank">Alamat email harus dimasukkan untuk menyimpan!</string>
+    <string name="contact_editor_error_phone_blank">Nomor telepon harus dimasukkan untuk menyimpan!</string>
+    <!-- Contact Editor: To Rename -->
+    <string name="contact_commitment_amount">MASUKKAN JUMLAH</string>
+    <string name="contact_commitment_currency">PILIH MATA UANG</string>
+    <string name="contact_select_commitment_frequency">PILIH FREKUENSI KOMITMEN</string>
+    <string name="contact_commitment_received_lowercase">Komitmen diterima</string>
+    <string name="contact_likely_text">Kemungkinan memberi</string>
+    <string name="contact_address_communications">KOMUNIKASI</string>
+    <string name="contact_address_greeting">Salam</string>
+    <string name="contact_address_envelope_name">Nama Amplop</string>
+    <string name="contact_address_appeal">Naik banding</string>
+    <string name="new_contact_phone_hint">Tambah Telepon</string>
+    <string name="new_contact_email_hint">Tambah Email</string>
+    <string name="contact_address_street_hint">Alamat Jalan</string>
+    <string name="contact_address_city">Kota</string>
+    <string name="contact_address_state">Negara bagian</string>
+    <string name="contact_address_postal_code">Kode pos</string>
+    <string name="contact_address_country">Negara</string>
+</resources>

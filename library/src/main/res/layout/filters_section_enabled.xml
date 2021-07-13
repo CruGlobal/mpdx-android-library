@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="androidx.databinding.ObservableField" />
+        <import type="androidx.lifecycle.LiveData" />
+        <import type="org.mpdx.android.features.filter.model.Filter" />
+        <import type="org.mpdx.android.features.filter.selector.FilterActions" />
+        <import type="java.util.Map" />
+
+        <variable name="filterActions" type="ObservableField&lt;FilterActions&gt;" />
+        <variable name="enabledFilters" type="LiveData&lt;Map&lt;Filter,String&gt;&gt;" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp">
+
+        <TextView
+            android:id="@+id/enabled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:minHeight="48dp"
+            android:paddingBottom="4dp"
+            android:paddingTop="4dp"
+            android:text="@string/filters_selector_enabled_label"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_blue"
+            android:textSize="12sp"
+            app:visibleIf="@{enabledFilters.size > 0}"/>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/filters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/enabled"
+            app:chipCloseOnClickTag="@{(f) -> filterActions.toggleFilter((Filter) f, false)}"
+            app:chipLayout="@{@layout/widget_tags_tag_closeable}"
+            app:chips="@{enabledFilters}" />
+    </RelativeLayout>
+</layout>

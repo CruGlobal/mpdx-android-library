@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Contact Editor -->
+    <string name="contact_editor_title_new">Neuer Kontakt</string>
+    <string name="contact_editor_title_edit">Kontakt bearbeiten</string>
+    <string name="contact_editor_section_details">Details</string>
+    <string name="contact_editor_section_commitment">Spendenzusage</string>
+    <string name="contact_editor_section_addresses">Adressen</string>
+    <string name="contact_editor_section_people">Leute</string>
+    <string name="contact_editor_section_tags">Stichworte</string>
+    <string name="contact_editor_hint_locale">Sprache</string>
+    <string name="contact_editor_hint_name">Nachname, Vorname</string>
+    <string name="contact_editor_hint_newsletter">Rundbrief</string>
+    <string name="contact_editor_hint_status">MPE-Phase</string>
+    <string name="contact_editor_hint_person_first_name">Vorname</string>
+    <string name="contact_editor_hint_person_last_name">Nachname</string>
+    <string name="contact_editor_hint_address_location">Wohnort</string>
+    <string name="contact_editor_hint_address_primary">Bevorzugt</string>
+    <string name="contact_editor_hint_email">Emailadresse</string>
+    <string name="contact_editor_hint_email_primary">Bevorzugt</string>
+    <string name="contact_editor_hint_phone">Telefonnummer</string>
+    <string name="contact_editor_hint_phone_primary">Bevorzugt</string>
+    <string name="contact_editor_action_add_address">Adresse hinzufügen</string>
+    <string name="contact_editor_action_delete_address">Adresse löschen</string>
+    <string name="contact_editor_action_import_contact">Import aus dem Telefonbuch</string>
+    <string name="contact_editor_action_person_add">Person hinzufügen</string>
+    <string name="contact_editor_action_person_delete">Person löschen</string>
+    <string name="contact_editor_label_person_no_name">(kein Name)</string>
+    <string name="contact_editor_label_commitment_no_commitment">(keine Spendenzusage)</string>
+    <string name="contact_editor_unsaved_dialog">Die Änderungen wurden nicht gespeichert</string>
+    <string name="contact_editor_unsaved_dialog_action_save">Speichern</string>
+    <string name="contact_editor_unsaved_dialog_action_discard">Verwerfen</string>
+    <string name="contact_editor_errors_toast">Bitte vor dem Sichern die vorgegebenen Felder ausfüllen</string>
+    <string name="contact_editor_error_contact_name_blank">Der Name des Kontaktes darf nicht leer sein</string>
+    <string name="contact_editor_error_email_blank">Die Emailadresse darf nicht leer sein</string>
+    <string name="contact_editor_error_email_invalid">Ungültige Emailadresse</string>
+    <string name="contact_editor_error_person_first_name_blank">Der Vorname darf nicht leer sein</string>
+    <string name="contact_editor_error_phone_blank">Die Nummer darf nicht leer sein</string>
+    <!-- Contact Editor: To Rename -->
+    <string name="contact_commitment_amount">Betrag</string>
+    <string name="contact_commitment_currency">Währung</string>
+    <string name="contact_select_commitment_frequency">Spendenhäufigkeit</string>
+    <string name="contact_commitment_received_lowercase">Spendenzusage erhalten</string>
+    <string name="contact_likely_text">Spendet wahrscheinlich</string>
+    <string name="contact_address_communications">Nachrichten</string>
+    <string name="contact_address_greeting">Anrede</string>
+    <string name="contact_address_envelope_name">Name für Briefumschlag</string>
+    <string name="contact_address_appeal">Spendenaufruf</string>
+    <string name="contact_add_tags">Stichwort hinzufügen</string>
+    <string name="new_contact_phone_hint">Telefonnummer hinzufügen</string>
+    <string name="new_contact_email_hint">E-Mail-Adresse hinzufügen</string>
+    <string name="contact_address_street_hint">Anschrift</string>
+    <string name="contact_address_city">Stadt</string>
+    <string name="contact_address_state">Bundesland</string>
+    <string name="contact_address_postal_code">Postleitzahl</string>
+    <string name="contact_address_country">Land</string>
+</resources>

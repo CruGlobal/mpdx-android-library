@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class=".CommentItemBinding">
+        <import type="org.threeten.bp.format.FormatStyle" />
+
+        <variable name="comment" type="org.mpdx.android.features.tasks.viewmodel.CommentViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:id="@+id/comment_name_text"
+                tools:text="John Smith"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:fontFamily="sans-serif-medium"
+                android:text="@{comment.person.fullName}"
+                android:textColor="@color/primary_gray"
+                android:textSize="@dimen/task_detail_small_text_size"/>
+
+            <TextView
+                android:id="@+id/comment_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/comment_name_text"
+                android:layout_toRightOf="@+id/comment_name_text"
+                android:fontFamily="sans-serif-medium"
+                android:text="@{comment.commentTime}"
+                android:textColor="@color/primary_gray"
+                android:textSize="@dimen/task_detail_small_text_size"
+                app:timeStyle="@{FormatStyle.SHORT}"
+                tools:text="12:34 PM" />
+
+            <TextView
+                android:id="@+id/comment_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:fontFamily="sans-serif"
+                android:text="@{comment.commentTime}"
+                android:textColor="@color/primary_gray"
+                android:textSize="@dimen/task_detail_small_text_size"
+                app:dateStyle="@{FormatStyle.SHORT}"
+                tools:text="2.4.17" />
+
+            <View
+                android:id="@+id/comment_heading_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/comment_name_text"
+                android:layout_marginBottom="6dp"
+                android:layout_marginTop="6dp"
+                android:background="@color/tint_gray"/>
+
+            <TextView
+                android:id="@+id/comment_body_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/comment_heading_divider"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="@{comment.body}"
+                android:textColor="@color/primary_gray"
+                android:textSize="@dimen/task_detail_large_text_size"
+                tools:text="Lorem ipsum dolor sit amet, sit et elitr aperiri, qui te diceret constituto elaboraret. Alia oportere ius ea, fabulas interpretaris an per, vis dicam cetero ne." />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="17dp"
+            android:background="@color/tint_gray"/>
+
+    </LinearLayout>
+
+</layout>

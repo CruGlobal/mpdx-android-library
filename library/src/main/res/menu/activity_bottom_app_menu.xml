@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_dashboard"
+        android:icon="@drawable/bottom_nav_icon_dashboard"
+        android:title="@string/dashboard" />
+    <item
+        android:id="@+id/nav_task"
+        android:icon="@drawable/bottom_nav_icon_tasks"
+        android:title="@string/tasks" />
+    <item
+        android:id="@+id/nav_contacts"
+        android:icon="@drawable/bottom_nav_icon_contacts"
+        android:title="@string/contacts" />
+    <item
+        android:id="@+id/nav_donations"
+        android:icon="@drawable/bottom_nav_icon_donations"
+        android:title="@string/donations" />
+    <item
+        android:id="@+id/nav_notifications"
+        android:icon="@drawable/cru_icon_notifications"
+        android:title="@string/notifications" />
+    <item
+        android:id="@+id/nav_appeals"
+        android:icon="@drawable/cru_icon_appeals"
+        android:title="@string/appeals" />
+    <item
+        android:id="@+id/nav_coaching"
+        android:icon="@drawable/cru_icon_coaching"
+        android:title="@string/menu_title_coaching" />
+</menu>

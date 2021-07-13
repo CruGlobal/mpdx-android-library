@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Task Editor -->
+    <!-- Task Editor: To Rename -->
+    <string name="new_task">새 업무</string>
+    <string name="edit_task">업무 편집</string>
+    <string name="log_task_label">작업 로그하기</string>
+    <string name="task_subject">업무 제목</string>
+    <string name="time_hint">시간</string>
+    <string name="activity_type_hint">활동 유형</string>
+    <string name="tags_hint">태그</string>
+    <string name="add_comment_hint">댓글 추가</string>
+    <string name="log_task_completed_date_string">완료된 일자</string>
+    <string name="task_without_date_and_time">작업 완료 일자 및 시간을 선택해 주세요</string>
+    <string name="log_task_in_future_error">작업 로그를 위해 과거의 시간 및 날짜를 선택해 주세요.</string>
+</resources>

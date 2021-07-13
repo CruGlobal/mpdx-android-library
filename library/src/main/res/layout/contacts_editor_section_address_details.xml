@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="androidx.databinding.ObservableField" />
+        <import type="org.mpdx.android.features.constants.Constants" />
+        <import type="org.mpdx.android.features.contacts.contacteditor.ContactEditorCallbacks" />
+
+        <variable name="callbacks" type="ObservableField&lt;ContactEditorCallbacks&gt;" />
+        <variable name="contact" type="org.mpdx.android.features.contacts.viewmodel.ContactViewModel" />
+        <variable name="address" type="org.mpdx.android.features.contacts.viewmodel.AddressViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/Widget.Mpdx.Form.Section.Fields"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/contact_editor_section_margin_bottom"
+        android:paddingTop="@dimen/contact_editor_section_padding_top"
+        android:paddingBottom="@dimen/contact_editor_section_padding_bottom">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/marginStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/contact_editor_start_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/marginEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/contact_editor_end_margin" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/street"
+            style="@style/Widget.Mpdx.Form.Input.Text.Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/contact_address_street_hint"
+            app:layout_constraintEnd_toStartOf="@id/marginEnd"
+            app:layout_constraintStart_toStartOf="@id/marginStart"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:text="@={address.street}"
+                tools:text="123 Anywhere St." />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/city"
+            style="@style/Widget.Mpdx.Form.Input.Text.Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/contact_address_city"
+            app:layout_constraintEnd_toStartOf="@id/marginEnd"
+            app:layout_constraintStart_toStartOf="@id/marginStart"
+            app:layout_constraintTop_toBottomOf="@id/street">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text|textCapWords"
+                android:text="@={address.city}"
+                tools:text="@tools:sample/cities" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/state"
+            style="@style/Widget.Mpdx.Form.Input.Text.Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="@string/contact_address_state"
+            app:layout_constraintEnd_toStartOf="@id/postalCode"
+            app:layout_constraintStart_toStartOf="@id/marginStart"
+            app:layout_constraintTop_toBottomOf="@id/city"
+            app:layout_goneMarginEnd="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="text|textCapWords"
+                android:nextFocusForward="@id/postalCodeInput"
+                android:text="@={address.state}"
+                tools:text="NY" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/postalCode"
+            style="@style/Widget.Mpdx.Form.Input.Text.Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/contact_address_postal_code"
+            app:layout_constraintEnd_toEndOf="@id/marginEnd"
+            app:layout_constraintStart_toEndOf="@id/state"
+            app:layout_constraintTop_toBottomOf="@id/city">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/postalCodeInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:text="@={address.postalCode}"
+                tools:text="@tools:sample/us_zipcodes" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/country"
+            style="@style/Widget.Mpdx.Form.Input.Text.Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/contact_address_country"
+            app:layout_constraintEnd_toStartOf="@id/marginEnd"
+            app:layout_constraintStart_toStartOf="@id/marginStart"
+            app:layout_constraintTop_toBottomOf="@id/state">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text|textCapWords"
+                android:text="@={address.country}"
+                tools:text="@tools:sample/cities" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/location"
+            style="@style/Widget.Mpdx.Form.Input.DropDown.Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/contact_editor_hint_address_location"
+            app:layout_constraintEnd_toStartOf="@id/primary"
+            app:layout_constraintStart_toStartOf="@id/marginStart"
+            app:layout_constraintTop_toBottomOf="@id/country">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:completionThreshold="@{999999}"
+                android:text="@={address.location}"
+                app:dropDownItemLayout="@{@layout/mtrl_dropdown_menu_popup_item}"
+                app:dropDownItems="@{Constants.locationLabels}"
+                app:dropDownItemsIncludeEmpty="@{true}"
+                tools:text="Home" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Primary Address Control -->
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/primary"
+            style="@style/Widget.Mpdx.Contact.Editor.Input.RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/contact_editor_line_text_margin_horizontal"
+            android:layout_marginStart="16dp"
+            android:checked="@={address.primary}"
+            android:onCheckedChanged="@{(v, s) -> s ? callbacks.onSetPrimaryAddress(contact, address.model) : void}"
+            android:text="@string/contact_editor_hint_address_primary"
+            app:layout_constraintBottom_toBottomOf="@id/location"
+            app:layout_constraintEnd_toStartOf="@id/marginEnd"
+            app:layout_constraintStart_toEndOf="@id/location"
+            app:layout_constraintTop_toTopOf="@id/location"
+            app:suppressListenerWhileBinding="@{true}"
+            app:visibleIf="@{contact.addresses.size > 1}" />
+
+        <ImageView
+            android:id="@+id/delete"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:onClick="@{() -> callbacks.onDeleteAddress(contact, address.model)}"
+            app:layout_constraintBottom_toBottomOf="@id/delete_label"
+            app:layout_constraintEnd_toStartOf="@id/delete_label"
+            app:layout_constraintStart_toEndOf="@id/marginStart"
+            app:layout_constraintTop_toTopOf="@id/delete_label"
+            app:srcCompat="@drawable/ic_remove_circle"
+            app:tint="@color/primary_red" />
+
+        <TextView
+            android:id="@+id/delete_label"
+            style="@style/Widget.Mpdx.Form.Input.Action"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> callbacks.onDeleteAddress(contact, address.model)}"
+            android:text="@string/contact_editor_action_delete_address"
+            app:layout_constraintEnd_toStartOf="@id/marginEnd"
+            app:layout_constraintStart_toEndOf="@id/delete"
+            app:layout_constraintTop_toBottomOf="@id/location" />
+
+        <!-- Uneditable Address Behavior-->
+        <org.mpdx.android.base.widget.constraintlayout.EnabledHelper
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="@{address.isEditable}"
+            app:constraint_referenced_ids="street,city,state,postalCode,country"
+            tools:ignore="MissingConstraints" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/marginStart"
+            app:layout_constraintEnd_toEndOf="@id/marginEnd"
+            app:layout_constraintTop_toTopOf="@id/street"
+            app:layout_constraintBottom_toBottomOf="@id/country"
+            android:onClick="@{() -> callbacks.showUneditableAddressMessage()}"
+            app:visibleIf="@{!address.isEditable}" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

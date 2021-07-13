@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="isBinding" type="id" />
+    <item name="radioGroupBehavior" type="id" />
+
+    <item name="validationFocusListener" type="id" />
+
+    <item name="chipLayout" type="id" />
+    <item name="chipTag" type="id" />
+    <item name="chipIcon" type="id" />
+</resources>

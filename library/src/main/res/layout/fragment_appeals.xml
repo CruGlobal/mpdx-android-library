@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="androidx.databinding.ObservableField"/>
+        <import type="androidx.lifecycle.LiveData" />
+        <import type="io.realm.RealmResults" />
+        <import type="org.mpdx.android.features.appeals.AppealSelectedListener" />
+        <import type="org.mpdx.android.features.appeals.model.Appeal" />
+
+        <variable name="appealListener" type="ObservableField&lt;AppealSelectedListener>" />
+        <variable name="primaryAppeal" type="LiveData&lt;Appeal&gt;" />
+        <variable name="otherAppeals" type="LiveData&lt;RealmResults&lt;Appeal&gt;&gt;" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/appeals_toolbar"
+                app:titleTextColor="@color/dark_blue"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="@string/appeals_lowercase" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/primary_appeal_heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F7F7F7"
+                    android:paddingStart="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="6dp"
+                    android:text="@string/primary_appeals_title"
+                    android:textColor="#ABABAB"
+                    android:textSize="12sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <include
+                    android:id="@+id/primary_appeal_view"
+                    layout="@layout/view_appeal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:appeal="@{primaryAppeal}"
+                    app:layout_constraintTop_toBottomOf="@id/primary_appeal_heading"
+                    app:listener="@{appealListener}" />
+
+                <TextView
+                    android:id="@+id/other_appeals_heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F7F7F7"
+                    android:paddingStart="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="6dp"
+                    android:text="@string/secondary_appeals_title"
+                    android:textColor="#ABABAB"
+                    android:textSize="12sp"
+                    app:layout_constraintTop_toBottomOf="@id/primary_appeal_view" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/other_appeals_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/other_appeals_heading"
+                    tools:listitem="@layout/view_appeal" />
+
+                <TextView
+                    android:id="@+id/no_appeals"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/appeals_empty"
+                    app:visibleIf="@{primaryAppeal == null &amp;&amp; otherAppeals.size() == 0}"
+                    tools:visibility="gone" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/primary_appeal_views"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="primary_appeal_heading,primary_appeal_view"
+                    app:visibleIf="@{primaryAppeal != null}"
+                    tools:visibility="gone" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/other_appeals_views"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="other_appeals_heading,other_appeals_view"
+                    app:visibleIf="@{otherAppeals.size() > 0}"
+                    tools:visibility="gone" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+</layout>

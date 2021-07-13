@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Contact Editor -->
+    <string name="contact_editor_title_new">nieuw contact</string>
+    <string name="contact_editor_section_commitment">toezegging</string>
+    <string name="contact_editor_hint_name">Achternaam, Voornaam</string>
+    <string name="contact_editor_error_contact_name_blank">Voer een naam in om op te slaan!</string>
+    <string name="contact_editor_error_email_blank">Voer het e-mailadres in om op te slaan!</string>
+    <string name="contact_editor_error_phone_blank">Voer een telefoonnummer in om op te slaan!</string>
+    <!-- Contact Editor: To Rename -->
+    <string name="contact_commitment_amount">BEDRAG INVOEREN</string>
+    <string name="contact_commitment_currency">VALUTA SELECTEREN</string>
+    <string name="contact_select_commitment_frequency">SELECTEER EEN TOEZEGGING VALUTA</string>
+    <string name="contact_commitment_received_lowercase">toezegging ontvangen</string>
+    <string name="contact_likely_text">geeft waarschijnlijk</string>
+    <string name="contact_address_communications">CORRESPONDENTIE</string>
+    <string name="contact_address_greeting">begroeting</string>
+    <string name="contact_address_envelope_name">enveloppe naam</string>
+    <string name="contact_address_appeal">verzoek</string>
+    <string name="new_contact_phone_hint">telefoon toevoegen</string>
+    <string name="new_contact_email_hint">e-mail toevoegen</string>
+    <string name="contact_address_street_hint">straatnaam</string>
+    <string name="contact_address_city">stad</string>
+    <string name="contact_address_state">staat</string>
+    <string name="contact_address_postal_code">postcode</string>
+    <string name="contact_address_country">land</string>
+</resources>

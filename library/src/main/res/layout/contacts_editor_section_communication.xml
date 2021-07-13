@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="org.mpdx.android.features.constants.Constants" />
+
+        <variable name="contact" type="org.mpdx.android.features.contacts.viewmodel.ContactViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/communication_header"
+            style="@style/Widget.Mpdx.Contact.Editor.Section.Header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/contact_editor_start_margin"
+            android:layout_marginLeft="@dimen/contact_editor_start_margin"
+            android:layout_marginEnd="@dimen/contact_editor_end_margin"
+            android:layout_marginRight="@dimen/contact_editor_end_margin"
+            android:text="@string/contact_address_communications" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/Widget.Mpdx.Form.Section.Fields"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/communication_header"
+            android:layout_marginBottom="@dimen/contact_editor_section_margin_bottom">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/marginStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/contact_editor_start_margin" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/marginEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/contact_editor_end_margin" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/greeting"
+                style="@style/Widget.Mpdx.Form.Input.Text.Layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/contact_address_greeting"
+                app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                app:layout_constraintStart_toStartOf="@id/marginStart"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={contact.greeting}"
+                    tools:text="@tools:sample/first_names" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/envelope_greeting"
+                style="@style/Widget.Mpdx.Form.Input.Text.Layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/contact_address_envelope_name"
+                app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                app:layout_constraintStart_toStartOf="@id/marginStart"
+                app:layout_constraintTop_toBottomOf="@id/greeting">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@={contact.envelopeGreeting}"
+                    tools:text="@tools:sample/full_names" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/locale"
+                style="@style/Widget.Mpdx.Form.Input.DropDown.Layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/contact_editor_hint_locale"
+                app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                app:layout_constraintStart_toStartOf="@id/marginStart"
+                app:layout_constraintTop_toBottomOf="@id/envelope_greeting">
+
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:completionThreshold="@{999999}"
+                    android:text="@={contact.locale}"
+                    app:dropDownItemLayout="@{@layout/mtrl_dropdown_menu_popup_item}"
+                    app:dropDownItems="@{Constants.localeNames}"
+                    app:dropDownItemsIncludeEmpty="@{true}"
+                    tools:text="English" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Send Appeals -->
+            <TextView
+                android:id="@+id/send_appeals_label"
+                style="@style/Widget.Mpdx.Contact.Editor.Input.Switch.Label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/contact_address_appeal"
+                app:layout_constraintEnd_toStartOf="@id/send_appeals"
+                app:layout_constraintStart_toStartOf="@id/marginStart"
+                app:layout_constraintTop_toBottomOf="@id/locale" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/send_appeals"
+                style="@style/Widget.Mpdx.Contact.Editor.Input.Switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@={!contact.noAppeals}"
+                app:layout_constraintBottom_toBottomOf="@id/send_appeals_label"
+                app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                app:layout_constraintStart_toEndOf="@id/send_appeals_label"
+                app:layout_constraintTop_toTopOf="@id/send_appeals_label" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</layout>

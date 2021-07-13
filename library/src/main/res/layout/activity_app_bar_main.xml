@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="?attr/actionBarSize"
+            app:layout_anchor="@+id/bottom_app_bar"
+            app:layout_anchorGravity="top|center"
+            app:layout_dodgeInsetEdges="top" />
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottom_app_bar"
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:minHeight="?attr/actionBarSize"
+            app:fabAlignmentMode="center"
+            app:fabAnimationMode="slide"
+            app:fabCradleMargin="1dp"
+            app:fabCradleRoundedCornerRadius="1dp"
+            app:menu="@menu/main_menu_bottom"
+            app:navigationIcon="@drawable/bottom_nav_icon_more" />
+
+
+        <io.github.yavski.fabspeeddial.FabSpeedDial
+            android:id="@+id/fab_speed_dial"
+            style="@style/Widget.Design.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/transparent"
+            android:elevation="1dp"
+            app:fabBackgroundTint="@color/primary_yellow"
+            app:fabGravity="bottom_start|bottom_end"
+            app:fabMenu="@menu/speed_dial"
+            app:layout_anchor="@+id/bottom_app_bar"
+            app:layout_anchorGravity="center"
+            app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
+            app:layout_dodgeInsetEdges="top"
+            app:miniFabBackgroundTint="@android:color/white"
+            app:miniFabDrawableTint="@color/primary_blue"
+            app:miniFabTitleTextColor="?attr/colorPrimaryDark" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

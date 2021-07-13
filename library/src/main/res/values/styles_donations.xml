@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- region Donations List -->
+    <style name="Widget.Mpdx.Donations.List.Tabs" parent="Widget.Mpdx.RecyclerTabLayout">
+        <item name="rtl_tabIndicatorColor">@color/primary_teal</item>
+        <item name="rtl_tabSelectedTextColor">@color/black</item>
+        <item name="rtl_tabTextAppearance">@style/TextAppearance.Mpdx.Donations.List.Tabs.Tab</item>
+    </style>
+
+    <style name="TextAppearance.Mpdx.Donations.List.Tabs.Tab" parent="TextAppearance.Mpdx.RecyclerTabLayout.Tab">
+        <item name="android:textColor">#99000000</item>
+    </style>
+    <!-- endregion Donations List -->
+</resources>

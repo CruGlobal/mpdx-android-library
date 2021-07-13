@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="androidx.databinding.ObservableField" />
+        <import type="org.mpdx.android.features.contacts.contacteditor.ContactEditorCallbacks" />
+
+        <variable name="callbacks" type="ObservableField&lt;ContactEditorCallbacks&gt;" />
+        <variable name="contact" type="org.mpdx.android.features.contacts.viewmodel.ContactViewModel" />
+        <variable name="person" type="org.mpdx.android.features.contacts.viewmodel.PersonViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/Widget.Mpdx.Form.Section.Fields"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/marginStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/contact_editor_start_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/marginEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/contact_editor_end_margin" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/first_name"
+            style="@style/Widget.Mpdx.Form.Input.Text.Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="@string/contact_editor_hint_person_first_name"
+            app:layout_constraintEnd_toStartOf="@id/last_name"
+            app:layout_constraintStart_toStartOf="@id/marginStart"
+            app:layout_constraintTop_toTopOf="parent"
+            app:validation="@{person.firstNameValidation}">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:nextFocusForward="@id/last_name_input"
+                android:text="@={person.firstName}"
+                tools:text="@tools:sample/first_names" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/last_name"
+            style="@style/Widget.Mpdx.Form.Input.Text.Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/contact_editor_hint_person_last_name"
+            app:layout_constraintEnd_toEndOf="@id/marginEnd"
+            app:layout_constraintStart_toEndOf="@id/first_name"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/last_name_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="@={person.lastName}"
+                tools:text="@tools:sample/last_names" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <org.ccci.gto.android.common.recyclerview.advrecyclerview.view.ExpandableStateImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="4dp"
+            android:onClick="@{() -> callbacks.onUpdatePersonVisibility(contact, person.model, false)}"
+            android:padding="8dp"
+            android:tint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/marginEnd"
+            app:layout_constraintTop_toTopOf="@id/first_name"
+            app:srcCompat="@drawable/ic_expand" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

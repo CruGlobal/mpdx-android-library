@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="callbacks" type="org.mpdx.android.features.contacts.contactdetail.notes.ContactNotesViewListener" />
+        <variable name="contact" type="org.mpdx.android.features.contacts.viewmodel.ContactViewModel" />
+        <variable name="viewModel" type="org.mpdx.android.features.contacts.contactdetail.notes.ContactDetailsNotesFragmentViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/contact_my_notes_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:paddingStart="10dp"
+            android:text="@string/contact_my_notes"
+            android:textColor="@color/primary_blue"
+            android:textSize="@dimen/contacts_detail_small_textsize"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <FrameLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/contact_note_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/no_notes_tap_to_edit"
+                    android:onClick="@{() -> callbacks.onNotesClicked()}"
+                    android:text="@{contact.notes}"
+                    android:textColor="@color/primary_gray"
+                    android:textSize="@dimen/contacts_detail_small_textsize"
+                    app:visibleIf="@{!viewModel.isEditing}" />
+
+                <EditText
+                    android:id="@+id/contact_note_editable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences|textAutoCorrect|textMultiLine"
+                    android:text="@={contact.notes}"
+                    android:textColor="@color/primary_gray"
+                    android:textSize="@dimen/contacts_detail_small_textsize"
+                    app:visibleIf="@{viewModel.isEditing}" />
+            </FrameLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/layout_save_notes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            tools:visibility="visible"
+            app:visibleIf="@{viewModel.isEditing}">
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_margin="1dp"
+                android:background="@color/primary_blue"
+                android:gravity="center|center_vertical"
+                android:onClick="@{() -> callbacks.onNotesCanceled()}"
+                android:text="@string/notes_cancel"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:id="@+id/btn_save_note"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_margin="1dp"
+                android:background="@color/primary_blue"
+                android:gravity="center|center_vertical"
+                android:onClick="@{() -> callbacks.onNotesSaved()}"
+                android:text="@string/notes_save"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

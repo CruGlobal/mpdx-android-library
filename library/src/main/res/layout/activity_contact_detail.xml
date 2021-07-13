@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <data>
+        <variable name="contact" type="org.mpdx.android.features.contacts.viewmodel.ContactViewModel" />
+        <variable name="presenter" type="org.mpdx.android.features.contacts.ContactsPresenter" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/contacts_detail_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/contacts_appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.AppBarOverlay">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/contacts_detail_toolbar"
+                    app:tabMode="fixed"
+                    android:layout_width="match_parent"
+                    android:layout_height="?android:attr/actionBarSize"
+                    android:theme="@style/ToolbarTheme"
+                    android:title="@string/contacts_lowercase"/>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <LinearLayout
+                android:id="@+id/contact_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" >
+
+                <include
+                    android:id="@+id/contact_header_include"
+                    layout="@layout/contact_view_header"
+                    app:contact="@{contact}"
+                    app:presenter="@{presenter}" />
+
+            </LinearLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/contacts_tab_layout"
+                app:tabMode="fixed"
+                style="@style/Contacts_TabLayoutTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/primary_blue"
+                android:elevation="6dp"
+                android:minHeight="?android:attr/actionBarSize"/>
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/contact_detail_swipe_refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <org.mpdx.android.base.widget.viewpager.NonSwipeableViewPager
+                    android:id="@+id/contacts_viewpager"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        </LinearLayout>
+
+        <io.github.yavski.fabspeeddial.FabSpeedDial
+            android:id="@+id/fab_speed_dial_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="45dp"
+            app:fabGravity="bottom_end"
+            app:fabMenu="@menu/speed_dial_contact"
+            app:miniFabBackgroundTint="@android:color/white"
+            app:miniFabDrawableTint="?attr/colorPrimaryDark"
+            app:miniFabTitleTextColor="?attr/colorPrimaryDark" />
+
+    </FrameLayout>
+</layout>

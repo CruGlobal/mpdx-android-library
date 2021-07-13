@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="org.threeten.bp.format.FormatStyle" />
+
+        <variable name="donation" type="org.mpdx.android.features.donations.viewmodel.DonationViewModel" />
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/donation_view_holder_spacing"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/donation_view_holder_padding_horizontal"
+        android:paddingLeft="@dimen/donation_view_holder_padding_horizontal"
+        android:paddingEnd="@dimen/donation_view_holder_padding_horizontal"
+        android:paddingRight="@dimen/donation_view_holder_padding_horizontal">
+
+        <TextView
+            android:id="@+id/donation_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{donation.donationDate}"
+            android:textColor="@color/primary_gray"
+            android:textSize="@dimen/donation_view_holder_date_text_size"
+            app:dateStyle="@{FormatStyle.MEDIUM}"
+            tools:text="@tools:sample/date/ddmmyy" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView
+                android:id="@+id/client_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@{donation.model.contact.name ?? donation.model.donorAccount.displayName}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/donation_view_holder_detail_text_size"
+                tools:text="@tools:sample/full_names" />
+
+            <TextView
+                android:id="@+id/tendered_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text='@{donation.convertedAmount}'
+                android:textColor="@color/primary_teal"
+                android:textSize="@dimen/donation_view_holder_detail_text_size"
+                app:currency="@{donation.convertedCurrency}"
+                tools:text="759.69 CAD" />
+
+            <TextView
+                android:id="@+id/donated_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text='@{donation.amount}'
+                android:textColor="@color/primary_teal"
+                android:textSize="@dimen/donation_view_holder_detail_text_size"
+                app:currency="@{donation.currency}"
+                tools:text="596.00 USD" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

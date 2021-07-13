@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Task Editor -->
+    <!-- Task Editor: To Rename -->
+    <string name="new_task">yeni görev</string>
+    <string name="edit_task">görevi düzenle</string>
+    <string name="log_task_label">Görevi Günlüğe Kaydet</string>
+    <string name="task_subject">GÖREV KONUSU</string>
+    <string name="time_hint">zaman</string>
+    <string name="activity_type_hint">etkinlik türü</string>
+    <string name="tags_hint">etiketler</string>
+    <string name="add_comment_hint">yorum ekle</string>
+    <string name="log_task_completed_date_string">Tamamlanma tarihi</string>
+    <string name="task_without_date_and_time">Lütfen görev tamamlanma tarihi ve zamanını seçin</string>
+    <string name="log_task_in_future_error">Lütfen Günlük Görevi için geçmişte olan bir zaman ve tarih seçin.</string>
+</resources>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="androidx.databinding.ObservableField" />
+        <import type="org.mpdx.android.features.contacts.contacteditor.ContactEditorCallbacks" />
+
+        <variable name="callbacks" type="ObservableField&lt;ContactEditorCallbacks&gt;" />
+        <variable name="person" type="org.mpdx.android.features.contacts.viewmodel.PersonViewModel" />
+        <variable name="email" type="org.mpdx.android.features.contacts.viewmodel.EmailAddressViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/Widget.Mpdx.Form.Section.Fields"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/marginStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/contact_editor_start_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/marginEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/contact_editor_end_margin" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email"
+            style="@style/Widget.Mpdx.Form.Input.Text.Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/contact_editor_hint_email"
+            android:enabled="@{email.editable}"
+            app:layout_constraintEnd_toStartOf="@id/primary"
+            app:layout_constraintStart_toStartOf="@id/marginStart"
+            app:layout_constraintTop_toTopOf="parent"
+            app:validation="@{email.emailValidation}">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:text="@={email.email}"
+                tools:text="user@example.com" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Primary Email Control -->
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/primary"
+            style="@style/Widget.Mpdx.Contact.Editor.Input.RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/contact_editor_line_text_margin_horizontal"
+            android:layout_marginStart="16dp"
+            android:checked="@={email.primary}"
+            android:onCheckedChanged="@{(v, s) -> s ? callbacks.onSetPrimaryEmailAddress(person, email.model) : void}"
+            android:text="@string/contact_editor_hint_email_primary"
+            app:layout_constraintBottom_toBottomOf="@id/delete"
+            app:layout_constraintEnd_toStartOf="@id/marginEnd"
+            app:layout_constraintStart_toEndOf="@id/email"
+            app:layout_constraintTop_toTopOf="@id/delete"
+            app:suppressListenerWhileBinding="@{true}"
+            app:visibleIf="@{person.emailAddresses.size > 1}" />
+
+        <ImageView
+            android:id="@+id/delete"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="@{() -> callbacks.onDeleteEmailAddress(person, email.model)}"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/email"
+            app:srcCompat="@drawable/ic_delete"
+            app:tint="@color/primary_red" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

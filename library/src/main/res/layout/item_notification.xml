@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="androidx.databinding.ObservableField" />
+        <import type="org.mpdx.android.features.notifications.list.OnNotificationSelectedListener" />
+        <import type="org.threeten.bp.format.FormatStyle" />
+
+        <variable name="notificationSelectedListener" type="ObservableField&lt;OnNotificationSelectedListener&gt;" />
+        <variable name="notification" type="org.mpdx.android.features.notifications.viewmodel.UserNotificationViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@{notification.isRead ? @color/background_gray : @color/white}"
+        android:minHeight="72dp"
+        android:onClick="@{() -> notificationSelectedListener.onNotificationSelected(notification.model)}"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/cru_icon_avatar"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/notification_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginEnd="0dp"
+            tools:src="@tools:sample/avatars"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/notification_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:gravity="bottom"
+            android:lines="1"
+            android:text="@{notification.notification.contact.name}"
+            android:textColor="@color/primary_blue"
+            android:textSize="16sp"
+            app:boldIf="@{!notification.isRead}"
+            app:layout_constraintBottom_toTopOf="@id/notification_content"
+            app:layout_constraintEnd_toStartOf="@id/notification_date"
+            app:layout_constraintStart_toEndOf="@id/avatar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/notification_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="1dp"
+            android:textStyle="bold"
+            android:text="@{notification.notification.date}"
+            android:textColor="@color/opacity_primary_gray_50"
+            android:textSize="12sp"
+            app:dateStyle="@{FormatStyle.SHORT}"
+            app:layout_constraintBaseline_toBaselineOf="@id/notification_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/notification_name"
+            tools:text="@tools:sample/date/mmddyy" />
+
+        <TextView
+            android:id="@+id/notification_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@{notification.notification.type.description}"
+            android:textColor="@color/opacity_primary_gray_50"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/notification_name"
+            app:layout_constraintTop_toBottomOf="@+id/notification_name"
+            tools:text="@tools:sample/lorem/random" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

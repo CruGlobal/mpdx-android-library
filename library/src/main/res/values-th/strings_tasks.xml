@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Task Editor -->
+    <!-- Task Editor: To Rename -->
+    <string name="new_task">งานใหม่</string>
+    <string name="edit_task">แก้ไขงาน</string>
+    <string name="log_task_label">บันทึกงาน</string>
+    <string name="task_subject">ชื่องาน</string>
+    <string name="time_hint">เวลา</string>
+    <string name="activity_type_hint">ประเภทกิจกรรม</string>
+    <string name="tags_hint">แท็ก</string>
+    <string name="add_comment_hint">เพิ่มความคิดเห็น</string>
+    <string name="log_task_completed_date_string">วันที่เสร็จสิ้น</string>
+    <string name="task_without_date_and_time">โปรดเลือกวันเวลาที่งานเสร็จสิ้น</string>
+    <string name="log_task_in_future_error">โปรดเลือกวันเวลาในอดีตสำหรับบันทึกงาน</string>
+</resources>

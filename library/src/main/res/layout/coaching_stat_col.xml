@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/coaching_stat_col_margin"
+    android:layout_marginRight="@dimen/coaching_stat_col_margin"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:layout_height="70dp">
+
+    <TextView
+        android:id="@+id/stat_col_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/primary_blue"
+        android:textSize="30sp"
+        tools:text="1999" />
+
+    <TextView
+        android:id="@+id/stat_col_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/primary_blue"
+        android:textSize="12sp"
+        tools:text="active" />
+</LinearLayout>

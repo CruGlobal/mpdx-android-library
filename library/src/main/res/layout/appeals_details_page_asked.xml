@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#F7F7F7"
+        android:paddingTop="5dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="1dp">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical" />
+
+         <TextView
+             android:layout_width="125dp"
+             android:layout_height="match_parent"
+             android:gravity="bottom|end"
+             android:layout_marginStart="10dp"
+             android:textSize="11sp"
+             android:textColor="#ABABAB"
+             android:text="@string/appeals_add_commitment" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/asked_contacts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:background="#E6E6E6"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+</RelativeLayout>
+</layout>

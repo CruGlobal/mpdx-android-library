@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Contact Editor -->
+    <string name="contact_editor_title_new">новый контакт</string>
+    <string name="contact_editor_section_commitment">платеж</string>
+    <string name="contact_editor_hint_name">Фамилия, имя</string>
+    <string name="contact_editor_error_contact_name_blank">Необходимо ввести имя для сохранения!</string>
+    <string name="contact_editor_error_email_blank">Необходимо ввести адрес эл. почты для сохранения!</string>
+    <string name="contact_editor_error_phone_blank">Необходимо ввести номер телефона для сохранения!</string>
+    <!-- Contact Editor: To Rename -->
+    <string name="contact_commitment_amount">ВВЕСТИ СУММУ</string>
+    <string name="contact_commitment_currency">ВЫБРАТЬ ВАЛЮТУ</string>
+    <string name="contact_select_commitment_frequency">ВЫБРАТЬ ЧАСТОТУ ПОЖЕРТВОВАНИЙ</string>
+    <string name="contact_commitment_received_lowercase">платеж получен</string>
+    <string name="contact_likely_text">способен на пожертвования</string>
+    <string name="contact_address_communications">СРЕДСТВА СВЯЗИ</string>
+    <string name="contact_address_greeting">приветствие</string>
+    <string name="contact_address_envelope_name">имя на конверте</string>
+    <string name="contact_address_appeal">просьба</string>
+    <string name="new_contact_phone_hint">добавить телефон</string>
+    <string name="new_contact_email_hint">добавить эл. почту</string>
+    <string name="contact_address_street_hint">почтовый адрес</string>
+    <string name="contact_address_city">город</string>
+    <string name="contact_address_state">регион</string>
+    <string name="contact_address_postal_code">индекс</string>
+    <string name="contact_address_country">страна</string>
+</resources>

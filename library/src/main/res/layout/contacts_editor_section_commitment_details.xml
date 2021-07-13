@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="org.mpdx.android.features.constants.Constants" />
+
+        <variable name="contact" type="org.mpdx.android.features.contacts.viewmodel.ContactViewModel" />
+        <variable name="visibility" type="org.mpdx.android.features.contacts.contacteditor.FormVisibilityViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/Widget.Mpdx.Form.Section.Fields"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/contact_editor_section_margin_bottom"
+        android:paddingTop="@dimen/contact_editor_section_padding_top"
+        android:paddingBottom="@dimen/contact_editor_section_padding_bottom">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/marginStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/contact_editor_start_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/marginEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/contact_editor_end_margin" />
+
+        <!-- Commitment Amount -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/amount"
+            style="@style/Widget.Mpdx.Form.Input.Text.Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="@string/contact_commitment_amount"
+            app:layout_constraintEnd_toStartOf="@id/currency"
+            app:layout_constraintStart_toStartOf="@id/marginStart"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginEnd="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:text="@={contact.commitmentAmount}"
+                tools:text="100" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:onClick="@{() -> visibility.toggleCommitment()}"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/amount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/marginEnd"
+            app:layout_constraintTop_toTopOf="@id/amount"
+            app:srcCompat="@drawable/ic_expand_less"
+            app:tint="@color/black"
+            tools:src="@drawable/ic_expand_more" />
+
+        <!-- Commitment Currency -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/currency"
+            style="@style/Widget.Mpdx.Form.Input.DropDown.Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/contact_commitment_currency"
+            app:layout_constraintBottom_toBottomOf="@id/amount"
+            app:layout_constraintEnd_toEndOf="@id/marginEnd"
+            app:layout_constraintStart_toEndOf="@id/amount"
+            app:layout_constraintTop_toTopOf="@id/amount">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:completionThreshold="@{999999}"
+                android:text="@={contact.commitmentCurrency}"
+                app:dropDownItemLayout="@{@layout/mtrl_dropdown_menu_popup_item}"
+                app:dropDownItems="@{Constants.currencyLabels}"
+                app:dropDownItemsIncludeEmpty="@{true}"
+                tools:text="USD" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Commitment Frequency -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/frequency"
+            style="@style/Widget.Mpdx.Form.Input.DropDown.Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/contact_select_commitment_frequency"
+            app:layout_constraintEnd_toEndOf="@id/marginEnd"
+            app:layout_constraintStart_toStartOf="@id/marginStart"
+            app:layout_constraintTop_toBottomOf="@id/amount">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:completionThreshold="@{999999}"
+                android:text="@={contact.commitmentFrequency}"
+                app:dropDownItemLayout="@{@layout/mtrl_dropdown_menu_popup_item}"
+                app:dropDownItems="@{Constants.commitmentFrequencyLabels}"
+                app:dropDownItemsIncludeEmpty="@{true}"
+                tools:text="Monthly" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Commitment Received -->
+        <TextView
+            android:id="@+id/received_label"
+            style="@style/Widget.Mpdx.Contact.Editor.Input.Switch.Label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/contact_commitment_received_lowercase"
+            app:layout_constraintEnd_toStartOf="@id/received"
+            app:layout_constraintStart_toStartOf="@id/marginStart"
+            app:layout_constraintTop_toBottomOf="@id/frequency" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/received"
+            style="@style/Widget.Mpdx.Contact.Editor.Input.Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="@={contact.commitmentReceived}"
+            app:layout_constraintBottom_toBottomOf="@id/received_label"
+            app:layout_constraintEnd_toEndOf="@id/marginEnd"
+            app:layout_constraintStart_toEndOf="@id/received_label"
+            app:layout_constraintTop_toTopOf="@id/received_label" />
+
+        <!-- Likely to Give -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/likelyToGive"
+            style="@style/Widget.Mpdx.Form.Input.DropDown.Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/contact_likely_text"
+            app:layout_constraintEnd_toEndOf="@id/marginEnd"
+            app:layout_constraintStart_toStartOf="@id/marginStart"
+            app:layout_constraintTop_toBottomOf="@id/received_label">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:completionThreshold="@{999999}"
+                android:text="@={contact.likelyToGive}"
+                app:dropDownItemLayout="@{@layout/mtrl_dropdown_menu_popup_item}"
+                app:dropDownItems="@{Constants.likelinessToGiveLabels}"
+                tools:text="Most Likely" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

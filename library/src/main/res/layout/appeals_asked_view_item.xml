@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="androidx.databinding.ObservableField" />
+        <import type="org.mpdx.android.features.appeals.model.AskedContact" />
+        <import type="org.mpdx.android.features.appeals.details.AddCommitmentListener" />
+
+        <variable name="callbacks" type="ObservableField&lt;AddCommitmentListener>" />
+        <variable name="contact" type="AskedContact" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:onClick="@{() -> callbacks.onAddCommitment(contact)}"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <ImageView
+            android:id="@+id/action_add_commitment"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@drawable/cru_icon_add_filled_with_yellow" />
+
+        <TextView
+            android:id="@+id/asked_contact_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/action_add_commitment"
+            android:text="@{contact.name}"
+            android:textColor="#585254"
+            android:textSize="14sp" />
+    </RelativeLayout>
+</layout>

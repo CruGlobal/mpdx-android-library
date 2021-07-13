@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Filter Selector -->
+    <!-- Filter Selector: To Rename -->
+    <string name="toolbar_filter_contacts">연락처 필터</string>
+    <string name="filter_by">필터</string>
+</resources>

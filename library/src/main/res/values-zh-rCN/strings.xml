@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">MPDX</string>
+    <string name="dashboard">显示板</string>
+    <string name="tasks">任务</string>
+    <string name="contacts">联系人</string>
+    <string name="donations">奉献支持</string>
+    <string name="dashboard_lowercase">显示板</string>
+    <string name="donations_lowercase">奉献支持</string>
+    <string name="contacts_lowercase">联系人</string>
+    <string name="tasks_lowercase">任务</string>
+    <string name="dashboard_overall_goal">%1$s目标</string>
+    <string name="dashboard_account_label">我的账户余额</string>
+    <string name="connect_lowercase">连接</string>
+    <string name="care_commitments_lowercase">关注并委身支持</string>
+    <!-- Tasks -->
+    <string name="current_tasks_lowercase">当前任务</string>
+    <string name="task_history_lowercase">任务历史</string>
+    <string name="no_contacts">无联系人</string>
+    <string name="multiple_contacts">多个联系人</string>
+    <string name="deleted">已删除</string>
+    <string name="overdue">逾期</string>
+    <string name="today">今天</string>
+    <string name="tomorrow">明天</string>
+    <string name="upcoming">即将到来</string>
+    <string name="no_due_date">无截止日期</string>
+    <string name="none">无</string>
+    <string name="add">添加</string>
+    <string name="task_subject_hint">请输入任务主题</string>
+    <string name="no_subject_description">%1$s %2$s</string>
+    <string name="task_detail">任务详情</string>
+    <string name="select_contact_hint">联系人</string>
+    <string name="date_hint">日期</string>
+    <string name="edit">编辑</string>
+    <string name="comments">评论</string>
+    <string name="tags">标签</string>
+    <string name="alert">警告</string>
+    <string name="alert_definition_title">你希望怎么被通知？</string>
+    <string name="hours_label">小时数</string>
+    <string name="minutes_label">分钟数</string>
+    <string name="mode_label">模式</string>
+    <string name="alert_mode_none">无</string>
+    <string name="alert_mode_email">电子邮件</string>
+    <string name="alert_mode_mobile">移动电话</string>
+    <string name="alert_mode_both">（两个）都</string>
+    <plurals name="hours_unit">
+        <item quantity="other">%d 小时数</item>
+    </plurals>
+    <plurals name="minutes_unit">
+        <item quantity="other">%d 分钟数</item>
+    </plurals>
+    <string name="alert_status_text">%s之前</string>
+    <string name="alert_no_status">未设定通知</string>
+    <string name="alert_grouped">%s 和 %d 更多</string>
+    <string name="hour_minute_mix">%d小时 %d分钟</string>
+    <string name="due_date">截止日期</string>
+    <string name="call">电话</string>
+    <string name="text">短信</string>
+    <string name="directions">方向</string>
+    <string name="todo">去做</string>
+    <string name="talk_to_in_person">见面谈</string>
+    <string name="no_action_set">未设定行动</string>
+    <string name="letter">信件</string>
+    <string name="newsletter_physical">代祷信－纸质信</string>
+    <string name="newsletter_email">代祷信－ 邮件</string>
+    <string name="pre_call_letter">电话谈话前的信件</string>
+    <string name="reminder_letter">提醒信</string>
+    <string name="support_letter">支持信</string>
+    <string name="thank">谢谢</string>
+    <string name="prayer_request">代祷事项</string>
+    <string name="appointment">预约</string>
+    <string name="text_message">短信</string>
+    <string name="facebook_message">facebook信息</string>
+    <string name="email">邮件</string>
+    <string name="complete">完成</string>
+    <string name="delete">删除</string>
+    <string name="info">信息</string>
+    <string name="notes">备注</string>
+    <string name="contacts_edit">编辑</string>
+    <string name="notes_save">保存备注</string>
+    <string name="notes_canceled">备注取消</string>
+    <string name="notes_cancel">取消</string>
+    <string name="task_deleted">任务已删除</string>
+    <string name="task_completed">任务完成</string>
+    <string name="no_phone_numbers">未找到可用电话号码</string>
+    <string name="no_email_addresses">未找到可用邮件地址</string>
+    <string name="no_email_client_found">未找到邮件客户</string>
+    <string name="task_added">任务已添加</string>
+    <string name="no_tags">没有可用标签</string>
+    <string name="time_without_date">请选择一个截止日期</string>
+    <string name="save">保存</string>
+    <string name="task_edited">任务保存</string>
+    <string name="task_completed_error">你的任务在本地已完成且将会被同步</string>
+    <string name="tasks_view_all">查看所有</string>
+    <string name="tasks_empty">没有完成的任务可加载</string>
+    <!-- Contact Info -->
+    <string name="search_title">搜索</string>
+    <string name="search_hint">按姓名搜索</string>
+    <string name="people">人</string>
+    <!-- Contact Detail Tasks -->
+    <string name="contact_associated_tasks">相关任务</string>
+    <string name="contact_view_task_history">浏览任务历史</string>
+    <string name="contact_new_task">新任务</string>
+    <!-- Contact Detail Info -->
+    <string name="contact_view_members">家庭成员</string>
+    <string name="contact_view_envelope_name">信封姓名</string>
+    <string name="contact_view_greeting">问候</string>
+    <string name="contact_view_primary_address">首要地址</string>
+    <string name="contact_view_newsletter">代祷信</string>
+    <string name="contact_view_partner_accounts">伙伴账户</string>
+    <string name="contact_view_email">邮件</string>
+    <string name="contact_no_email">未找到邮件地址</string>
+    <string name="contact_no_phone_number">未找到电话号码</string>
+    <string name="call_or_text">打电话或发短信</string>
+    <string name="call_or_text_number">拨打 or 发短信到移动电话号码 %1$s?</string>
+    <!-- Donations -->
+    <string name="donation_view_donation_salary">工资货币</string>
+    <string name="donation_view_tendered_salary">奉献货币</string>
+    <string name="donation_add_title">增加奉献支持</string>
+    <string name="donation_edit_title">查看/编辑奉献支持</string>
+    <string name="donation_add_donation_details_header">奉献详情</string>
+    <string name="donation_add_donation_details_amount_hint">奉献金额</string>
+    <string name="donation_add_donation_details_currency">货币 - %1$s</string>
+    <string name="donation_add_donation_details_currency_select">选择一种货币</string>
+    <string name="donation_add_donation_details_select_donor">选择奉献者（必须）</string>
+    <string name="donation_add_donation_date_header">奉献的日期</string>
+    <string name="donation_add_donation_date_hint">选择日期</string>
+    <string name="donation_add_donation_appeal_header">上诉（可选的）</string>
+    <string name="donation_add_donation_appeal_type_hint">上诉</string>
+    <string name="donation_add_donation_appeal_select">选择一个上诉</string>
+    <string name="donation_add_donation_appeal_amount_hint">上诉的金额（是全部金额就留空白）</string>
+    <string name="donation_add_donation_designation_header">指定（必须）</string>
+    <string name="donation_add_donation_designation_select">选择指定账户</string>
+    <string name="donation_add_donation_designation_hint">选择账户</string>
+    <string name="donation_add_donation_memo_header">备忘（可选的）</string>
+    <string name="donation_add_donation_memo_hint">增加备忘</string>
+    <string name="donation_saved">奉献已保存</string>
+    <string name="add_donation_no_amount">请输入金额</string>
+    <string name="add_donation_no_currency">选择一种货币</string>
+    <string name="add_donation_no_date">选择日期</string>
+    <string name="add_donation_no_donor">请选一个奉献者</string>
+    <string name="add_donation_no_designation">选择一个指定</string>
+    <string name="add_donation_error">你的任务在本地已保存且将会被同步</string>
+    <!-- Contact - Info Tab -->
+    <string name="contact_my_notes">我的笔记</string>
+    <!-- Contact - Donation Tab -->
+    <string name="contact_view_more_donations">查看更多奉献</string>
+    <string name="contact_no_donation_date">日期不可用</string>
+    <string name="donations_last_gifts">上一次 %d 奉献</string>
+    <!-- Fingerprint -->
+    <string name="cancel">取消</string>
+    <string name="ok">OK</string>
+    <string name="fingerprint_skip">跳过</string>
+    <string name="overdue_or_due_today">过期或今天到期</string>
+    <string name="commitments_unfulfilled">未兑现的委身支持</string>
+    <string name="care">关注</string>
+    <!-- Task Filters -->
+    <string name="filter">筛选</string>
+    <string name="filter_contact_status">联系人状态</string>
+    <string name="filter_action_type">行动类型</string>
+    <string name="filter_contact_referrer">联系推荐人</string>
+    <string name="filter_contact_church">联系人的教会</string>
+    <string name="filter_contact_likely_to_give">联系人可能会支持</string>
+    <string name="filter_contact_timezone">联系人时区</string>
+    <string name="filter_task_contact_city">联系人所在城市</string>
+    <string name="filter_task_contact_state">联系人所在省</string>
+    <string name="filter_task_tags">标签</string>
+    <string name="toolbar_filter_tasks">筛选任务</string>
+    <!-- Onboarding -->
+    <string name="pin_and_fingerprint_verification">密码和指纹验证</string>
+    <string name="pin_and_fingerprint_description">设置一个四位数字手机解锁密码以帮助我们保护你的个人信息和隐私。也可以在支持指纹的设备上设置指纹密码。</string>
+    <string name="pin_create">请设置四位数字手机解锁密码</string>
+    <string name="confirm_pin">确认密码</string>
+    <string name="get_started">开始</string>
+    <string name="fingerprint_touch_sensor">输入密码并触摸传感器来确认</string>
+    <string name="fingerprint_prompt">以后使用指纹验证</string>
+    <string name="fingerprint_help">启用指纹解锁需要你的手机解锁密码</string>
+    <string name="fingerprint_enrolled">指纹设置成功</string>
+    <string name="fingerprint_failed">哦，再试一次吧</string>
+    <string name="invalid_pin">请输入有效的密码</string>
+    <string name="incorrect_pin">输入的密码有误</string>
+    <string name="pin_enter">请输入你的手机解锁密码</string>
+    <string name="fingerprint_enabled">指纹启用</string>
+    <string name="unlock_with_pin">用密码解锁</string>
+    <string name="use_fingerprint_on_device">输入密码或使用指纹解锁</string>
+    <!-- Settings -->
+    <string name="settings">设置</string>
+    <string name="settings_lowercase">设置</string>
+    <string name="settings_logout">退出</string>
+    <string name="settings_notifications">通知偏好</string>
+    <string name="settings_notifications_task_due">任务到期</string>
+    <string name="settings_account_list">账户清单</string>
+    <string name="version">版本</string>
+    <string name="change_account_list">修改账户清单</string>
+    <string name="change_account_list_dialog">你确定要改变账户到 %s吗? 现有的数据会被删除，新账户会启用</string>
+    <string name="yes">是</string>
+    <string name="logout_dialog">您确定要退出吗？</string>
+    <string name="offline_error">离线时你不难进行这个操作</string>
+    <string name="current_account_list">目前的账户已经被设定为%s</string>
+    <string name="privacy_policy">隐私条款</string>
+    <!--CareCommittments-->
+    <string name="first_gift_not_received">%s 第一笔奉献支持未受到</string>
+    <string name="gifts_not_received_label">奉献支持未收到</string>
+    <string name="partners_thirty_days_late">%s 伙伴三十天逾期</string>
+    <string name="partners_thirty_days_late_label">伙伴30天逾期</string>
+    <string name="partners_sixty_days_late">%s 伙伴60天逾期</string>
+    <string name="partners_sixty_days_late_label">伙伴60天逾期</string>
+    <string name="days_since_last_newsletter">距你上一次发出代祷信%s天</string>
+    <string name="days_since_last_newsletter_never">0封代祷信发出</string>
+    <string name="days_since_last_newsletter_label">天距你上一次发出代祷信</string>
+    <string name="birthdays_this_week_label">本周生日</string>
+    <string name="anniversaries_this_week_label">本周的纪念日</string>
+    <string name="care_commitment_titles"><![CDATA[关注并委身支持]]></string>
+    <string name="connect_title">连接</string>
+    <string name="connect_screen_see_all">查看所有%s</string>
+    <!-- Appeals -->
+    <!-- Coaching -->
+    <!-- New Contact -->
+    <string name="contacts_add">完成</string>
+    <string name="contact_not_found">抱歉！看起来这个联系人不在MPDX的账户中。请切换到正确的账户在网上查找这个联系人。</string>
+    <string name="okay">okay</string>
+    <!-- Help -->
+    <string name="menu_title_help">帮助</string>
+    <string name="email_app_selection">选择一个邮件软件</string>
+    <!-- Notifications -->
+    <!-- New Strings -->
+    <string name="balance_committed">%1$s %2$s 承诺支持</string>
+    <string name="balanced_received">%1$s %2$s收到</string>
+    <plurals name="donation_frequency">
+        <item quantity="other">每 %d 月</item>
+    </plurals>
+    <plurals name="donation_frequency_weeks">
+        <item quantity="other">每 %d 周</item>
+    </plurals>
+    <string name="message_auth_expired">你的会话已过期，请重新登录</string>
+    <string name="no_account_list_error_message">你好！看起来你有没有完成你的账户设置。你可以在电脑上访问mpdx.org，完成设置过程，然后再来看看。谢谢。</string>
+    <string name="no_default_account_list_error_message">糟糕！看起来你的账户缺少一些信息。你可否在电脑上登录mpdx.org找到你的偏好设置然后选择一个默认账户清单？完成后，再来试试。谢谢。</string>
+    <string name="no_organization_or_default_account_list_error_message">看起来你没有连接到任何机构。你可否到MPDX.org里的设置里找“连接服务”，增加一个机构，然后再回来看看？谢谢</string>
+    <string name="log_task_result">结果（必填）</string>
+    <string name="log_task_result_hint_no_activity">先选择一个活动类型</string>
+    <string name="log_task_result_hint">结果类型</string>
+    <string name="log_task_next_action">下一步行动</string>
+    <string name="log_task_next_action_none">无</string>
+    <string name="no_notes_tap_to_edit">没有笔记（点击编辑）</string>
+    <string name="notifications_task_due_channel_description">这个任务要求一些行动</string>
+    <string name="contact_action_no_phone">抱歉，这个联系人没有可用的电话号码</string>
+    <string name="contact_action_no_email">抱歉，这个联系人没有可用的邮件地址</string>
+    <string name="contact_action_no_address">抱歉，这个联系人没有可用的地址</string>
+    <string name="fab_new_task">新任务</string>
+    <string name="fab_log_task">记录任务</string>
+    <string name="fab_new_donation">新奉献支持</string>
+</resources>

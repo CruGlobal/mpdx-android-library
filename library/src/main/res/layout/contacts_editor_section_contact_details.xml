@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="androidx.databinding.ObservableField" />
+        <import type="org.mpdx.android.features.constants.Constants" />
+        <import type="org.mpdx.android.features.contacts.contacteditor.ContactEditorCallbacks" />
+
+        <variable name="callbacks" type="ObservableField&lt;ContactEditorCallbacks&gt;" />
+        <variable name="contact" type="org.mpdx.android.features.contacts.viewmodel.ContactViewModel" />
+        <variable name="visibility" type="org.mpdx.android.features.contacts.contacteditor.FormVisibilityViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/Widget.Mpdx.Form.Section.Fields"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/contact_editor_section_margin_bottom"
+        android:paddingTop="@dimen/contact_editor_section_padding_top"
+        android:paddingBottom="@dimen/contact_editor_section_padding_bottom">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/marginStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/contact_editor_start_margin" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/marginEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/contact_editor_end_margin" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/import_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="@dimen/form_line_margin_vertical"
+            android:layout_marginRight="16dp"
+            android:onClick="@{() -> callbacks.importContact()}"
+            android:text="@string/contact_editor_action_import_contact"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:visibleIf="@{visibility.importContact}" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/name"
+            style="@style/Widget.Mpdx.Form.Input.Text.Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/contact_editor_hint_name"
+            app:layout_constraintEnd_toEndOf="@id/marginEnd"
+            app:layout_constraintStart_toStartOf="@id/marginStart"
+            app:layout_constraintTop_toBottomOf="@id/import_contact"
+            app:validation="@{contact.nameValidation}">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="@={contact.name}"
+                tools:text="@tools:sample/full_names" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/status"
+            style="@style/Widget.Mpdx.Form.Input.DropDown.Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/contact_editor_hint_status"
+            app:layout_constraintEnd_toEndOf="@id/marginEnd"
+            app:layout_constraintStart_toStartOf="@id/marginStart"
+            app:layout_constraintTop_toBottomOf="@id/name">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:completionThreshold="@{999999}"
+                android:text="@={contact.status}"
+                app:dropDownItemLayout="@{@layout/mtrl_dropdown_menu_popup_item}"
+                app:dropDownItems="@{Constants.statusValues}"
+                app:dropDownItemsIncludeEmpty="@{true}"
+                tools:text="Partner" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/newsletter"
+            style="@style/Widget.Mpdx.Form.Input.DropDown.Layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/contact_editor_hint_newsletter"
+            app:layout_constraintEnd_toEndOf="@id/marginEnd"
+            app:layout_constraintStart_toStartOf="@id/marginStart"
+            app:layout_constraintTop_toBottomOf="@id/status">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:completionThreshold="@{999999}"
+                android:text="@={contact.newsletter}"
+                app:dropDownItemLayout="@{@layout/mtrl_dropdown_menu_popup_item}"
+                app:dropDownItems="@{Constants.newsLetterOptionsValues}"
+                tools:text="Both" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

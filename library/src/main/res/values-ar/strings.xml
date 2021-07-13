@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">MPDX</string>
+    <string name="dashboard">لوحة التسيير</string>
+    <string name="tasks">مهام</string>
+    <string name="contacts">جهات الاتصال</string>
+    <string name="donations">تبرعات</string>
+    <string name="dashboard_lowercase">لوحة التسيير</string>
+    <string name="donations_lowercase">تبرعات</string>
+    <string name="contacts_lowercase">جهات الاتصال</string>
+    <string name="tasks_lowercase">مهام</string>
+    <string name="dashboard_overall_goal">%1$s هدف</string>
+    <string name="dashboard_account_label">رصيد حسابي</string>
+    <string name="connect_lowercase">اتصال</string>
+    <string name="care_commitments_lowercase">الرعاية و الإلتزامات</string>
+    <!-- Tasks -->
+    <string name="current_tasks_lowercase">المهام الحالية</string>
+    <string name="task_history_lowercase">تاريخ المهام</string>
+    <string name="no_contacts">لا جهات اتصال</string>
+    <string name="multiple_contacts">جهات اتصال متعددة</string>
+    <string name="deleted">محذوف</string>
+    <string name="overdue">متأخر</string>
+    <string name="today">اليوم</string>
+    <string name="tomorrow">غداً</string>
+    <string name="upcoming">القادم</string>
+    <string name="no_due_date">لا أجل محدد</string>
+    <string name="none">لا شيء</string>
+    <string name="add">إضافة</string>
+    <string name="task_subject_hint">أدخل موضوع المهمة</string>
+    <string name="task_detail">تفاصيل المهمة</string>
+    <string name="select_contact_hint">جهة اتصال</string>
+    <string name="date_hint">التاريخ</string>
+    <string name="edit">تعديل</string>
+    <string name="comments">تعليقات</string>
+    <string name="tags">وسوم</string>
+    <string name="alert">تنبيه</string>
+    <string name="alert_definition_title">كيف تريد أن يتم إشعارك؟</string>
+    <string name="hours_label">ساعات:</string>
+    <string name="minutes_label">دقائق:</string>
+    <string name="mode_label">النظام:</string>
+    <string name="alert_mode_none">لا شيء</string>
+    <string name="alert_mode_email">الإيميل</string>
+    <string name="alert_mode_mobile">الجوال</string>
+    <string name="alert_mode_both">كلاهما</string>
+    <plurals name="hours_unit">
+        <item quantity="one">%d ساعة</item>
+        <item quantity="other">%d ساعات</item>
+        <item quantity="few">%d ساعات</item>
+        <item quantity="many">%d ساعات</item>
+        <item quantity="two">%d ساعتين</item>
+        <item quantity="zero">%d ساعة</item>
+    </plurals>
+    <plurals name="minutes_unit">
+        <item quantity="one">%d دقيقة</item>
+        <item quantity="other">%d دقائق</item>
+        <item quantity="few">%d دقائق</item>
+        <item quantity="many">%d دقائق</item>
+        <item quantity="two">%d دقيقتين</item>
+        <item quantity="zero">%d دقيقة</item>
+    </plurals>
+    <string name="alert_status_text">%s قبل</string>
+    <string name="alert_no_status">‏‏لم يتم تعيين إشعار</string>
+    <string name="alert_grouped">%s و %d غيرها</string>
+    <string name="hour_minute_mix">%dسا %dد</string>
+    <string name="due_date">الأجل</string>
+    <string name="call">اتصال</string>
+    <string name="text">نص</string>
+    <string name="todo">للقيام</string>
+    <string name="talk_to_in_person">تحدث معه شخصياً</string>
+    <string name="no_action_set">‏‏لم يتم تعيين أمر</string>
+    <string name="letter">رسالة</string>
+    <string name="newsletter_physical">النشرة الدورية - النسخة المادية</string>
+    <string name="newsletter_email">النشرة الدورية - الإيميل</string>
+    <string name="pre_call_letter">رسائل ما قبل المكالمة</string>
+    <string name="reminder_letter">رسالة تذكيرية</string>
+    <string name="support_letter">رسالة دعم</string>
+    <string name="thank">شكراً</string>
+    <string name="prayer_request">طلب صلاة</string>
+    <string name="appointment">موعد</string>
+    <string name="text_message">رسالة نصية</string>
+    <string name="facebook_message">رسالة فيسبوك</string>
+    <string name="email">الإميل</string>
+    <string name="complete">اتمام</string>
+    <string name="delete">حذف</string>
+    <string name="info">معلومات</string>
+    <string name="notes">ملاحظات</string>
+    <string name="contacts_edit">تعديل</string>
+    <string name="notes_save">حفظ الملاحظة</string>
+    <string name="notes_canceled">تم إلغاء الملاحظات</string>
+    <string name="notes_cancel">إلغاء</string>
+    <string name="task_deleted">تم حذف المهمة</string>
+    <string name="task_completed">تمت المهمة</string>
+    <string name="no_phone_numbers">لا أرقام هواتف متوفرة</string>
+    <string name="no_email_addresses">لا عناوين إلكترونية متوفرة</string>
+    <string name="no_email_client_found">لا يوجد زبون إيميلات</string>
+    <string name="task_added">تمت إضافة المهمة</string>
+    <string name="no_tags">لا يوجد أية وسوم</string>
+    <string name="time_without_date">يرجى تحديد أجل</string>
+    <string name="save">حفظ</string>
+    <string name="task_edited">تم حفظ المهمة</string>
+    <string name="task_completed_error">لقد تم إتمام مهمتك محلياً و ستتم مزامنتها لاحقاُ</string>
+    <string name="tasks_view_all">مشاهدة الكل</string>
+    <string name="tasks_empty">لا مهام منجزة يمكن تحميلها .</string>
+    <!-- Contact Info -->
+    <string name="search_title">بحث</string>
+    <string name="search_hint">البحث بالإسم</string>
+    <string name="people">أشخاص</string>
+    <!-- Contact Detail Tasks -->
+    <string name="contact_associated_tasks">المهام المرتبطة</string>
+    <string name="contact_view_task_history">عرض تاريخ المهام</string>
+    <string name="contact_new_task">مهمة جديدة</string>
+    <!-- Contact Detail Info -->
+    <string name="contact_view_members">أفراد العائلة</string>
+    <string name="contact_view_envelope_name">اسم الظرف</string>
+    <string name="contact_view_greeting">التحية</string>
+    <string name="contact_view_primary_address">العنوان الرئيسي</string>
+    <string name="contact_view_newsletter">نشرة دورية</string>
+    <string name="contact_view_partner_accounts">حسابات الشريك</string>
+    <string name="contact_view_email">الإميل</string>
+    <string name="contact_no_email">لا توجد عناوين إلكترونية</string>
+    <string name="contact_no_phone_number">لا توجد أرقام هاتف</string>
+    <string name="call_or_text">اتصال أو رسالة نصية</string>
+    <string name="call_or_text_number">اتصل أو مراسلة الرقم %1$s؟</string>
+    <!-- Donations -->
+    <string name="donation_view_donation_salary">عملة الراتب</string>
+    <string name="donation_view_tendered_salary">عملة التبرع</string>
+    <!-- Contact - Info Tab -->
+    <string name="contact_my_notes">ملاحظاتي</string>
+    <!-- Contact - Donation Tab -->
+    <string name="contact_view_more_donations">مشاهدة مزيد من التبرعات</string>
+    <string name="contact_no_donation_date">التاريخ غير متوفر</string>
+    <string name="donations_last_gifts">آخر %d هدايا</string>
+    <!-- Fingerprint -->
+    <string name="cancel">إلغاء</string>
+    <string name="ok">موافق</string>
+    <string name="fingerprint_skip">تجاوز</string>
+    <string name="overdue_or_due_today">فات أجلها أو حل أجلها اليوم</string>
+    <string name="commitments_unfulfilled">الإيداع غير مكتمل</string>
+    <string name="care">اهتمام</string>
+    <!-- Task Filters -->
+    <string name="filter">فتلر</string>
+    <string name="filter_contact_status">وضعية جهة الإتصال</string>
+    <string name="filter_action_type">نوع العمل</string>
+    <string name="filter_contact_referrer">موجه جهة الإتصال</string>
+    <string name="filter_contact_church">الإتصال بالكنيسة</string>
+    <string name="filter_contact_likely_to_give">جهة الإتصال محتمل منحها</string>
+    <string name="filter_contact_timezone">المنطقة الزمنية لجهة الإتصال</string>
+    <string name="filter_task_contact_city">مدينة الإتصال</string>
+    <string name="filter_task_contact_state">ولاية الإتصال</string>
+    <string name="toolbar_filter_tasks">فلترة المهام</string>
+    <!-- Onboarding -->
+    <string name="pin_and_fingerprint_verification">التحقق من البصمة و رقم إثبات الهوية</string>
+    <string name="pin_and_fingerprint_description">ساعدنا في حماية معلوماتك و خصوصيتك بوضع كود فتح للجوال ذي 4 أرقام. خيار البصمة متوفر للأجهزة التي تتوفر على إمكانية البصمة.</string>
+    <string name="pin_create">الرجاء إنشاء كود لفتح الجوال بـ 4 أرقام</string>
+    <string name="confirm_pin">تأكيد رقم إثبات الهوية</string>
+    <string name="get_started">ابدأ</string>
+    <string name="fingerprint_touch_sensor">أدخل كود PIN و ألمس المجس للتأكيد</string>
+    <string name="fingerprint_prompt">هل تستعمل البصمة من أجل فتح مستقبلي؟</string>
+    <string name="fingerprint_help">كود فتح للجوال الخاص بك سيكون ضرورياً لتمكين الفتح بالبصمة بحيث يمكن استعماله</string>
+    <string name="fingerprint_enrolled">تم تسجيل البصمة بنجاح!</string>
+    <string name="fingerprint_failed">للأسف، حاول مجدداً!</string>
+    <string name="invalid_pin">يرجى إدخال رقم إثبات الشخصية صالح</string>
+    <string name="incorrect_pin">تم إدخال رقم إثبات الشخصية غير صحيح</string>
+    <string name="pin_enter">يُرجى إدخال كود فتح للجوال الخاص بك</string>
+    <string name="fingerprint_enabled">تم تفعيل البصمة</string>
+    <string name="unlock_with_pin">الفتح برقم إثبات الشخصية</string>
+    <string name="use_fingerprint_on_device">أدخل كود PIN أو استعمل البصمة على الجهاز للفتح</string>
+    <!-- Settings -->
+    <string name="settings">إعدادات</string>
+    <string name="settings_lowercase">إعدادات</string>
+    <string name="settings_logout">تسجيل الخروج</string>
+    <string name="settings_notifications">تفضيلات الإشعارات</string>
+    <string name="settings_notifications_task_due">أجل المهمة</string>
+    <string name="settings_account_list">قائمة الحسابات</string>
+    <string name="version">الإصدار</string>
+    <string name="change_account_list">تغيير قائمة الحسابات</string>
+    <string name="change_account_list_dialog">هل أنت متأكد من أنك ترغب في تغيير الحساب إلى %s؟
+سيتم حذف البيانات الحالية و سيبدأ التشغيل بالحساب الجديد</string>
+    <string name="yes">نعم</string>
+    <string name="logout_dialog">هل تريد فعلا تسجيل الخروج؟</string>
+    <string name="offline_error">لا يسمح لك بالقيام بهذه العملية خارج الشبكة</string>
+    <string name="current_account_list">الحساب الحالي مضبوط مسبقاً على %s</string>
+    <string name="privacy_policy">سياسة الخصوصية.</string>
+    <!--CareCommittments-->
+    <string name="first_gift_not_received">%s لم يتم استلام الهدية الأولى</string>
+    <string name="gifts_not_received_label">لم يتم استلام الهدايا</string>
+    <string name="partners_thirty_days_late">%s شريك متأخر بثلاثين يوماً</string>
+    <string name="partners_thirty_days_late_label">شركاء متأخرون بثلاثين يوماً</string>
+    <string name="partners_sixty_days_late">%s شريك متأخر بستين يوماً</string>
+    <string name="partners_sixty_days_late_label">شركاء متأخرون بستين يوماً</string>
+    <string name="days_since_last_newsletter">%s يوما ًمنذ آخر نشرة دورية لك</string>
+    <string name="days_since_last_newsletter_never">0 نشرات دورية تم إرسالها</string>
+    <string name="days_since_last_newsletter_label">يوما ًمنذ آخر نشرة دورية لك</string>
+    <string name="birthdays_this_week_label">تواريخ الميلاد لهذا الأسبوع</string>
+    <string name="anniversaries_this_week_label">أعياد  سنوية لهذا الأسبوع</string>
+    <string name="care_commitment_titles"><![CDATA[الإهتمام و الإيداعات]]></string>
+    <string name="connect_title">اتصال</string>
+    <string name="connect_screen_see_all">رؤية كل %s</string>
+    <!-- Appeals -->
+    <!-- Coaching -->
+    <!-- New Contact -->
+    <string name="contacts_add">تمّ</string>
+    <string name="contact_not_found">للأسف! يبدو أن جهة الاتصال هذه غير موجودة في حساب MPDX. يرجى الانتقال إلى حساب صحيح أو البحث عنها في الشبكة.</string>
+    <string name="okay">حسناً</string>
+    <!-- Help -->
+    <!-- Notifications -->
+    <!-- New Strings -->
+    <string name="balance_committed">%1$s %2$s  تم إيداعها</string>
+    <string name="balanced_received">%1$s  %2$s تم استلامها</string>
+    <plurals name="donation_frequency">
+        <item quantity="few">كل %d أشهر</item>
+        <item quantity="one">كل شهر</item>
+        <item quantity="zero">أبداً</item>
+        <item quantity="other">كل %d شهرا</item>
+        <item quantity="many">كل %d شهور</item>
+        <item quantity="two">كل %d شهرين</item>
+    </plurals>
+    <plurals name="donation_frequency_weeks">
+        <item quantity="one">كل أسبوع</item>
+        <item quantity="other">" كل %d أسابيع"</item>
+        <item quantity="zero">أبدا</item>
+        <item quantity="few">" كل %d أسابيع"</item>
+        <item quantity="many">" كل %d أسابيع"</item>
+        <item quantity="two">كل %d أسبوعين</item>
+    </plurals>
+    <string name="message_auth_expired">لقد إنتهت حصتك، الرجّاء إعادة تسجيل الدخول</string>
+    <string name="no_account_list_error_message">أنت هناك! يبدو أنك لم تكمل ضبط حسابك. يمكنك زيارة mpdx.org على حاسوبك، أكمل الخطوات، ثم تعال لرؤيتي مجدداً. شكراً!</string>
+    <string name="no_default_account_list_error_message">للأسف! يبدو أن هناك شيئا ينقص في حسابك. يمكنك الذهاب إلى تفضيلاتك على mpdx.org على حاسوبك و تحديد قائمة حساب افتراضية؟ بعد القيام بهذا، ارجع وحاول مجدداً. شكراً!</string>
+    <string name="no_organization_or_default_account_list_error_message">همممم. يبدو أنك غير متصل بأية منظمات. هل يمكنك الذهاب إلى \"ربط الخدمات\" في الإعدادات على MPDX.org، أضف منظمة، ثم ارجع بهذه الطريقة؟ شكراً!</string>
+    <string name="no_notes_tap_to_edit">لا ملاحظات (أنقر للتعديل)</string>
+    <string name="notifications_task_due_channel_description">بعض الأوامر إجبارية لهذه المهمة</string>
+</resources>

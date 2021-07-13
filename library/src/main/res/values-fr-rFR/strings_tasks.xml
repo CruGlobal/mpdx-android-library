@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Task Editor -->
+    <!-- Task Editor: To Rename -->
+    <string name="new_task">nouvelle tâche</string>
+    <string name="edit_task">modifier la tâche</string>
+    <string name="log_task_label">Consigner une tâche</string>
+    <string name="task_subject">SUJET DE LA TÂCHE</string>
+    <string name="time_hint">heure</string>
+    <string name="activity_type_hint">type d\'activité</string>
+    <string name="tags_hint">libellés</string>
+    <string name="add_comment_hint">ajouter un commentaire</string>
+    <string name="log_task_completed_date_string">Date achevée</string>
+    <string name="task_without_date_and_time">Veuillez sélectionner la date et l\'heure d\'achèvement de la tâche</string>
+    <string name="log_task_in_future_error">Veuillez sélectionner une date et une heure antérieure pour la consignation de la tâche.</string>
+</resources>

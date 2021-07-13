@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout2">
+
+    <data class=".ContactPeopleViewBinding">
+
+        <variable name="person" type="org.mpdx.android.features.contacts.viewmodel.PersonViewModel" />
+
+        <variable name="viewModel" type="org.mpdx.android.features.contacts.contactdetail.info.ContactInfoPeopleViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/contacts_info_margin_top"
+        android:padding="@dimen/contacts_info_padding">
+
+        <TextView
+            android:id="@+id/contact_person_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{person.fullName}"
+            android:textSize="@dimen/contact_detail_large_textsize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="John Doe" />
+
+        <TextView
+            android:id="@+id/contact_no_phone_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="@string/contact_no_phone_number"
+            android:textColor="@color/primary_blue"
+            android:textSize="@dimen/contacts_detail_small_textsize"
+            android:visibility="@{viewModel.noPhoneNumbersLabelVisibility}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contact_person_name_label"
+            tools:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/contact_person_phone_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginBottom="5dp"
+            android:text="@string/contact_view_phone"
+            android:textColor="@color/primary_blue"
+            android:textSize="12sp"
+            android:visibility="@{viewModel.phoneNumbersLabelVisibilty}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contact_person_name_label" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/contact_phone_number_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contact_person_phone_label"
+            app:spanCount="2"
+            tools:itemCount="4"
+            tools:listitem="@layout/contact_detail_info_phone_item" />
+
+        <View
+            android:id="@+id/person_boarder_view"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="@dimen/contacts_detail_small_textsize"
+            android:layout_marginEnd="@dimen/contacts_info_padding"
+            android:layout_marginRight="@dimen/contacts_info_padding"
+            android:layout_marginBottom="@dimen/contacts_small_text_size"
+            android:background="@color/shade_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contact_phone_number_recycler_view" />
+
+        <TextView
+            android:id="@+id/contact_no_emails_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/contact_no_email"
+            android:textColor="@color/primary_blue"
+            android:textSize="12sp"
+            android:visibility="@{viewModel.noEmailAddressesLabelVisibility}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/person_boarder_view"
+            tools:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/contact_email_label"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/contacts_info_layout_height"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/contact_view_email"
+            android:textColor="@color/primary_blue"
+            android:textSize="@dimen/contacts_detail_small_textsize"
+            android:visibility="@{viewModel.emailAddressesLabelVisibility}"
+            app:layout_constraintEnd_toStartOf="@+id/contact_social_media_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/person_boarder_view" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/contact_email_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:orientation="vertical"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toStartOf="@+id/contact_social_media_recycler_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contact_email_label"
+            tools:itemCount="3"
+            tools:listitem="@layout/contact_detail_info_email_item" />
+
+        <TextView
+            android:id="@+id/contact_social_media_label"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/contacts_info_layout_height"
+            android:layout_marginTop="8dp"
+            android:text="@string/contact_view_social_media"
+            android:textColor="@color/primary_blue"
+            android:textSize="@dimen/contacts_detail_small_textsize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/contact_email_label"
+            app:layout_constraintTop_toBottomOf="@id/person_boarder_view" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/contact_social_media_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:orientation="vertical"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/contact_email_recycler_view"
+            app:layout_constraintTop_toBottomOf="@id/contact_email_label"
+            tools:itemCount="3"
+            tools:listitem="@layout/contact_detail_info_facebook_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

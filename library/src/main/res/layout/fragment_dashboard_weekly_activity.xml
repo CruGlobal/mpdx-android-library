@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="viewModel" type="org.mpdx.android.features.dashboard.view.weekly_activity.WeeklyActivityViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:elevation="4dp"
+        app:cardCornerRadius="16dp"
+        app:contentPadding="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/weekly_activity_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/weekly_activity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/weekly_date_rang_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weekly_activity_label"
+                android:text="@{viewModel.weekDateText}"
+                tools:text="September 13 - 19 2020" />
+
+            <View
+                android:id="@+id/title_spacing"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/weekly_date_rang_value"
+                app:layout_constraintEnd_toStartOf="@id/completed_label"
+                app:layout_constraintHorizontal_weight="3"/>
+
+            <TextView
+                android:id="@+id/completed_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/completed"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toStartOf="@id/produced_label"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintStart_toEndOf="@id/title_spacing"
+                app:layout_constraintTop_toBottomOf="@id/weekly_date_rang_value" />
+
+            <TextView
+                android:id="@+id/produced_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/appointments_produced"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintStart_toEndOf="@id/completed_label"
+                app:layout_constraintTop_toBottomOf="@id/weekly_date_rang_value" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/title_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="379dp"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="title_spacing,completed_label,produced_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="99dp" />
+
+            <TextView
+                android:id="@+id/call_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/calls"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintTop_toBottomOf="@id/title_barrier"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/calls_completed_text" />
+
+            <TextView
+                android:id="@+id/calls_completed_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toStartOf="@id/calls_produced_text"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintStart_toEndOf="@id/call_label"
+                app:layout_constraintTop_toBottomOf="@id/title_barrier"
+                android:text="@{viewModel.callCompletedCount}"
+                tools:text="40" />
+
+            <TextView
+                android:id="@+id/calls_produced_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintStart_toEndOf="@id/calls_completed_text"
+                app:layout_constraintTop_toBottomOf="@id/title_barrier"
+                android:text="@{viewModel.callProducedCount}"
+                tools:text="3" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/first_row_barrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="call_label,calls_completed_text,calls_produced_text" />
+
+            <TextView
+                android:id="@+id/messages_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/messages"
+                android:layout_marginTop="8dp"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintTop_toBottomOf="@id/first_row_barrier"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/messages_completed_text" />
+
+            <TextView
+                android:id="@+id/messages_completed_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toStartOf="@id/messages_produced_text"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintStart_toEndOf="@id/messages_label"
+                app:layout_constraintTop_toBottomOf="@id/first_row_barrier"
+                android:text="@{viewModel.messagesCompletedCount}"
+                tools:text="50" />
+
+            <TextView
+                android:id="@+id/messages_produced_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintStart_toEndOf="@id/messages_completed_text"
+                app:layout_constraintTop_toBottomOf="@id/first_row_barrier"
+                android:text="@{viewModel.messagesProducedCount}"
+                tools:text="4" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/second_row_barrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="messages_completed_text,messages_label,messages_produced_text"/>
+
+            <TextView
+                android:id="@+id/appointment_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/capital_appointment"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toStartOf="@id/appointments_completed_text"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/second_row_barrier" />
+
+            <TextView
+                android:id="@+id/appointments_completed_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toStartOf="@id/messages_produced_text"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintStart_toEndOf="@id/appointment_label"
+                app:layout_constraintTop_toBottomOf="@id/second_row_barrier"
+                android:text="@{viewModel.appointmentsCompletedCount}"
+                tools:text="4" />
+
+            <TextView
+                android:id="@+id/appointments_produced_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintStart_toEndOf="@id/appointments_completed_text"
+                app:layout_constraintTop_toBottomOf="@id/second_row_barrier"/>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/third_row_barrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="appointment_label,appointments_completed_text,appointments_produced_text"/>
+
+            <TextView
+                android:id="@+id/correspondence_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/correspondence"
+                android:layout_marginTop="8dp"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintTop_toBottomOf="@id/third_row_barrier"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/correspondence_completed_text" />
+
+            <TextView
+                android:id="@+id/correspondence_completed_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toStartOf="@id/correspondence_produced_text"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintStart_toEndOf="@id/correspondence_label"
+                app:layout_constraintTop_toBottomOf="@id/third_row_barrier"
+                android:text="@{viewModel.correspondenceCompletedCount}"
+                tools:text="10" />
+
+            <TextView
+                android:id="@+id/correspondence_produced_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintStart_toEndOf="@id/correspondence_completed_text"
+                app:layout_constraintTop_toBottomOf="@id/third_row_barrier" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/fourth_row_barrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="correspondence_label,correspondence_completed_text,correspondence_produced_text"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/weekly_activity_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/view_activity_detail"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/dark_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fourth_row_barrier" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

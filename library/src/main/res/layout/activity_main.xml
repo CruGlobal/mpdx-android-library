@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- XXX: this needs to be before the main content in order to intercept clicks -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_bar_height"
+        android:background="@color/primary_blue"
+        android:layout_gravity="bottom"
+        android:elevation="4dp"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_insetEdge="bottom" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/bottom_bar_height" />
+
+    <io.github.yavski.fabspeeddial.FabSpeedDial
+        android:id="@+id/fab_speed_dial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabGravity="bottom_end"
+        app:fabMenu="@menu/speed_dial"
+        app:layout_anchor="@id/fragment_container"
+        app:layout_anchorGravity="bottom|end"
+        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
+        app:layout_dodgeInsetEdges="bottom"
+        app:miniFabBackgroundTint="@android:color/white"
+        app:miniFabDrawableTint="?attr/colorPrimaryDark"
+        app:miniFabTitleTextColor="?attr/colorPrimaryDark" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

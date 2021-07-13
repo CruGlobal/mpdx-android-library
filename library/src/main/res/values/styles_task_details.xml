@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ThemeOverlay.Mpdx.Task.Details.Contacts" parent="ThemeOverlay.MaterialComponents">
+        <item name="chipStyle">@style/Widget.MaterialComponents.Chip.Action</item>
+    </style>
+</resources>

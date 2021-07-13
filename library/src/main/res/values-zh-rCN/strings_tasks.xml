@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Task Editor -->
+    <!-- Task Editor: To Rename -->
+    <string name="new_task">新任务</string>
+    <string name="edit_task">编辑任务</string>
+    <string name="log_task_label">记录任务</string>
+    <string name="task_subject">任务主题</string>
+    <string name="time_hint">时间</string>
+    <string name="activity_type_hint">活跃类型</string>
+    <string name="tags_hint">标签</string>
+    <string name="add_comment_hint">添加一条评论</string>
+    <string name="log_task_completed_date_string">完成的日期</string>
+    <string name="log_task_next_action_hint">下一步行动</string>
+    <string name="task_without_date_and_time">请选择任务完成的日期和时间</string>
+    <string name="log_task_in_future_error">请为记录任务选择过去的时间和日期。</string>
+</resources>

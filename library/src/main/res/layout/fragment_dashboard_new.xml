@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_anchor="@id/dashboard_appbar_layout"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EBECEC">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:dividerPadding="8dp"
+                    android:clipToPadding="false"
+                    android:padding="8dp">
+
+                    <fragment
+                        android:id="@+id/fragment_account_balance"
+                        android:name="org.mpdx.android.features.dashboard.view.account_balance.AccountBalanceFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:layout="@layout/fragment_dashboard_account_balance" />
+
+                    <fragment
+                        android:id="@+id/fragment_monthly_goal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:name="org.mpdx.android.features.dashboard.view.monthly_goal.DashboardMonthlyGoalFragment"
+                        tools:layout="@layout/fragment_dashboard_monthly_goal" />
+
+                    <fragment
+                        android:id="@+id/fragment_monthly_activity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:name="org.mpdx.android.features.dashboard.view.monthly_activity.MonthlyActivityFragment"
+                        tools:layout="@layout/fragment_dashboard_monthly_activity" />
+
+                    <fragment
+                        android:id="@+id/fragment_due_this_week"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:name="org.mpdx.android.features.dashboard.view.to_due_this_week.DashboardDueThisWeekFragment"
+                        tools:layout="@layout/fragment_dashboard_due_this_week" />
+
+                    <fragment
+                        android:id="@+id/fragment_referral"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:name="org.mpdx.android.features.dashboard.view.referral.DashboardReferralFragment"
+                        tools:layout="@layout/fragment_dashboard_referrals" />
+
+                    <fragment
+                        android:id="@+id/fragment_appeal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:name="org.mpdx.android.features.dashboard.view.appeal.AppealDashboardFragment"
+                        tools:layout="@layout/fragment_dashboard_appeal" />
+
+                    <fragment
+                        android:id="@+id/fragment_weekly_activity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:name="org.mpdx.android.features.dashboard.view.weekly_activity.WeeklyActivityFragment"
+                        tools:layout="@layout/fragment_dashboard_weekly_activity" />
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/dashboard_appbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/dashboard_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="@string/dashboard_lowercase"
+                app:titleTextColor="@color/dark_blue" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

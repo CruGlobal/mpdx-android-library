@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Task Editor -->
+    <!-- Task Editor: To Rename -->
+    <string name="new_task">Tugas baru</string>
+    <string name="edit_task">Edit tugas</string>
+    <string name="log_task_label">Log Tugas</string>
+    <string name="task_subject">SUBYEK TUGAS</string>
+    <string name="time_hint">Waktu</string>
+    <string name="activity_type_hint">Jenis aktivitas</string>
+    <string name="tags_hint">Tag</string>
+    <string name="add_comment_hint">Tambah Komentar</string>
+    <string name="log_task_completed_date_string">Tanggal Selesai</string>
+    <string name="task_without_date_and_time">Silakan pilih tanggal dan waktu tugas yang diselesaikan</string>
+    <string name="log_task_in_future_error">Silakan pilih tanggal dan waktu di masa lalu untuk Log Tugas</string>
+</resources>

@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">MPDX</string>
+    <string name="dashboard">Panel</string>
+    <string name="tasks">Görevler</string>
+    <string name="contacts">Kişiler</string>
+    <string name="donations">Bağışlar</string>
+    <string name="dashboard_lowercase">panel</string>
+    <string name="donations_lowercase">bağışlar</string>
+    <string name="contacts_lowercase">kişiler</string>
+    <string name="tasks_lowercase">görevler</string>
+    <string name="dashboard_overall_goal">%1$s Hedef</string>
+    <string name="dashboard_account_label">Hesap bakiyem</string>
+    <string name="connect_lowercase">bağlan</string>
+    <string name="care_commitments_lowercase">ilgi ve taahhütler</string>
+    <!-- Tasks -->
+    <string name="current_tasks_lowercase">mevcut görevler</string>
+    <string name="task_history_lowercase">görev geçmişi</string>
+    <string name="no_contacts">Kişi Yok</string>
+    <string name="multiple_contacts">Birden Çok Kişi</string>
+    <string name="deleted">silindi</string>
+    <string name="overdue">SÜRESİ GEÇTİ</string>
+    <string name="today">BUGÜN</string>
+    <string name="tomorrow">YARIN</string>
+    <string name="upcoming">YAKLAŞAN</string>
+    <string name="no_due_date">SON TARİH YOK</string>
+    <string name="none">hiçbiri</string>
+    <string name="add">ekle</string>
+    <string name="task_subject_hint">bir görev konusu girin</string>
+    <string name="task_detail">GÖREV AYRINTISI</string>
+    <string name="select_contact_hint">kişi</string>
+    <string name="date_hint">tarih</string>
+    <string name="edit">düzenle</string>
+    <string name="comments">YORUMLAR</string>
+    <string name="tags">ETİKETLER</string>
+    <string name="alert">uyarı</string>
+    <string name="alert_definition_title">Nasıl haberdar edilmek istersiniz?</string>
+    <string name="hours_label">Saat:</string>
+    <string name="minutes_label">Dakika:</string>
+    <string name="mode_label">Mod:</string>
+    <string name="alert_mode_none">Hiçbiri</string>
+    <string name="alert_mode_email">E-posta</string>
+    <string name="alert_mode_mobile">Cep Telefonu</string>
+    <string name="alert_mode_both">İkisi de</string>
+    <plurals name="hours_unit">
+        <item quantity="one">%d saat</item>
+        <item quantity="other">%d saat</item>
+    </plurals>
+    <plurals name="minutes_unit">
+        <item quantity="one">%d dakika</item>
+        <item quantity="other">%d dakika</item>
+    </plurals>
+    <string name="alert_status_text">%s önce</string>
+    <string name="alert_no_status">Ayarlanan bildirim yok</string>
+    <string name="alert_grouped">%s ve %d daha</string>
+    <string name="hour_minute_mix">%d sa %d dk</string>
+    <string name="due_date">SÜRE SONU</string>
+    <string name="call">ara</string>
+    <string name="text">metin</string>
+    <string name="todo">yapılacak</string>
+    <string name="talk_to_in_person">yüz yüze konuşun</string>
+    <string name="no_action_set">ayarlanmış eylem yok</string>
+    <string name="letter">mektup</string>
+    <string name="newsletter_physical">haber bülteni - fiziksel</string>
+    <string name="newsletter_email">haber bülteni - e-posta</string>
+    <string name="pre_call_letter">çağrı öncesi mektup</string>
+    <string name="reminder_letter">hatırlatma mektubu</string>
+    <string name="support_letter">destek mektubu</string>
+    <string name="thank">teşekkür</string>
+    <string name="prayer_request">dua isteği</string>
+    <string name="appointment">randevu</string>
+    <string name="text_message">kısa mesaj</string>
+    <string name="facebook_message">facebook mesajı</string>
+    <string name="email">e-posta</string>
+    <string name="complete">tamamla</string>
+    <string name="delete">sil</string>
+    <string name="info">bilgi</string>
+    <string name="notes">notlar</string>
+    <string name="contacts_edit">düzenle</string>
+    <string name="notes_save">notu kaydet</string>
+    <string name="notes_canceled">Notlar İptal Edildi</string>
+    <string name="notes_cancel">İptal</string>
+    <string name="task_deleted">Görev silindi</string>
+    <string name="task_completed">Görev tamamlandı</string>
+    <string name="no_phone_numbers">Müsait telefon numarası yok</string>
+    <string name="no_email_addresses">Kullanılabilir e-posta adresi yok</string>
+    <string name="no_email_client_found">E-posta istemcisi bulunamadı</string>
+    <string name="task_added">Görev eklendi</string>
+    <string name="no_tags">Kullanılabilir etiket yok</string>
+    <string name="time_without_date">Lütfen bir bitiş tarihi seçin</string>
+    <string name="save">kaydet</string>
+    <string name="task_edited">Görev kaydedildi</string>
+    <string name="task_completed_error">Göreviniz yerel olarak tamamlandı ve daha sonra eşitlenecek</string>
+    <string name="tasks_view_all">tümünü görüntüle</string>
+    <string name="tasks_empty">Tamamlanan hiçbir görev yüklenemedi.</string>
+    <!-- Contact Info -->
+    <string name="search_title">Arama</string>
+    <string name="search_hint">Ada göre ara</string>
+    <string name="people">kişiler</string>
+    <!-- Contact Detail Tasks -->
+    <string name="contact_associated_tasks">İLİŞKİLİ GÖREVLER</string>
+    <string name="contact_view_task_history">görev geçmişini görüntüle</string>
+    <string name="contact_new_task">yeni görev</string>
+    <!-- Contact Detail Info -->
+    <string name="contact_view_members">HANE ÜYELERİ</string>
+    <string name="contact_view_envelope_name">Zarf adı</string>
+    <string name="contact_view_greeting">Selamlama</string>
+    <string name="contact_view_primary_address">Birincil adres</string>
+    <string name="contact_view_newsletter">Haber bülteni</string>
+    <string name="contact_view_partner_accounts">Ortak Hesapları</string>
+    <string name="contact_view_email">E-posta</string>
+    <string name="contact_no_email">E-posta adresi bulunamadı</string>
+    <string name="contact_no_phone_number">Telefon numarası bulunamadı</string>
+    <string name="call_or_text">Arayın veya Mesaj Yazın</string>
+    <string name="call_or_text_number">%1$s numaralı cep telefonunu ara veya bu numaraya mesaj çek?</string>
+    <!-- Donations -->
+    <string name="donation_view_donation_salary">Maaş Para Birimi</string>
+    <string name="donation_view_tendered_salary">Bağış Para Birimi</string>
+    <!-- Contact - Info Tab -->
+    <string name="contact_my_notes">NOTLARIM</string>
+    <!-- Contact - Donation Tab -->
+    <string name="contact_view_more_donations">daha fazla bağış görüntüle</string>
+    <string name="contact_no_donation_date">Tarih Mevcut Değil</string>
+    <string name="donations_last_gifts">SON %d HEDİYE</string>
+    <!-- Fingerprint -->
+    <string name="cancel">İptal</string>
+    <string name="ok">TAMAM</string>
+    <string name="fingerprint_skip">atla</string>
+    <string name="overdue_or_due_today">ZAMANI GEÇMİŞ VEYA SÜRESİ BUGÜN DOLUYOR</string>
+    <string name="commitments_unfulfilled">YERİNE GETİRİLMEMİŞ TAAHHÜTLER</string>
+    <string name="care">İLGİ</string>
+    <!-- Task Filters -->
+    <string name="filter">Filtre</string>
+    <string name="filter_contact_status">Kişi Durumu</string>
+    <string name="filter_action_type">Eylem Türü</string>
+    <string name="filter_contact_referrer">Referans Olan Kişiyle İletişime Geçin</string>
+    <string name="filter_contact_church">Kiliseyle İletişime Geçin</string>
+    <string name="filter_contact_likely_to_give">Vermesi Olası Kişi</string>
+    <string name="filter_contact_timezone">Kişi Zaman Dilimi</string>
+    <string name="filter_task_contact_city">Kişi Şehri</string>
+    <string name="filter_task_contact_state">Kişi Eyaleti</string>
+    <string name="toolbar_filter_tasks">filtre görevleri</string>
+    <!-- Onboarding -->
+    <string name="pin_and_fingerprint_verification">PIN ve Parmak İzi Doğrulaması</string>
+    <string name="pin_and_fingerprint_description">4 haneli bir cep telefonu kilit açma kodu belirleyerek bilgilerinizi ve gizliliğinizi korumamıza yardımcı olun. Parmak izi seçeneği, sadece parmak izi özelliğine sahip cihazlarda kullanılabilir.</string>
+    <string name="pin_create">Lütfen 4 haneli bir cep telefonu kilit açma kodu oluşturun</string>
+    <string name="confirm_pin">pini onayla</string>
+    <string name="get_started">başlayın</string>
+    <string name="fingerprint_touch_sensor">Onaylamak için PIN\'i girin ve sensöre dokunun</string>
+    <string name="fingerprint_prompt">Gelecek kilit açmalarda parmak izi kullan?</string>
+    <string name="fingerprint_help">Cep telefonu kilit açma kodunuz, kullanılabilecek olan parmak iziyle kilit açmayı etkinleştirmek için gerekli olacak</string>
+    <string name="fingerprint_enrolled">Parmak izi başarıyla kaydedildi!</string>
+    <string name="fingerprint_failed">Hay aksi, tekrar deneyin!</string>
+    <string name="invalid_pin">Lütfen geçerli bir PIN girin</string>
+    <string name="incorrect_pin">Yanlış PIN girildi</string>
+    <string name="pin_enter">Lütfen cep telefonu kilit açma kodunuzu girin</string>
+    <string name="fingerprint_enabled">Parmak izi etkin</string>
+    <string name="unlock_with_pin">kilidini pinle aç</string>
+    <string name="use_fingerprint_on_device">Kilidi açmak için PIN\'i girin veya parmak izini kullanın</string>
+    <!-- Settings -->
+    <string name="settings">Ayarlar</string>
+    <string name="settings_lowercase">ayarlar</string>
+    <string name="settings_logout">Oturumu Kapat</string>
+    <string name="settings_notifications">Bildirim Tercihleri</string>
+    <string name="settings_notifications_task_due">Görev Son Tarihi</string>
+    <string name="settings_account_list">Hesap Listesi</string>
+    <string name="version">Sürüm</string>
+    <string name="change_account_list">hesap listesini değiştir</string>
+    <string name="change_account_list_dialog">Hesabı %s ile değiştirmek istediğinizden emin misiniz? Mevcut veriler silinecek ve yeni hesapla ekleme işlemi başlayacak</string>
+    <string name="yes">evet</string>
+    <string name="logout_dialog">Oturumu kapatmak istediğinizden emin misiniz?</string>
+    <string name="offline_error">Bu eylemi çevrim dışıyken yapmanıza izin verilmez</string>
+    <string name="current_account_list">Mevcut hesap zaten %s\'(y)a/(y)e ayarlanmış</string>
+    <string name="privacy_policy">Gizlilik Politikası</string>
+    <!--CareCommittments-->
+    <string name="first_gift_not_received">%s ilk hediyesi alınmadı</string>
+    <string name="gifts_not_received_label">hediyeler alınmadı</string>
+    <string name="partners_thirty_days_late">%s ortakları otuz gün gecikti</string>
+    <string name="partners_thirty_days_late_label">ortaklar otuz gün gecikti</string>
+    <string name="partners_sixty_days_late">%s ortakları altmış gün gecikti</string>
+    <string name="partners_sixty_days_late_label">ortaklar altmış gün gecikti</string>
+    <string name="days_since_last_newsletter">son haber bülteninizden bu yana %s gün</string>
+    <string name="days_since_last_newsletter_never">0 haber bülteni gönderildi</string>
+    <string name="days_since_last_newsletter_label">son haber bülteninizden bu yana geçen günler</string>
+    <string name="birthdays_this_week_label">bu haftaki doğum günleri</string>
+    <string name="anniversaries_this_week_label">bu haftaki yıl dönümleri</string>
+    <string name="care_commitment_titles"><![CDATA[İlgi ve Taahhütler]]></string>
+    <string name="connect_title">Bağlan</string>
+    <string name="connect_screen_see_all">Tümünü gör: %s</string>
+    <!-- Appeals -->
+    <!-- Coaching -->
+    <!-- New Contact -->
+    <string name="contacts_add">bitti</string>
+    <string name="contact_not_found">Hay aksi! Görünüşe bakılırsa bu kişi bu MPDX hesabında mevcut değil. Lütfen doğru hesaba geçin veya bu kişiyi webde arayın.</string>
+    <string name="okay">tamam</string>
+    <!-- Help -->
+    <!-- Notifications -->
+    <!-- New Strings -->
+    <string name="balance_committed">%1$s   %2$s taahhüt edildi</string>
+    <string name="balanced_received">%1$s   %2$s alındı</string>
+    <plurals name="donation_frequency">
+        <item quantity="one">Her Ay</item>
+        <item quantity="other">%d Ayda Bir</item>
+    </plurals>
+    <plurals name="donation_frequency_weeks">
+        <item quantity="one">Her Hafta</item>
+        <item quantity="other">%d Haftada Bir</item>
+    </plurals>
+    <string name="message_auth_expired">Oturumunuzun süresi doldu, lütfen tekrar oturum açın</string>
+    <string name="no_account_list_error_message">Selam! Görünüşe bakılırsa hesap kurulumunuzu tamamlamamışsınız. Bilgisayarınızda mpdx.org\'u ziyaret edip, izlenecek yolu tamamlayıp sonra gelip beni görebilir misiniz? Teşekkürler!</string>
+    <string name="no_default_account_list_error_message">Hay aksi! Görünüşe bakılırsa hesabınızda eksik olan bir şeyler var. Bilgisayarınızda mpdx.org\'daki tercihlerinize gidip varsayılan bir hesap listesi seçebilir misiniz? Bunu yaptıktan sonra geri gelin ve tekrar deneyin. Teşekkürler!</string>
+    <string name="no_organization_or_default_account_list_error_message">Hımm. Görünüşe bakılırsa hiçbir Kurumla bağlı değilsiniz. MPDX.org\'daki Ayarlar\'da bulunan\"Hizmetleri Bağla\"ya gidip, bir Kurum ekleyip buraya tekrar gelebilir misiniz? Teşekkürler!</string>
+    <string name="no_notes_tap_to_edit">Not Yok (Düzenlemek için Dokunun)</string>
+    <string name="notifications_task_due_channel_description">Bu görev için bazı eylemler gerekli</string>
+</resources>

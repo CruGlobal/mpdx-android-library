@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.widget.TextView" />
+        <import type="androidx.databinding.ObservableField" />
+        <import type="androidx.lifecycle.LiveData" />
+        <import type="java.util.List" />
+        <import type="org.mpdx.android.features.contacts.contacteditor.ContactEditorCallbacks" />
+
+        <variable name="callbacks" type="ObservableField&lt;ContactEditorCallbacks&gt;" />
+        <variable name="contact" type="org.mpdx.android.features.contacts.viewmodel.ContactViewModel" />
+        <variable name="tags" type="LiveData&lt;List&lt;String&gt;&gt;" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tags_header"
+            style="@style/Widget.Mpdx.Contact.Editor.Section.Header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/contact_editor_start_margin"
+            android:layout_marginLeft="@dimen/contact_editor_start_margin"
+            android:layout_marginEnd="@dimen/contact_editor_end_margin"
+            android:layout_marginRight="@dimen/contact_editor_end_margin"
+            android:text="@string/contact_editor_section_tags" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/Widget.Mpdx.Form.Section.Fields"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tags_header"
+            android:layout_marginBottom="@dimen/contact_editor_section_margin_bottom"
+            android:paddingTop="@dimen/contact_editor_section_padding_top"
+            android:paddingBottom="@dimen/contact_editor_section_padding_bottom">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/marginStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/contact_editor_start_margin" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/marginEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/contact_editor_end_margin" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/tags"
+                style="@style/Widget.Mpdx.Tags"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                app:chipCloseOnClick="@{(v) -> callbacks.onRemoveTag(contact, (TextView) v)}"
+                app:chipLayout="@{@layout/contacts_editor_section_tags_tag_chip}"
+                app:chips="@{contact.tags}"
+                app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                app:layout_constraintStart_toStartOf="@id/marginStart"
+                app:layout_constraintTop_toTopOf="parent"
+                app:visibleIf="@{contact.tags.size > 0}" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/new_tag_layout"
+                style="@style/Widget.Mpdx.Form.Input.Text.AutoComplete.Layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/contact_add_tags"
+                app:endIconDrawable="@drawable/ic_form_add_circle_20dp"
+                app:endIconMode="dropdown_menu"
+                app:endIconOnClick="@{() -> callbacks.onAddTag(contact, newTag)}"
+                app:layout_constraintEnd_toEndOf="@id/marginEnd"
+                app:layout_constraintStart_toStartOf="@id/marginStart"
+                app:layout_constraintTop_toBottomOf="@id/tags">
+
+                <AutoCompleteTextView
+                    android:id="@+id/new_tag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:completionThreshold="1"
+                    android:imeOptions="actionDone"
+                    android:onEditorAction="@{(v,a,e) -> callbacks.onAddTag(contact, v)}"
+                    android:onItemClick="@{() -> callbacks.onAddTag(contact, newTag)}"
+                    android:singleLine="true"
+                    app:dropDownItemLayout="@{@layout/mtrl_dropdown_menu_popup_item}"
+                    app:dropDownItems="@{tags}"
+                    tools:text="Tag" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</layout>

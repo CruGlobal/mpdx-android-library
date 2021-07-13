@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="filters_filter_label">%1$s : %2$s</string>
+    <!-- Filter Selector -->
+    <string name="filters_selector_enabled_label">Filtros habilitados</string>
+    <!-- Filter Selector: To Rename -->
+    <string name="toolbar_filter_contacts">Gestionar y filtrar contactos</string>
+    <string name="filter_by">Filtrar por</string>
+</resources>

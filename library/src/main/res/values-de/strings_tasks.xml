@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="task_notification_unit_minutes">Minuten</string>
+    <string name="task_notification_unit_hours">Stunden</string>
+    <string name="task_result_received">Erhalten</string>
+    <string name="task_result_done">Erledigt</string>
+    <!-- Task Editor -->
+    <string name="task_editor_header_contacts">Kontakte</string>
+    <string name="task_editor_hint_notification">Benachrichtigung</string>
+    <string name="task_editor_hint_due_date">Fälligkeitsdatum</string>
+    <string name="task_editor_hint_completed_at_time">Zeit</string>
+    <string name="task_editor_action_add_contact">Kontakt hinzufügen</string>
+    <string name="task_editor_action_add_tag">Aufgabe erstellen</string>
+    <string name="task_editor_action_save">Sichern</string>
+    <!-- Task Editor: To Rename -->
+    <string name="new_task">neue Aufgabe</string>
+    <string name="edit_task">Aufgabe bearbeiten</string>
+    <string name="log_task_label">Aufgabe protokollieren</string>
+    <string name="task_subject">Name der Aufgabe</string>
+    <string name="time_hint">Zeit</string>
+    <string name="activity_type_hint">Tätigkeit</string>
+    <string name="tags_hint">Stichworte</string>
+    <string name="add_comment_hint">Kommentar hinzufügen</string>
+    <string name="log_task_completed_date_string">Datum Erledigt</string>
+    <string name="log_task_next_action_hint">Nächste Tätigkeit</string>
+    <string name="task_without_date_and_time">Bitte Datum und Uhrzeit für abgeschlossene Aufgabe auswählen.</string>
+    <string name="log_task_in_future_error">Bitte wählen Sie für das Aufgabenprotokoll einen Zeitpunkt in der Vergangenheit.</string>
+</resources>

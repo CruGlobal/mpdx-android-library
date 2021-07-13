@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <data>
+        <variable name="appeal" type="org.mpdx.android.features.appeals.model.Appeal" />
+    </data>
+
+    <FrameLayout android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+                android:id="@+id/appeals_detail_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/AppTheme.AppBarOverlay">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?android:attr/actionBarSize"
+                        android:theme="@style/ToolbarTheme"
+                        android:title="@string/appeals_lowercase" />
+
+                </com.google.android.material.appbar.AppBarLayout>
+
+            <include
+                layout="@layout/view_appeal"
+                app:appeal="@{appeal}" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/appeals_tab_layout"
+                    app:tabMode="fixed"
+                    style="@style/Contacts_TabLayoutTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/primary_blue"
+                    android:elevation="6dp"
+                    android:minHeight="?android:attr/actionBarSize"/>
+
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:id="@+id/refresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/details"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp" />
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        </LinearLayout>
+    </FrameLayout>
+</layout>

@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">MPDX</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="tasks">Taken</string>
+    <string name="contacts">Contacten</string>
+    <string name="donations">Giften</string>
+    <string name="dashboard_lowercase">dashboard</string>
+    <string name="donations_lowercase">giften</string>
+    <string name="contacts_lowercase">contacten</string>
+    <string name="tasks_lowercase">taken</string>
+    <string name="dashboard_overall_goal">%1$s Doel</string>
+    <string name="dashboard_account_label">Mijn accountsaldo</string>
+    <string name="connect_lowercase">ontwikkeling</string>
+    <string name="care_commitments_lowercase">onderhoud</string>
+    <!-- Tasks -->
+    <string name="current_tasks_lowercase">huidige taken</string>
+    <string name="task_history_lowercase">taakgeschiedenis</string>
+    <string name="no_contacts">Geen Contacten</string>
+    <string name="multiple_contacts">Meerdere Contacten</string>
+    <string name="deleted">verwijderd</string>
+    <string name="overdue">ACHTERSTALLIG</string>
+    <string name="today">VANDAAG</string>
+    <string name="tomorrow">MORGEN</string>
+    <string name="upcoming">AANKOMEND</string>
+    <string name="no_due_date">GEEN VERVALDATUM</string>
+    <string name="none">geen</string>
+    <string name="add">toevoegen</string>
+    <string name="task_subject_hint">voer een taakonderwerp in</string>
+    <string name="task_detail">TAAKGEGEVENS</string>
+    <string name="select_contact_hint">contact</string>
+    <string name="date_hint">datum</string>
+    <string name="edit">bewerken</string>
+    <string name="comments">OPMERKINGEN</string>
+    <string name="tags">LABELS</string>
+    <string name="alert">melding</string>
+    <string name="due_date">EINDDATUM</string>
+    <string name="call">bellen</string>
+    <string name="text">bericht sturen</string>
+    <string name="todo">te doen</string>
+    <string name="talk_to_in_person">persoonlijk benaderen</string>
+    <string name="letter">brief</string>
+    <string name="newsletter_physical">nieuwsbrief - papier</string>
+    <string name="newsletter_email">nieuwsbrief - e-mail</string>
+    <string name="pre_call_letter">voorbereidingsbrief voor bellen</string>
+    <string name="reminder_letter">herinneringsbrief</string>
+    <string name="support_letter">ondersteuningsbrief</string>
+    <string name="thank">bedanken</string>
+    <string name="prayer_request">gebedsverzoek</string>
+    <string name="appointment">afspraak</string>
+    <string name="text_message">bericht</string>
+    <string name="facebook_message">facebook bericht</string>
+    <string name="email">e-mail</string>
+    <string name="complete">voltooien</string>
+    <string name="delete">verwijderen</string>
+    <string name="info">info</string>
+    <string name="notes">notities</string>
+    <string name="contacts_edit">bewerken</string>
+    <string name="notes_save">notitie opslaan</string>
+    <string name="notes_canceled">Notities Geannuleerd</string>
+    <string name="notes_cancel">Annuleren</string>
+    <string name="task_deleted">Taak verwijderd</string>
+    <string name="task_completed">Taak volbracht</string>
+    <string name="no_phone_numbers">Geen telefoonnummers beschikbaar</string>
+    <string name="no_email_addresses">Geen e-mailadres beschikbaar</string>
+    <string name="no_email_client_found">Geen e-mail app gevonden</string>
+    <string name="task_added">Taak toegevoegd</string>
+    <string name="no_tags">Geen labels beschikbaar</string>
+    <string name="time_without_date">Selecteer een einddatum</string>
+    <string name="save">opslaan</string>
+    <string name="task_edited">Taak opgeslagen</string>
+    <string name="task_completed_error">Je taak is op je telefoon volbracht en zal later worden gesynchroniseerd</string>
+    <string name="tasks_view_all">bekijk alles</string>
+    <!-- Contact Info -->
+    <string name="search_title">Zoeken</string>
+    <string name="search_hint">Zoeken op naam</string>
+    <string name="people">personen</string>
+    <!-- Contact Detail Tasks -->
+    <string name="contact_associated_tasks">GEASSOCIEERDE TAKEN</string>
+    <string name="contact_view_task_history">bekijk taakgeschiedenis</string>
+    <string name="contact_new_task">nieuwe taak</string>
+    <!-- Contact Detail Info -->
+    <string name="contact_view_members">GEZINSLEDEN</string>
+    <string name="contact_view_envelope_name">Enveloppe naam</string>
+    <string name="contact_view_greeting">Begroeting</string>
+    <string name="contact_view_primary_address">Primair adres</string>
+    <string name="contact_view_newsletter">Nieuwsbrief</string>
+    <string name="contact_view_partner_accounts">Partners Accounts</string>
+    <string name="contact_view_email">E-mail</string>
+    <string name="contact_no_email">Geen e-mailadressen gevonden</string>
+    <string name="contact_no_phone_number">Geen telefoonnummers gevonden</string>
+    <string name="call_or_text">Bellen of Bericht Sturen</string>
+    <string name="call_or_text_number">Bellen of bericht sturen naar nummer %1$s?</string>
+    <!-- Donations -->
+    <string name="donation_view_donation_salary">Salaris Valuta</string>
+    <string name="donation_view_tendered_salary">Gift Valuta</string>
+    <!-- Contact - Info Tab -->
+    <string name="contact_my_notes">MIJN NOTITIES</string>
+    <!-- Contact - Donation Tab -->
+    <string name="contact_view_more_donations">bekijk meer giften</string>
+    <string name="contact_no_donation_date">Datum Niet Beschikbaar</string>
+    <string name="donations_last_gifts">LAATSTE %d GIFTEN</string>
+    <!-- Fingerprint -->
+    <string name="cancel">Annuleren</string>
+    <string name="ok">Oké</string>
+    <string name="fingerprint_skip">overslaan</string>
+    <string name="overdue_or_due_today">VERVALLEN OF VERVALT VANDAAG</string>
+    <string name="commitments_unfulfilled">NIET NAGEKOMEN TOEZEGGINGEN</string>
+    <string name="care">ONDERHOUD</string>
+    <!-- Task Filters -->
+    <string name="filter">Filter</string>
+    <string name="filter_contact_status">Contact Status</string>
+    <string name="filter_action_type">Actie Type</string>
+    <string name="filter_contact_referrer">Contact Doorverwijzer</string>
+    <string name="filter_contact_church">Contact Kerk</string>
+    <string name="filter_contact_likely_to_give">Contact Geeft Waarschijnlijk</string>
+    <string name="filter_contact_timezone">Contact Tijdzone</string>
+    <string name="filter_task_contact_city">Contact Stad</string>
+    <string name="filter_task_contact_state">Contact Staat</string>
+    <string name="toolbar_filter_tasks">filter taken</string>
+    <!-- Onboarding -->
+    <string name="pin_and_fingerprint_verification">PIN &amp; Vingerafdruk Verificatie</string>
+    <string name="pin_and_fingerprint_description">Help ons om je gegevens en privacy te beschermen door een ontgrendelingscode van 4 cijfers in te stellen. Ontgrendeling via een vingerafdruk is beschikbaar voor apparaten die geschikt zijn voor vingerafdrukherkenning.</string>
+    <string name="pin_create">Kies een 4 cijferige ontgrendelingscode</string>
+    <string name="confirm_pin">Bevestig pincode</string>
+    <string name="get_started">aan de slag</string>
+    <string name="fingerprint_touch_sensor">Voer de pincode in en raak de touch sensor aan om te bevestigen</string>
+    <string name="fingerprint_prompt">Wil je je vingerafdruk gebruiken om in de toekomst in te loggen?</string>
+    <string name="fingerprint_help">Je mobiele ontgrendelingscode is vereist om ontgrendeling van vingerafdrukken in te schakelen</string>
+    <string name="fingerprint_enrolled">Vingerafdruk succesvol toegevoegd!</string>
+    <string name="fingerprint_failed">oh oh, probeer het opnieuw!</string>
+    <string name="invalid_pin">Voer een geldige pincode in</string>
+    <string name="incorrect_pin">Onjuiste pincode ingevoerd</string>
+    <string name="pin_enter">Voer de ontgrendelingscode van je mobiele telefoon in</string>
+    <string name="fingerprint_enabled">Vingerafdruk ingeschakeld</string>
+    <string name="unlock_with_pin">ontgrendelen met pincode</string>
+    <string name="use_fingerprint_on_device">Voer de pincode in of gebruik een vingerafdruk om het apparaat te ontgrendelen</string>
+    <!-- Settings -->
+    <string name="settings">Instellingen</string>
+    <string name="settings_lowercase">instellingen</string>
+    <string name="settings_logout">Uitloggen</string>
+    <string name="settings_account_list">Account Lijst</string>
+    <string name="version">Versie</string>
+    <string name="change_account_list">account lijst wijzigen</string>
+    <string name="change_account_list_dialog">Weet je zeker dat je van account wilt wisselen naar %s? De huidige gegevens worden verwijderd en het inloggen met een nieuw account wordt gestart.</string>
+    <string name="yes">ja</string>
+    <string name="logout_dialog">Weet je zeker dat je wilt uitloggen?</string>
+    <string name="offline_error">Het is niet toegestaan om deze actie offline uit te voeren</string>
+    <string name="current_account_list">Huidige account is al ingesteld op %s</string>
+    <!--CareCommittments-->
+    <string name="first_gift_not_received">%s eerste gift niet ontvangen</string>
+    <string name="gifts_not_received_label">giften niet ontvangen</string>
+    <string name="partners_thirty_days_late">%s partners 30 dagen te laat</string>
+    <string name="partners_thirty_days_late_label">partners 30 dagen te laat</string>
+    <string name="partners_sixty_days_late">%s partners 60 dagen te laat</string>
+    <string name="partners_sixty_days_late_label">partners 60 dagen te laat</string>
+    <string name="days_since_last_newsletter">%s dagen sinds je laatste nieuwsbrief</string>
+    <string name="days_since_last_newsletter_label">dagen sinds je laatste nieuwsbrief</string>
+    <string name="birthdays_this_week_label">verjaardagen deze week</string>
+    <string name="anniversaries_this_week_label">jubilea deze week</string>
+    <string name="care_commitment_titles"><![CDATA[ONDERHOUD]]></string>
+    <string name="connect_title">Ontwikkeling</string>
+    <string name="connect_screen_see_all">Bekijk alle %s</string>
+    <!-- Appeals -->
+    <!-- Coaching -->
+    <!-- New Contact -->
+    <string name="contacts_add">klaar</string>
+    <string name="okay">oké</string>
+    <!-- Help -->
+    <!-- Notifications -->
+    <!-- New Strings -->
+    <string name="balance_committed">%1$s %2$s toegezegd</string>
+    <string name="balanced_received">%1$s %2$s ontvangen</string>
+    <plurals name="donation_frequency">
+        <item quantity="one">Elke Maand</item>
+        <item quantity="other">Elke %d Maanden</item>
+    </plurals>
+    <string name="message_auth_expired">Je sessie is verlopen, log opnieuw in</string>
+    <string name="no_account_list_error_message">Hallo daar! Het ziet ernaar uit dat je je accountconfiguratie nog niet hebt voltooid. Ga naar mpdx.org op je computer, doorloop de stappen en kom dan weer terug. Bedankt!</string>
+    <string name="no_default_account_list_error_message">Oeps! Het lijkt erop dat er iets ontbreekt aan je account. Kun je op je computer naar je voorkeuren gaan op mpdx.org en daar een standaard account lijst selecteren? Kom terug nadat je dat gedaan hebt en probeer het opnieuw. Bedankt!</string>
+    <string name="no_organization_or_default_account_list_error_message">Hmm. Het lijkt erop dat je niet verbonden bent met een organisatie. Kan je naar \"Verbindingsdiensten\" gaan onder \"Instellingen\" op MPDX.org, een organisatie toevoegen en dan weer terug komen? Bedankt!</string>
+    <string name="no_notes_tap_to_edit">Geen Notities (Tik om te Bewerken)</string>
+</resources>

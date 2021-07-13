@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="coaching_notification_channel_weekly_reminder">Coaching</string>
+</resources>

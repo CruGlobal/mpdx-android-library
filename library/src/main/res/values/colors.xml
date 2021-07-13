@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primary_blue">#05699b</color>
+    <color name="dark_blue">#00557d</color>
+    <color name="shade_blue">#3282af</color>
+    <color name="primary_teal">#32c3d7</color>
+    <color name="primary_yellow">#f5be19</color>
+    <color name="primary_orange">#ec8223</color>
+    <color name="primary_red">#f47c87</color>
+    <color name="primary_green">#6cd297</color>
+    <color name="primary_gray">#5a5a5a</color>
+    <color name="opacity_primary_gray_50">#805A5A5A</color>
+    <color name="dark_gray">#323232</color>
+    <color name="shade_gray">#BEBEBE</color>
+    <color name="tint_gray">#E6E6E6</color>
+    <color name="background_gray">#F7F7F7</color>
+    <color name="divider_gray">#f4f4f4</color>
+
+    <!-- Primary -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="bottomBarTabColor">@color/white</color>
+    <color name="bottomBarBackgroundColor">@color/primary_blue</color>
+    <color name="tabLayoutInactiveTabTextColor">@color/black</color>
+    <color name="contactsTabLayoutInactiveTabTextColor">@color/opacity_white_70</color>
+    <color name="opacity_white_70">#B3FFFFFF</color>
+    <color name="opacity_blue_50">#8005699b</color>
+    <color name="text_primary">#de000000</color>
+    <color name="text_secondary">#99000000</color>
+
+    <!-- Fingerprint -->
+    <color name="warning_color">#f4511e</color>
+    <color name="hint_color">#42000000</color>
+    <color name="success_color">#009688</color>
+
+    <!-- Days Late -->
+    <color name="on_time">#5cb85c</color>
+    <color name="zero_to_thirty">#595959</color>
+    <color name="thirty_to_sixty">#f5be19</color>
+    <color name="sixty_plus">#f00000</color>
+
+    <color name="tintable">#ff000000</color>
+    <color name="transparent">#00000001</color>
+</resources>

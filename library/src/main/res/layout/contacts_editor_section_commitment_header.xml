@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.text.TextUtils" />
+        <import type="org.mpdx.android.features.constants.Constants" />
+
+        <variable name="contact" type="org.mpdx.android.features.contacts.viewmodel.ContactViewModel" />
+        <variable name="visibility" type="org.mpdx.android.features.contacts.contacteditor.FormVisibilityViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants"
+        android:focusable="false">
+
+        <TextView
+            style="@style/Widget.Mpdx.Contact.Editor.Section.Header"
+            android:id="@+id/commitment_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/contact_editor_start_margin"
+            android:layout_marginLeft="@dimen/contact_editor_start_margin"
+            android:layout_marginEnd="@dimen/contact_editor_end_margin"
+            android:layout_marginRight="@dimen/contact_editor_end_margin"
+            android:text="@string/contact_editor_section_commitment" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/Widget.Mpdx.Form.Section.Fields"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/commitment_header"
+            android:layout_marginBottom="@dimen/contact_editor_section_margin_bottom"
+            android:minHeight="48dp"
+            android:onClick="@{() -> visibility.toggleCommitment()}"
+            app:visibleIf="@{!visibility.commitment}">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/marginStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/contact_editor_start_margin" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/marginEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/contact_editor_end_margin" />
+
+            <TextView
+                android:id="@+id/label"
+                style="@style/Widget.Mpdx.Contact.Editor.Label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{TextUtils.isEmpty(contact.commitment) ? @string/contact_editor_label_commitment_no_commitment : contact.commitment}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/marginEnd"
+                app:layout_constraintStart_toEndOf="@id/marginStart"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/contact_editor_label_commitment_no_commitment" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="@id/label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/marginEnd"
+                app:layout_constraintTop_toTopOf="@id/label"
+                app:srcCompat="@drawable/ic_expand_more"
+                app:tint="@color/black"
+                tools:src="@drawable/ic_expand_more" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</layout>

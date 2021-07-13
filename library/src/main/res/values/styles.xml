@@ -1,0 +1,74 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/primary_blue</item>
+        <item name="colorAccent">@color/primary_teal</item>
+    </style>
+
+    <style name="SplashActivity" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorPrimaryDark">@color/primary_blue</item>
+        <item name="colorAccent">@color/primary_teal</item>
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="ToolbarTheme">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="titleTextColor">@color/primary_blue</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <item name="android:textColorSecondary">@android:color/black</item>
+        <item name="popupTheme">@style/AppTheme.PopupOverlay</item>
+        <item name="actionMenuTextColor">@color/primary_blue</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="ToolbarThemeSearch" parent="Theme.AppCompat.Light">
+        <item name="android:background">@color/white</item>
+        <item name="titleTextColor">@color/primary_blue</item>
+        <item name="android:textColorPrimary">@color/primary_blue</item>
+        <item name="android:textColorSecondary">@color/primary_blue</item>
+        <item name="actionMenuTextColor">@color/primary_blue</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TabLayoutTheme">
+        <item name="tabBackground">?attr/colorPrimary</item>
+        <item name="tabIndicatorColor">?attr/colorPrimaryDark</item>
+        <item name="tabIndicatorHeight">@dimen/tab_indicator_height</item>
+        <item name="tabSelectedTextColor">?attr/colorPrimaryDark</item>
+        <item name="tabTextAppearance">@android:style/TextAppearance.Widget.TabWidget</item>
+        <item name="tabTextColor">@color/tabLayoutInactiveTabTextColor</item>
+    </style>
+
+    <style name="Contacts_TabLayoutTheme">
+        <item name="tabBackground">@color/primary_blue</item>
+        <item name="tabIndicatorColor">@color/white</item>
+        <item name="tabIndicatorHeight">@dimen/tab_indicator_height</item>
+        <item name="tabSelectedTextColor">@color/white</item>
+        <item name="tabTextAppearance">@android:style/TextAppearance.Widget.TabWidget</item>
+        <item name="tabTextColor">@color/contactsTabLayoutInactiveTabTextColor</item>
+    </style>
+
+    <style name="Balance_Progress" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/double_progress_drawable</item>
+    </style>
+
+    <style name="Balance_Progress.Monthly_Goal" parent="Balance_Progress">
+        <item name="android:progressDrawable">@drawable/monthly_goal_double_progress_drawable</item>
+    </style>
+
+    <style name="Balance_Progress_Triple_Base" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/triple_progress_drawable_bottom_two</item>
+    </style>
+
+    <style name="Balance_Progress_Tertiary" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/tertiary_progress_drawable</item>
+    </style>
+
+</resources>

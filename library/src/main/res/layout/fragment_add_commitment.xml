@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/fragment_add_commitment_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/fragment_add_commitment_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:theme="@style/ToolbarTheme"
+                app:tabMode="fixed"
+                app:title="@string/add_commitment_title" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/add_task_item_margins"
+                    android:paddingStart="@dimen/add_task_item_margins"
+                    android:paddingTop="@dimen/add_task_item_margins"
+                    android:text="@string/add_commitment_contact_header"
+                    android:textColor="@color/primary_blue"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_commitment_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/add_task_item_margins"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/donation_add_donation_details_select_donor"
+                    android:maxLines="1"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/add_task_item_margins"
+                    android:paddingStart="@dimen/add_task_item_margins"
+                    android:paddingTop="@dimen/add_task_item_margins"
+                    android:text="@string/add_commitment_expected_date_header"
+                    android:textColor="@color/primary_blue"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/fragment_add_commitment_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/add_task_item_margins"
+                    android:background="@android:color/transparent"
+                    android:drawableLeft="@drawable/cru_icon_calendar"
+                    android:drawablePadding="@dimen/add_task_item_margins"
+                    android:drawableStart="@drawable/cru_icon_calendar"
+                    android:hint="@string/donation_add_donation_date_hint"
+                    android:maxLines="1"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#F4F4F4" />
+
+                <LinearLayout
+                    android:id="@+id/fragment_add_commitment_received_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/add_task_item_margins"
+                    android:clickable="true">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/add_commitment_received_header" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/fragment_add_commitment_received_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/add_task_item_margins"
+                    android:paddingStart="@dimen/add_task_item_margins"
+                    android:paddingTop="@dimen/add_task_item_margins"
+                    android:text="@string/add_commitment_amount_header"
+                    android:textColor="@color/primary_blue"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/fragment_add_commitment_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/add_task_item_margins"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/add_commitment_amount_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/fragment_edit_commitment_delete_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="#FF3B30"
+                    android:text="@string/add_commitment_delete_commitment_label"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</FrameLayout>
